@@ -1,0 +1,191 @@
+Name                          PortName
+----                          --------
+PV43_Ecommerce                10.43.0.39
+PV43_DRH                      10.43.0.37
+PV43_Custos                   10.43.0.34
+PV43_Compras                  10.43.0.38
+PV43_Caixa Geral              10.43.0.35
+PV43_Atendimento              10.43.0.36
+PV38_Servir                   10.38.0.36
+PV38_Recebimento              10.38.0.38
+PV38_Ecommerce                10.38.0.40
+PV38_DRH                      10.38.0.37
+PV38_Compras                  10.38.0.34
+PV38_Caixa Geral              10.38.0.39
+PV38_Atendimento              10.38.0.35
+PV37_Fat2                     10.37.0.35
+PV37_Fat1                     10.37.0.34
+PV35_Servir                   10.35.0.36
+PV35_Nota Fiscal              10.35.0.35
+PV35_Ecommerce                10.35.0.41
+PV35_DRH                      10.35.0.39
+PV35_CPD                      10.35.0.38
+PV35_Caixa Geral              10.35.0.34
+PV35_Atendimento              10.35.0.37
+PV34_Servir                   10.34.0.37
+PV34_Custos                   10.34.0.38
+PV34_CPD                      10.34.0.34
+PV34_Atendimento              10.34.0.36
+PV33_RH                       10.33.0.36
+PV33_CPD                      10.33.0.35
+PV33_Atendimento              10.33.0.34
+PV30_Gerencia Comercial       10.30.0.41
+PV30_Crediário                10.30.0.35
+PV30_Compras                  10.30.0.34
+PV30_Caixa Geral              10.30.0.42
+PV29_teste JUI                10.29.0.40
+PV29_Gerencia                 10.29.0.37
+PV29_CPD                      10.29.0.34
+PV29_Caixa Geral              10.29.0.36
+PV27_Servir                   10.27.0.39
+PV27_Ecommerce                10.27.0.38
+PV27_Custos                   10.27.0.37
+PV27_Compras                  10.27.0.34
+PV27_Caixa Geral              10.27.0.36
+PV27_Atendimento              10.27.0.35
+PV26_CPD                      10.26.0.34
+PV26_Caixa Geral              10.26.0.36
+PV26_Atendimento              10.26.0.35
+PV25_Trafego                  10.25.0.34
+PV25_Servico                  10.25.0.36
+PV25_Escritório               10.25.0.35
+PV23_CPD                      10.23.0.35
+PV23_Atendimento              10.23.0.34
+PV22_Servir                   10.22.0.40
+PV22_Gerencia                 10.22.0.39
+PV22_Ecommerce                10.22.0.34
+PV22_DRH                      10.22.0.35
+PV22_CPD                      10.22.0.37
+PV22_Construmil               10.22.0.38
+PV22_Caixa Geral              10.22.0.45
+PV22_Atendimento              10.22.0.36
+PV21_Servir                   10.21.0.34
+Pv21_DRH                      10.21.0.36
+PV21_Custos                   10.21.0.35
+PV20_Servir                   10.20.0.36
+PV20_Nota Fiscal              10.20.0.34
+PV20_Caixa Geral              10.20.0.35
+PV20_Atendimento              10.20.0.37
+PV19_Zebra_01                 \\10.19.0.13
+Pv19_Recebimentos de Notas    10.19.0.43
+PV19_Fat2                     10.19.0.35
+PV19_Fat1                     10.19.0.34
+PV19_Descarga                 10.19.0.37
+PV19_Deposito2                10.19.0.42
+PV19_Carga                    10.19.0.36
+PV18_ Geral2                  10.18.0.34
+PV18_ Geral1                  10.18.0.35
+Pv17_DRH                      10.17.0.36
+Pv17_CPD                      10.17.0.35
+Pv17_Caixa Geral              10.17.0.37
+Pv17_Atendimento              10.17.0.34
+PV16_Escritório               10.16.0.36
+PV16_DRH                      10.16.0.34
+PV16_Caixa PDV                10.16.0.35
+PV15_CPD                      10.15.0.34
+PV15_Caixa Geral              10.15.0.36
+PV15_Atendimento              10.15.0.35
+PV14_Custos                   10.14.0.38
+PV14_CPD                      10.14.0.36
+PV14_Caixa Geral              10.14.0.37
+PV14_Atendimento              10.14.0.34
+PV13_Nota Fiscal              10.13.0.34
+PV13_Custos                   10.13.0.35
+PV12_Preforma 2               10.12.0.40
+PV12_Preforma                 10.12.0.35
+PV12_Laboratorio              10.12.0.34
+PV11_Telefonista              10.11.0.35
+PV11_Servir                   10.11.0.39
+PV11_Ecommerce                10.11.0.43
+PV11_DRH                      10.11.0.36
+PV11_CPD                      10.11.0.41
+PV11_Conferencia              10.11.0.34
+PV11_Caixa Geral              10.11.0.42
+PV11_Atendimento              10.11.0.38
+PV10_Servir                   10.10.0.38
+PV10_Ecommerce                10.10.0.41
+PV10_DRH                      10.10.0.39
+PV10_Custos                   10.10.0.37
+PV10_Caixa Geral              10.10.0.35
+PV10_Atendimento              10.10.0.36
+PV10_Administração            10.10.0.42
+PV09_DRH                      10.9.0.35
+PV09_Crediário                10.9.0.34
+PV09_Caixa Geral              10.9.0.36
+PV08_Servir                   10.8.0.36
+PV08_Nota Fiscal              10.8.0.38
+PV08_DRH                      10.8.0.37
+PV08_Compras                  10.8.0.35
+PV08_Caixa Geral              10.8.0.40
+PV08_Atendimento              10.8.0.34
+PV07_Servir                   10.7.0.37
+PV07_Nota Fiscal              10.7.0.40
+PV07_DRH                      10.7.0.39
+PV07_CPD                      10.7.0.34
+PV07_Caixa Geral              10.7.0.41
+PV07_Atendimento              10.7.0.35
+PV06_Administração            10.12.0.41
+PV05_Servir                   10.5.0.37
+PV05_Nota Fiscal              10.5.0.38
+PV05_CPD                      10.5.0.34
+PV05_Caixa Geral              10.5.0.35
+PV05_Atendimento              10.5.0.36
+PV04_Telemarketing            10.4.0.38
+PV04_Servir                   10.4.0.37
+PV04_DRH                      10.4.0.35
+PV04_Custos                   10.4.0.39
+PV04_CPD                      10.4.0.34
+PV04_Caixa Geral              10.4.0.41
+PV04_Atendimento              10.4.0.36
+PV03_Servir                   10.3.0.34
+PV03_DRH                      10.3.0.35
+PV03_CPD                      10.3.0.36
+PV02_Servir                   10.2.0.36
+PV02_Nota Fiscal              10.2.0.37
+PV02_Expedicao                10.2.0.39
+PV02_Drh                      10.2.0.40
+PV02_CPD                      10.2.0.34
+PV02_Caixa Geral              10.2.0.35
+PV01_CPD                      10.1.0.34
+PV01_Caixa Geral              10.1.0.36
+PV01_Atendimento              10.1.0.35
+PV14_DRH                      10.14.0.35
+PneusMil_Pátio                10.247.0.35
+PneusMil_Caixa Geral          10.247.0.36
+PneusMil_Caixa                10.247.0.34
+PDR_Transporte_2              10.239.0.34
+PDR_Transporte1               10.239.0.36
+PDR_Suprimentos1              10.239.0.43
+PDR_Pavimil                   10.239.0.35
+PDR_Padua_transporte          10.250.0.37
+PDR_Padua_RH                  10.250.0.36
+PDR_Ilha_02                   10.239.0.57
+PDR_Ilha_01                   10.239.0.42
+PDR_Fat_02                    10.239.0.50
+PDR_Fat_01                    10.239.0.39
+PDR_Faturamento               10.239.0.40
+PDR_Caixa                     10.239.0.38
+PDR_Almoxarifado              10.239.0.37
+PV37_Caixa Geral              10.37.0.36
+PV02_Atendimento              10.2.0.38
+Maximil_Vendas                10.249.0.36
+Maximil_Faturamento           10.249.0.37
+Maximil_Comercial             10.249.0.35
+PV29_Atendimento              10.29.0.35
+Manutenção_Gerencia           10.248.0.36
+Manutenção_Escritório 2       10.248.0.34
+Manutenção_Escritório 1       10.248.0.35
+JUI - TESTE                   10.2.0.43
+FL01_Servir                   10.6.0.36
+FL01_CPD                      10.6.0.34
+FL01_Caixa Geral              10.6.0.35
+Maximil_Financeiro            10.249.0.34
+Ctr_Projetos                  10.244.0.34
+Ctr_Geral2                    10.244.0.36
+Ctr_Geral1                    10.244.0.35
+Carragena_Administração       10.241.0.54
+Arrozeira_Administração       10.241.0.56
+Acosmil_Produção              10.238.0.37
+Acosmil_Gerencia              10.238.0.35
+AcosMil_Financeiro            10.238.0.36
+Acosmil_Comercial             10.238.0.34

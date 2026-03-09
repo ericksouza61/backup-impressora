@@ -1,0 +1,27 @@
+<input type="hidden" name="ID">
+<input type="hidden" name="mode" value="LIST">
+<input type="hidden" name="pageSpecifiedIn" value="">
+<input type="hidden" name="pageNumberIn" value="1">
+<input type="hidden" name="searchSpecifyModeIn" value="">
+<input type="hidden" name="outputSpecifyModeIn" value="">
+<input type="hidden" name="entryIndexIn" value="">
+<input type="hidden" name="entryNameIn" value="">
+<input type="text" name="searchDataIn" maxLength="128" size="25" value="">
+<input type="button" name="searchBtn" onclick="javascript:Search()" value="Busca">
+<input type="text" name="pages" size="4" maxlength="5" onkeydown="return isNumericInput(event)" onkeypress="return isNumericInput(event)" onkeyup="return isNumericInput(event)" onblur="return isNumericInput(this)" style="ime-mode:disabled">
+<input type="button" name="go" onclick="javascript:adrsListCtrl('go')" value="Ir">
+<input type="hidden" name="totalCount" value="5">
+<input type="hidden" name="offset" value="0">
+<input type="radio" name="entryIndex" value="00001,Compartilhado">
+<input type="hidden" name="00001" value="ADRS_ENTRY_USER">
+<input type="radio" name="entryIndex" value="00002,Gerencia">
+<input type="hidden" name="00002" value="ADRS_ENTRY_USER">
+<input type="radio" name="entryIndex" value="00003,RH">
+<input type="hidden" name="00003" value="ADRS_ENTRY_USER">
+<input type="radio" name="entryIndex" value="00004,Fiscal">
+<input type="hidden" name="00004" value="ADRS_ENTRY_USER">
+<input type="radio" name="entryIndex" value="00005,MAXMIL">
+<input type="hidden" name="00005" value="ADRS_ENTRY_USER">
+<input type="hidden" name="mode" value="LIST">
+<input type="hidden" name="returnValue" value="SUCCESS">
+<input type="hidden" name="methodName" value="adrsList">

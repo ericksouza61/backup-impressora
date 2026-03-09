@@ -1,0 +1,953 @@
+
+ var CmdForm,MainForm,BaseForm;
+ var CurrentMethod;
+ 
+ var	SET					= 1;
+ var	RESET				= 0;
+ var TRUE				= "true";
+ var FALSE				= "false";
+ var NONE				= "none";
+ var	EMPTY				= "";
+ var RES_SUCCESS 		= "SUCCESS";
+ var KIND_ENTRY_GROUP	= "ADRS_ENTRY_GROUP";
+ 
+ var ADRS_LIST			= "adrsList.cgi";
+ var ADRS_GET_USER		= "adrsGetUser.cgi";
+ var ADRS_SET_USER		= "adrsSetUser.cgi";
+ var ADRS_GET_GROUP		= "adrsGetGroup.cgi";
+ var ADRS_SET_GROUP		= "adrsSetGroup.cgi";
+ var ADRS_EDIT_PWD		= "adrsEditPassword.cgi";
+ var ADRS_EDIT_LIST		= "adrsEditEntryList.cgi";
+ var ADRS_CONFDELETE		= "adrsConfDeleteEntry.cgi";
+ var ADRS_DELETE			= "adrsDeleteEntry.cgi";
+ var ADRS_UPLOAD_FILE	= "adrsUploadFile.cgi";
+ var ADRS_DOWNLOAD_FILE	= "adrsDownloadFile.cgi";
+ var ADRS_UPLOAD_RESULT	= "adrsGetUploadResult.cgi";
+ var ADRS_UPLOAD			= "adrsUploadFile.cgi";
+ var ADRS_GET_CERTIFICATE= "adrsGetCertificate.cgi";
+ var ADRS_GET_USER_TEMPLATE	= "adrsGetUserTemplate.cgi";
+ var ADRS_SET_USER_TEMPLATE	= "adrsSetUserTemplate.cgi";
+ var ADRS_DELETE_LIMITCOUNT	= "adrsDeleteLimitCount.cgi";
+ var ADD					= "ADD";
+ var MOD					= "MOD";
+ var SELF				= "SELF";
+ var OTHER				= "OTHER";
+ var SESSION				= "SESSION";
+ var SELECTEDCHECK_PUBLIC = new Array(4);
+ var SELECTEDCHECK_LIST = new Array();
+ var ownerLineStatList = new Array(4);
+ var ADSARRAYHREF = new Array();
+ var buttonCheckFlag = false;
+ function baseInit()
+ {
+ 	buttonCheckFlag = false;
+	if (document.commandForm) {
+		CmdForm = document.commandForm;
+	}
+	if (document.mainForm) {
+		MainForm = document.mainForm;
+	}
+	if (document.basicForm) {
+		BaseForm = document.basicForm;
+		CurrentMethod = BaseForm.methodName.value + ".cgi";
+	}
+ }
+ 
+ 
+ function utilGetIndexSelect(elem){
+	var val = 0;
+	if (elem) {
+		for (var i = 0; i < elem.length; i++) {
+			if ( elem.options[i].selected ) {
+				val = i+1;
+				break;
+			}
+		}
+	}
+	return val;
+ }
+ 
+ function utilSetIndexSelect(elem,ordinal){
+	if (elem) {
+		if (elem.length + 1 >= ordinal) {
+			elem.options[ordinal-1].selected = SET;
+		}
+	}
+ }
+ 
+ <!-- formオブジェクト内の名前がnameの入力要素に入力されている値を返す. 部品種類が隠蔽される. -->
+ function utilGetInputValue(form,name) {
+	var el;
+	var val = EMPTY;
+ 
+	if (form) {
+		for (var i=0; i < form.length; i++) {
+			el = form.elements[i];
+ 
+			if (el.name == name) {
+				if (el.type == "text" || el.type == "password" || el.type == "file" || el.type == "hidden") {
+					val = el.value;
+					break;
+				}
+				else if (el.type == "radio") {
+					if (el.checked) {
+						val = el.value;
+						break;
+					}
+				}
+				else if (el.type == "select-one") {
+					for(var j=0; j < el.length; j++) {
+						if (el.options[j].selected) {
+							val = el.options[j].value;
+							break;
+						}
+					}
+					break;
+				}
+				else if (el.type == "select-multiple") {
+					for(var j=0; j < el.length; j++) {
+						if (el.options[j].selected) {
+							if (val != EMPTY)
+								val += ",";
+							val += el.options[j].value;
+						}
+					}
+					break;
+				}
+				else if (el.type == "checkbox") {
+					if (el.checked) {
+						if (val != EMPTY)
+							val += ",";
+						val += el.value;
+					}
+				}
+				else {
+					alert("not supported type");
+					return;
+				}
+			}
+ 
+		}
+	}
+	return val;
+ }
+ 
+ function utilDisableInput(elem,disabled) {
+	if (elem) {
+		if (elem.length) {
+			for (var i=0; i < elem.length; i++) {
+				elem[i].disabled = disabled;
+			}
+		}
+		else {
+			elem.disabled = disabled;
+		}
+	}
+ }
+ 
+ function utilDisableOneOfElements(elems,value,disabled) {
+	if (elems) {
+		if (elems.length) {
+			for (var i=0; i < elems.length; i++) {
+				if (elems[i].value == value) {
+					elems[i].disabled = disabled;
+					break;
+				}
+			}
+		}
+		else {
+			if (elems.value == value) {
+				elems.disabled = disabled;
+			}
+		}
+	}
+ }
+ 
+ function utilIsElementChecked(elems,value) {
+	if (elems) {
+		if (elems.length) {
+			for (var i=0; i < elems.length; i++) {
+				if (elems[i].value == value) {
+					if (elems[i].checked && !elems[i].disabled)
+						return SET;
+					else
+						return RESET;
+				}
+			}
+		}
+		else {
+			if (elems.value == value) {
+				if (elems.checked && !elems.disabled)
+					return SET;
+				else
+					return RESET;
+			}
+		}
+	}
+	return NONE;
+ }
+ 
+ function utilExchangeValue(element1,element2)
+ {
+	var value1,value2;
+	if (element1 && element2) {
+		value1 = element1.value;
+		value2 = element2.value;
+ 
+		element1.value = value2;
+		element2.value = value1;
+	}
+ }
+ 
+ function utilSubmitForm(form,dest){
+	var pos = 0;
+	var queryString;
+	var param,name,value;
+	var queryPos = dest.indexOf("?");
+ 
+	if (queryPos == -1) {
+		form.action = dest;
+	}
+	else {
+		form.action = dest.substring(0,queryPos);
+ 
+		queryString = dest.substring(queryPos+1,dest.length);
+		if (queryString.length > 0) {
+			if (queryString.indexOf("&",queryString.length-1) == -1)
+				queryString += "&";
+		}
+ 
+		while (pos < queryString.length) {
+			param = queryString.substring(pos,queryString.indexOf("&",pos));
+			pos += param.length + 1;
+ 
+			if (param.indexOf("=") >= 0) {
+				name = param.substring(0,param.indexOf("="));
+				value = param.substring(param.indexOf("=")+1,param.length);
+				for(var i=0; i < form.length; i++) {
+					if (form.elements[i].name == name) {
+						form.elements[i].value = value;
+						break;
+					}
+				}
+			}
+		}
+	}
+ 
+	form.method = "post";
+	form.target = "_self";
+	form.submit();
+ }
+ function utilPageSkipDisabled()
+ {
+ 
+	if(CmdForm.entryKindIn){
+		CmdForm.entryKindIn.disabled = TRUE;
+	}
+ 
+	if(MainForm.entryFilterIn){
+		MainForm.entryFilterIn.disabled = TRUE;
+	}
+ 
+	if(MainForm.searchItemIn){
+		MainForm.searchItemIn.disabled = TRUE;
+	}
+ 
+	if(MainForm.listCountIn){
+		MainForm.listCountIn.disabled = TRUE;
+	}
+ 
+	var aobj = document.getElementsByTagName('A');
+	for(var i=0; i<aobj.length ;i++){
+		aobj[i].removeAttribute('href');
+	}
+ 
+	var inputobj = document.getElementsByTagName('INPUT');
+	for(var i=0; i<inputobj.length ;i++){
+		if(inputobj[i].type=='button'){
+			inputobj[i].disabled = SET;
+		}
+	}
+ }
+ function GetCheckedAuth(){
+	var i=0;
+	var j=0;
+	var k=0;
+	var l=0;
+ 
+	for(i=0;i<document.mainForm.length;i++){
+		if(document.mainForm.elements[i].name == "permissionPublicIn"){
+			for(j=0;j<4;j++){
+				if(document.mainForm.elements[i].checked){
+					SELECTEDCHECK_PUBLIC[k]= 1;
+				}else{
+					SELECTEDCHECK_PUBLIC[k]= 0;
+				}
+				k++;
+			}
+			break;
+		}
+	}
+ 
+	for(i=0;i<document.mainForm.length;i++){
+		if(document.mainForm.elements[i].name == "readableEntryIndicesIn"){
+			for(j=0;j<4;j++){
+				if(document.mainForm.elements[i+j].checked){
+					SELECTEDCHECK_LIST[l]= 1;
+				}else{
+					SELECTEDCHECK_LIST[l]= 0;
+				}
+				l++;
+			}
+		}
+	}
+ }
+ function publicCheck(n){
+	var i=0;
+	for(i=0;i<document.mainForm.permissionPublicIn.length;i++){
+		if(i!=n){
+			document.mainForm.permissionPublicIn[i].checked=false 
+		}
+	}
+ }
+ function PermCheck(){
+	var i=0;
+	var j=0;
+ 
+	for(i=0;i<document.mainForm.length;i++){
+		if(document.mainForm.elements[i].name == "readableEntryIndicesIn"){
+			if(document.mainForm.elements[i].checked && SELECTEDCHECK_LIST[j] == 0){
+				SELECTEDCHECK_LIST[j] = 1;
+				document.mainForm.elements[i+1].checked=false;
+				document.mainForm.elements[i+2].checked=false;
+				document.mainForm.elements[i+3].checked=false;
+			}
+			if(document.mainForm.elements[i+1].checked && SELECTEDCHECK_LIST[j+1] == 0){
+				SELECTEDCHECK_LIST[j+1] = 1;
+				document.mainForm.elements[i].checked=false;
+				document.mainForm.elements[i+2].checked=false;
+				document.mainForm.elements[i+3].checked=false;
+			}
+			if(document.mainForm.elements[i+2].checked && SELECTEDCHECK_LIST[j+2] == 0){
+				SELECTEDCHECK_LIST[j+2] = 1;
+				document.mainForm.elements[i].checked=false;
+				document.mainForm.elements[i+1].checked=false;
+				document.mainForm.elements[i+3].checked=false;
+			}
+			if(document.mainForm.elements[i+3].checked && SELECTEDCHECK_LIST[j+3] == 0){
+				SELECTEDCHECK_LIST[j+3] = 1;
+				document.mainForm.elements[i].checked=false;
+				document.mainForm.elements[i+1].checked=false;
+				document.mainForm.elements[i+2].checked=false;
+			}
+ 
+			if (document.mainForm.elements[i].checked == false && SELECTEDCHECK_LIST[j] == 1) {
+				SELECTEDCHECK_LIST[j] = 0;
+			}
+ 
+			if (document.mainForm.elements[i+1].checked == false && SELECTEDCHECK_LIST[j+1] == 1) {
+				SELECTEDCHECK_LIST[j+1] = 0;
+			}
+ 
+			if (document.mainForm.elements[i+2].checked == false && SELECTEDCHECK_LIST[j+2] == 1) {
+				SELECTEDCHECK_LIST[j+2] = 0;
+			}
+ 
+			if (document.mainForm.elements[i+3].checked == false && SELECTEDCHECK_LIST[j+3] == 1) {
+				SELECTEDCHECK_LIST[j+3] = 0;
+			}
+			j+=4;
+		}
+	}
+ }
+ function PermCheckForOwner(){
+	var myIndexElemNum = 0;
+	var ret = 0;
+ 
+	myIndexElemNum = getMyIndexElemNum();
+	ret = checkMyLineStat(myIndexElemNum);
+	if(!ret){
+		restoreMyLineStat(myIndexElemNum);
+		return;
+	}
+	PermCheck();
+	keepMyLineStat(myIndexElemNum);
+ }
+ function initKeepMyLineStat(){
+	var myIndexElemNum = 0;
+ 
+	myIndexElemNum = getMyIndexElemNum();
+	if(!myIndexElemNum){
+		return;
+	}
+	keepMyLineStat(myIndexElemNum);
+ }
+ function keepMyLineStat(myIndexElemNum){
+	var i = 0;
+ 
+	for(i=0; i<4; i++){
+		if(document.mainForm.elements[myIndexElemNum + i].checked == true){
+			ownerLineStatList[i] = 1;
+		}
+		else{
+			ownerLineStatList[i] = 0;
+		}
+	}
+ }
+ function restoreMyLineStat(myIndexElemNum){
+	var i = 0;
+ 
+	for(i=0; i<4; i++){
+		if(ownerLineStatList[i] == 1){
+			document.mainForm.elements[myIndexElemNum + i].checked = true;
+		}
+		else{
+			document.mainForm.elements[myIndexElemNum + i].checked = false;
+		}
+	}
+ }
+ function checkMyLineStat(myIndexElemNum){
+	if(document.mainForm.elements[myIndexElemNum + 0].checked == false && document.mainForm.elements[myIndexElemNum + 1].checked == false && 
+	   document.mainForm.elements[myIndexElemNum + 2].checked == false && document.mainForm.elements[myIndexElemNum + 3].checked == false)
+	{
+		return 0;
+	}
+	else{
+		return 1;
+	}
+ }
+ function getMyIndexElemNum(){
+	var i = 0;
+ 
+	for(i=0; i<document.mainForm.length; i++){
+		if(document.mainForm.elements[i].name == "readableEntryIndicesIn" && document.mainForm.elements[i].id == "OWNER_R"){
+			return i;
+		}
+	}
+	return 0;
+}
+ 
+ var SKIP_USER_SET			= "user_set";
+ var SKIP_USER_CONTINUE		= "user_continue";
+ var SKIP_GROUP_SET			= "group_set";
+ var SKIP_GROUP_CONTINUE		= "group_continue";
+ var SKIP_USER_GROUP			= "user_group";
+ var SKIP_GROUP_USER			= "group_user";
+ var SKIP_USER_PASSWORD		= "user_password";
+ var SKIP_USER_ENTRYLIST		= "user_entrylist";
+ var SKIP_GROUP_PASSWORD		= "group_password";
+ var SKIP_GROUP_ENTRYLIST	= "group_entrylist";
+ var SKIP_CONFDELETE_EXEC	= "confdelete_exec";
+ var SKIP_UPLOAD_RESULT		= "confdelete_list";
+ var SKIP_CERTIFICATE_GET	= "certificate_get";
+ var SKIP_USERTEMPLATE_SET	= "usertemplate_set";
+ var SKIP_LIMITCOUNT_DELETE	= "limitcount_delete";
+ function part_info(key,value) {
+	this.key = key;
+	this.value = value;
+ }
+ <!-- cig,marker,queryはpart_infoでもその配列でもよい。keyによる場合分けが不要な場合は前者、そうでない場合は後者。 -->
+ function url_parts() {
+	this.cgi = EMPTY;
+	this.marker = EMPTY;
+	this.query = EMPTY;
+ }
+ function skip_list() {
+	this.skipname;
+	this.from = new url_parts();
+	this.via = new url_parts();
+	this.to = new url_parts();
+ }
+ function skip_info() {
+ 	this.from = EMPTY;
+ 	this.via = EMPTY;
+ 	this.to = EMPTY;
+ }
+ 
+ var SkipList = makeSkipList();
+ function makeSkipList() {
+ 	var List = new Array();
+ 	var size = 0;
+ 	var obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_USER_SET;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=WRITE");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_LIST);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?searchSpecifyModeIn=NONE");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_USER_CONTINUE;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=WRITE");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=DEFAULT&mode=ADDUSER");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_GROUP_SET;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_GROUP);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=WRITE");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_LIST);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?searchSpecifyModeIn=NONE");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_GROUP_CONTINUE;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_GROUP);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=WRITE");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=DEFAULT&mode=ADDGROUP");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_USER_GROUP
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS&mode=ADDGROUP");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_GROUP_USER;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_GROUP);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS&mode=ADDUSER");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_USER_PASSWORD;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new Array();
+ 		obj.from.marker[0] = new part_info("LOCAL",		"#AUTH_INFO_C");
+ 		obj.from.marker[1] = new part_info("SMTP",		"#AUTH_INFO_C");
+ 		obj.from.marker[2] = new part_info("LDAP",		"#AUTH_INFO_C");
+ 		obj.from.marker[3] = new part_info("FOLDER",	"#AUTH_INFO_C");
+ 		obj.from.marker[4] = new part_info("PROTECT",	"#ENTRY_PROTECT_C");
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_EDIT_PWD);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new Array();
+ 		obj.to.query[0] = new part_info("LOCAL",	"?inputSpecifyMode=NONE&kind=LOCAL");
+ 		obj.to.query[1] = new part_info("SMTP",		"?inputSpecifyMode=NONE&kind=SMTP");
+ 		obj.to.query[2] = new part_info("LDAP",		"?inputSpecifyMode=NONE&kind=LDAP");
+ 		obj.to.query[3] = new part_info("FOLDER",	"?inputSpecifyMode=NONE&kind=FOLDER");
+ 		obj.to.query[4] = new part_info("PROTECT",	"?inputSpecifyMode=NONE&kind=PROTECT");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_USER_ENTRYLIST;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new Array();
+ 		obj.from.marker[0] = new part_info("DEST_ACL",		"#ENTRY_PROTECT_C");
+ 		obj.from.marker[1] = new part_info("DOC_ACL",			"#DOC_PROTECT_C");
+ 		obj.from.marker[2] = new part_info("GROUP_ASSIGN",	"#GROUPLIST_C");
+ 		obj.from.marker[3] = new part_info("ENTRY_ASSIGNED",	"#ENTRYLIST_C");
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_EDIT_LIST);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new Array();
+ 		obj.to.query[0] = new part_info("DEST_ACL",		"?kind=DEST_ACL");
+ 		obj.to.query[1] = new part_info("DOC_ACL",		"?kind=DOC_ACL");
+ 		obj.to.query[2] = new part_info("GROUP_ASSIGN",	"?kind=GROUP_ASSIGN");
+ 		obj.to.query[3] = new part_info("ENTRY_ASSIGNED",	"?kind=ENTRY_ASSIGNED");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_GROUP_PASSWORD;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.from.marker	= new Array();
+ 		obj.from.marker[0] = new part_info("LOCAL",	"#AUTH_INFO_C");
+ 		obj.from.marker[1] = new part_info("SMTP",	"#AUTH_INFO_C");
+ 		obj.from.marker[2] = new part_info("LDAP",	"#AUTH_INFO_C");
+ 		obj.from.marker[3] = new part_info("FOLDER",	"#AUTH_INFO_C");
+ 		obj.from.marker[4] = new part_info("PROTECT",	"#ENTRY_PROTECT_C");
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_GROUP);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_EDIT_PWD);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new Array();
+ 		obj.to.query[0] = new part_info("LOCAL",	"?inputSpecifyMode=NONE&kind=LOCAL");
+ 		obj.to.query[1] = new part_info("SMTP",	"?inputSpecifyMode=NONE&kind=SMTP");
+ 		obj.to.query[2] = new part_info("LDAP",	"?inputSpecifyMode=NONE&kind=LDAP");
+ 		obj.to.query[3] = new part_info("FOLDER",	"?inputSpecifyMode=NONE&kind=FOLDER");
+ 		obj.to.query[4] = new part_info("PROTECT","?inputSpecifyMode=NONE&kind=PROTECT");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_GROUP_ENTRYLIST;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_GROUP);
+ 	obj.from.marker	= new Array();
+ 		obj.from.marker[0] = new part_info("DEST_ACL",		"#ENTRY_PROTECT_C");
+ 		obj.from.marker[1] = new part_info("DOC_ACL",			"#DOC_PROTECT_C");
+ 		obj.from.marker[2] = new part_info("GROUP_ASSIGN",	"#GROUPLIST_C");
+ 		obj.from.marker[3] = new part_info("ENTRY_ASSIGNED",	"#ENTRYLIST_C");
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_GROUP);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_EDIT_LIST);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new Array();
+ 		obj.to.query[0] = new part_info("DEST_ACL",			"?kind=DEST_ACL");
+ 		obj.to.query[1] = new part_info("DOC_ACL",			"?kind=DOC_ACL");
+ 		obj.to.query[2] = new part_info("GROUP_ASSIGN",		"?kind=GROUP_ASSIGN");
+ 		obj.to.query[3] = new part_info("ENTRY_ASSIGNED",		"?kind=ENTRY_ASSIGNED");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_CONFDELETE_EXEC;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_CONFDELETE);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_DELETE);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_LIST);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	"?searchSpecifyModeIn=NONE");
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_UPLOAD_RESULT;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_UPLOAD_FILE);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_UPLOAD);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_UPLOAD_RESULT);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	EMPTY);
+ 	List[size++]	= obj;
+ 
+ 	obj				= new skip_list();
+ 	obj.skipname	= SKIP_CERTIFICATE_GET;
+ 	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+ 	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+ 	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+ 	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.via.query	= new part_info(EMPTY,	"?inputSpecifyModeIn=SESSION");
+ 	obj.to.cgi		= new part_info(EMPTY,	ADRS_GET_CERTIFICATE);
+ 	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+ 	obj.to.query	= new part_info(EMPTY,	EMPTY);
+ 	List[size++]	= obj;
+ 
+	obj			= new skip_list();
+	obj.skipname	= SKIP_USERTEMPLATE_SET;
+	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER_TEMPLATE);
+	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER_TEMPLATE);
+	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+	obj.via.query	= new part_info(EMPTY,	EMPTY);
+	obj.to.cgi		= new part_info(EMPTY,	ADRS_LIST);
+	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+	obj.to.query	= new part_info(EMPTY,	EMPTY);
+	List[size++]	= obj;
+ 
+	obj			= new skip_list();
+	obj.skipname	= SKIP_LIMITCOUNT_DELETE;
+	obj.from.cgi	= new part_info(EMPTY,	ADRS_GET_USER);
+	obj.from.marker	= new part_info(EMPTY,	EMPTY);
+	obj.from.query	= new part_info(EMPTY,	"?outputSpecifyModeIn=SETTINGS");
+	obj.via.cgi		= new part_info(EMPTY,	ADRS_SET_USER);
+	obj.via.marker	= new part_info(EMPTY,	EMPTY);
+	obj.via.query	= new part_info(EMPTY,	EMPTY);
+	obj.to.cgi		= new part_info(EMPTY,	ADRS_DELETE_LIMITCOUNT);
+	obj.to.marker	= new part_info(EMPTY,	EMPTY);
+	obj.to.query	= new part_info(EMPTY,	"?inputSpecifyMode=NONE");
+	List[size++]	= obj;
+ 
+ 	return List;
+ }
+ 
+ function getSkipInfo(skipname,key,skip_info) {
+ 	var List;
+ 
+ 	for (var i=0; i < SkipList.length; i++) {
+ 		if (SkipList[i].skipname == skipname) {
+ 			List = SkipList[i];
+ 
+			skip_info.from	= getSkipUrlString(key,List.from);
+			skip_info.via	= getSkipUrlString(key,List.via);
+			skip_info.to	= getSkipUrlString(key,List.to);
+ 
+ 			break;
+ 		}
+ 	}
+ }
+ 
+ function getSkipUrlString(key,urlInfo) {
+ 	var url = EMPTY;
+ 	var parts = new Array();
+ 	parts[0] = urlInfo.cgi;
+ 	parts[1] = urlInfo.marker;
+ 	parts[2] = urlInfo.query;
+ 
+ 	for (var i=0; i < parts.length; i++) {
+ 		if (parts[i].length) {
+ 			for (var j=0; j < parts[i].length; j++) {
+ 				if (parts[i][j].key == key) {
+ 					url += parts[i][j].value;
+ 					break;
+ 				}
+ 			}
+ 		}
+ 		else {
+ 			url += parts[i].value;
+ 		}
+ 	}
+ 	return url;
+ }
+ 
+ <!-- Top Button -->
+ var toUp = new Array();
+ 	toUp[0]= new Image();
+ 	toUp[0].src = "/images/gotoPageTop.gif";
+ 	toUp[1]= new Image();
+ 	toUp[1].src = "/images/gotoPageTop-r.gif";
+ 
+ function adrsHelp(file){
+ 	if (BaseForm) {
+ 		toHelp('..',file);
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function adrsListJump(){
+ 	if (BaseForm) {
+ 		if (buttonCheckFlag) { return; }
+ 		buttonCheckFlag = true;
+ 		if (MainForm.pageSpecifiedIn) {
+ 			MainForm.pageSpecifiedIn.value = FALSE;
+ 		}
+ 		if (MainForm.searchSpecifyModeIn) {
+ 			MainForm.searchSpecifyModeIn.value = "NONE";
+ 		}
+ 
+ 		utilSubmitForm(MainForm,ADRS_LIST);
+ 		utilPageSkipDisabled();
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function adrsUndo() {
+ 	var dest;
+ 	if (BaseForm) {
+ 		if (buttonCheckFlag) { return; }
+ 		buttonCheckFlag = true;
+ 		if (MainForm) {
+ 			if (MainForm.wayFrom) {
+ 				if (MainForm.wayFrom.value) {
+ 					dest = MainForm.wayFrom.value;
+ 
+ 					if (dest != EMPTY) {
+ 						utilExchangeValue(MainForm.wayFrom,MainForm.wayTo);
+ 						utilSubmitForm(MainForm,dest);
+ 						utilPageSkipDisabled();
+ 					}
+ 					else {
+ 						adrsListJump();
+ 					}
+ 				}
+ 				else {
+ 					adrsListJump();
+ 				}
+ 			}
+ 			else {
+ 				adrsListJump();
+ 			}
+ 		}
+ 		else {
+ 			adrsListJump();
+ 		}
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ function adrsACLEditListUndo() {
+ 	var dest;
+ 	if (BaseForm) {
+ 		if (buttonCheckFlag) { return; }
+ 		buttonCheckFlag = true;
+ 		MainForm.searchSpecifyModeIn.value = "UNDO";
+ 		MainForm.inputSpecifyMode.value = "NONE";
+ 		utilSubmitForm(MainForm,ADRS_EDIT_LIST);
+ 		utilPageSkipDisabled();
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function inputPassword(kind){
+ 	var cnt = 0;
+ 	var skip = new skip_info();
+ 
+ 	if (BaseForm) {
+ 		if (CurrentMethod == ADRS_GET_USER) {
+ 			getSkipInfo(SKIP_USER_PASSWORD,kind,skip);
+ 		}
+ 		else {
+ 			getSkipInfo(SKIP_GROUP_PASSWORD,kind,skip);
+ 		}
+ 		MainForm.wayFrom.value = skip.from;
+ 		MainForm.wayTo.value = skip.to;
+ 		utilSubmitForm(MainForm,skip.via);
+ 		utilPageSkipDisabled();
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function deleteLimitCount(){
+ 	var cnt = 0;
+ 	var skip = new skip_info();
+ 
+ 	if (BaseForm) {
+ 		if (CurrentMethod == ADRS_GET_USER) {
+ 			getSkipInfo(SKIP_LIMITCOUNT_DELETE,EMPTY,skip);
+ 		}
+ 		MainForm.wayFrom.value = skip.from;
+ 		MainForm.wayTo.value = skip.to;
+ 		utilSubmitForm(MainForm,skip.via);
+ 		utilPageSkipDisabled();
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function adrsSetListPage(dest) {
+ 	if (BaseForm) {
+ 		if (dest == "top") {
+ 			MainForm.pageNumberIn.value = 0;
+ 		}
+ 		else if (dest == "pre") {
+ 			MainForm.pageNumberIn.value--;
+ 		}
+ 		else if (dest == "next") {
+ 			MainForm.pageNumberIn.value++;
+ 		}
+ 		else if (dest == "last") {
+ 			MainForm.pageNumberIn.value = 99999;
+ 		}
+ 		else{
+ 			MainForm.pageNumberIn.value = MainForm.pages.value;
+ 		}
+ 	}
+ }
+ 
+ function pageSkip() {
+ 	if (BaseForm) {
+ 		utilSubmitForm(MainForm,MainForm.wayTo.value);
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function adrsScriptStop(){
+ 	var aobj = document.getElementsByTagName('A');
+ 	for(var i=0; i<aobj.length ;i++){
+ 		ADSARRAYHREF[i] = aobj[i].getAttribute('href');
+ 		aobj[i].removeAttribute('href');
+ 	}
+ }
+ 
+ function adrsScriptRecover(){
+ 	var aobj = document.getElementsByTagName('A');
+ 	for(var i=0; i<ADSARRAYHREF.length ;i++){
+ 		aobj[i].setAttribute('href',ADSARRAYHREF[i]);
+ 	}
+ }
+ 
+ 
+ function DownloadFile(file) {
+ 	var key;
+ 
+ 	if (BaseForm) {
+ 		if(MainForm.mainteKeywk){
+ 			if(MainForm.mainteKeywk.value != EMPTY){
+ 				key = base64encode(MainForm.mainteKeywk.value);
+ 				MainForm.mainteKeywk.value = EMPTY;
+ 				file = file + "?key=" + key;
+ 			}
+ 		}
+ 		location.href = "adrsFileDownload.cgi/" + file;
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ function Upload(kind) {
+ 
+ 	if (BaseForm) {
+ 		MainForm.kind.value = kind;
+ 
+ 		if(MainForm.mainteKeywk){
+ 			if(MainForm.mainteKeywk.value != EMPTY){
+ 				MainForm.mainteKey.value = base64encode(MainForm.mainteKeywk.value);
+ 				MainForm.mainteKeywk.value = EMPTY;
+ 			}
+ 		}
+ 
+ 		utilSubmitForm(MainForm,ADRS_UPLOAD_FILE);
+ 		utilPageSkipDisabled();
+ 	}
+ 	else {
+ 		location.reload(true);
+ 	}
+ }
+ 
+ 

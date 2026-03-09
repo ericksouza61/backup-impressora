@@ -1,0 +1,1031 @@
+<html xmlns:axsl="http://localhost" lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Página principal</title>
+    <style type="text/css"></style>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <script language="JavaScript" src="/scripts/common.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/scripts/reload.js" type="text/javascript"></script>
+    <link href="/css/common.css" type="text/css" rel="stylesheet">
+    <script language="Javascript" type="text/javascript">
+		function reloadPage(){
+			location.reload();
+		}
+	</script>
+    <script language="javascript">
+		var wsMenu_jumpUrl_control = "";
+
+		function wsMenu_jumpUrl(url, timeout) {
+			var urlMark="(".concat(url).concat(")");
+
+			if(timeout==0) { timeout=1000; }
+			if(wsMenu_jumpUrl_control.search(urlMark)==-1) {
+				wsMenu_jumpUrl_control=wsMenu_jumpUrl_control.concat(urlMark);
+				setTimeout("wsMenu_jumpUrl_enableLink('".concat(urlMark).concat("')"), timeout);
+				location = url;
+			}
+		}
+		function wsMenu_jumpUrl_enableLink(urlMark) {
+			wsMenu_jumpUrl_control=wsMenu_jumpUrl_control.replace(urlMark, "");
+		}
+		function wsMenu_jumpUrl_init() {
+			wsMenu_jumpUrl_control = "";
+		}
+	</script>
+    <style type="text/css">
+		table.menuButton {
+			font-size:12px;
+			border-width: 0px;
+			border-color: #eff7ff;
+			cursor:pointer;
+		}
+		table.menuButton td.menuButton {
+			padding: 4px 8px 4px 8px;
+			vertical-align: middle;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #aac0d6;
+			background-color: #e9eff5;
+			color: #161991;
+			text-align: left;
+			overflow: hidden;
+		}
+	</style>
+    <style type="text/css">
+		table.menuTab {
+			font-size:12px;
+			border: 0px;
+		}
+		table.menuTab td.menuTab {
+			padding: 5px;
+			background-color: #D8E9FF;
+			border: 1px solid #afafaf;
+			overflow: hidden;
+			cursor:pointer;
+		}
+		table.menuTab td.menuTabSelected {
+			padding: 5px;
+			border-top: 1px solid #afafaf;
+			border-left: 1px solid #afafaf;
+			border-right:  1px solid #afafaf;
+			overflow: hidden;
+		}
+		table.menuTab a.menuTabSelectedText {
+			font-weight: bold;
+			color:black;
+			text-decoration:none;
+			cursor:default;
+		}
+		table.menuTab td.menuTabSpacer {
+			padding: 3px;
+			border-bottom: 1px solid #afafaf;
+		}
+	</style>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <script language="JavaScript" src="/scripts/common.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/scripts/reload.js" type="text/javascript"></script>
+    <link href="/css/common.css" type="text/css" rel="stylesheet">
+    <script language="Javascript" type="text/javascript">
+		function reloadPage(){
+			location.reload();
+		}
+	</script>
+    <script language="JavaScript" type="text/javascript">
+var buttonImg = new Array();
+	buttonImg[0]= new Image();
+	buttonImg[0].src = "/images/gotoPageTop.gif";
+	buttonImg[1]= new Image();
+	buttonImg[1].src = "/images/gotoPageTop-r.gif";
+
+var apos = "'";
+var comments = new Array();
+
+comments[0] = '\n';
+comments[0]+= 'Impressora:\n\n';
+
+comments[0]+= 'Modo de painel desligado\n';
+
+comments[1] = '\n';
+comments[1]+= 'Copiador:\n\n';
+
+comments[1]+= 'Modo de painel desligado\n';
+
+comments[3] = '\n';
+comments[3]+= 'Scanner:\n\n';
+
+comments[3]+= 'Modo de painel desligado\n';
+
+
+var idx = 0;
+var layer2idx = new Array();
+
+layer2idx[0] = idx++;
+
+layer2idx[1] = idx++;
+
+layer2idx[3] = idx++;
+
+
+var showStateButton = new Array();
+	showStateButton[0] = new Image();
+	showStateButton[0].src = "/images/btnStatus-n.gif";
+	showStateButton[1] = new Image();
+	showStateButton[1].src = "/images/btnStatus-s.gif";
+
+var curLayer = -1;
+function buttonOnClick(layer) {
+if (document.form1.detailMessage)
+{
+	if(curLayer!=-1){
+		if(idx <= 1){
+			document.showDetailButton.src = showStateButton[0].src;
+		}else{
+			document.showDetailButton[layer2idx[curLayer]].src = showStateButton[0].src;
+		}
+	}
+	document.form1.detailMessage.value=comments[layer];
+	if(idx <= 1){
+		document.showDetailButton.src = showStateButton[1].src;
+	}else{
+		document.showDetailButton[layer2idx[layer]].src = showStateButton[1].src;
+	}
+	curLayer = layer;
+}
+}
+
+function onLoad() {
+	buttonOnClick(
+	0
+	);
+}
+
+function openNew(url) {
+	window.open(url,'linkPageWnd','toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes');
+}
+</script>
+    <style type="text/css">
+	textarea.details{
+		background-color:#dfeaf5;
+		border-top:1px solid #d2d5d9;
+		border-bottom:1px solid #d2d5d9;
+		border-right:0px;
+		border-left:0px;
+		font-size:12px;
+		font-style:normal;
+		font-weight:normal;
+		font-family:osaka, verdana, arial, helvetica, sans-serif, 'MS UI Gothic';
+		text-align:left;
+		vertical-align:middle;
+	}
+
+	table.toner{
+		margin: 0px;
+		padding: 0px;
+		border:1px solid #8d8d8d;
+		height: 20px;
+	}
+
+	table.toner td.bar
+	{
+		width: auto;
+		white-space: nowrap;
+		background-image: url(/images/spacer.gif);
+		background-repeat: repeat-x;
+		background-color: #e1e1e1;
+	}
+
+	table.toner td.unknown
+	{
+		width: auto;
+		white-space: nowrap;
+		background-repeat: repeat-x;
+		background-color: #ffffff;
+	}
+</style>
+    <style type="text/css">
+		table.defaultTableButton {
+			font-size:12px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #8D8D8D;
+			cursor:pointer;
+		}
+		table.defaultTableButton td.defaultTableButton {
+			padding: 0px 8px 0px 8px;
+			vertical-align: middle;
+			background-color: #808080;
+			background-image: URL(/images/buttonBGwhite.gif);
+			background-repeat: repeat-x;
+			text-align: center;
+			overflow: hidden;
+		}
+		table.defaultTableButtonSelected {
+			font-size:12px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #8D8D8D;
+			cursor:pointer;
+		}
+		table.defaultTableButtonSelected td.defaultTableButtonSelected {
+			padding: 0px 8px 0px 8px;
+			vertical-align: middle;
+			background-color: #F7EEB2;
+			text-align: center;
+			overflow: hidden;
+		}
+		table.defaultTableButton a.defaultTableButton {
+			text-decoration: none;
+			color: black;
+			white-space: nowrap;
+		}
+		table.defaultTableButtonSelected a.defaultTableButton {
+			text-decoration: none;
+			color: black;
+			white-space: nowrap;
+		}
+		table.defaultTableButton a.defaultTableCommandButton {
+			text-decoration: none;
+			font-weight: bold;
+			color: black;
+			white-space: nowrap;
+		}
+		table.defaultTableButtonSelected a.defaultTableCommandButton {
+			text-decoration: none;
+			font-weight: bold;
+			color: black;
+			white-space: nowrap;
+		}
+	</style>
+    <script language="javascript">
+				function onBodyLoad() {
+					javascript:onLoad();;
+					wsMenu_jumpUrl_init();
+				}
+
+				function langChange() {
+					var index;
+					var lang;
+					var urlLocation;
+
+					index = document.formChgLang.language.selectedIndex;
+					lang = document.formChgLang.language.options[index].value;
+					urlLocation = "../../../" + lang + "/websys/webArch/mainFrame.cgi";
+					top.location.replace(urlLocation);
+				}
+			</script>
+  </head>
+  <body onLoad="onBodyLoad();">
+    <table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <a href="#link00"><img width="0" height="0" src="/images/spacer.gif" border="0" alt="Ignore o menu e vá para os conteúdos principais." title="Ignore o menu e vá para os conteúdos principais."></a>
+        </td>
+        <td align="left" valign="top">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../websys/webArch/topPage.cgi',000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('TOPPAGE').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('TOPPAGE').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../websys/webArch/topPage.cgi',000)" id="TOPPAGE" class="defaultTableButton">Página principal</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../webdocbox/docListPage.cgi',10000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('webdocbox').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('webdocbox').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../webdocbox/docListPage.cgi',10000)" id="webdocbox" class="defaultTableButton">Servidor de documentos</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../webprinter/storedJob.cgi',000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('MENU_STORED_PRINTER').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('MENU_STORED_PRINTER').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../webprinter/storedJob.cgi',000)" id="MENU_STORED_PRINTER" class="defaultTableButton">Impressora: Trabalhos de impressão</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../websys/webArch/jobList.cgi',000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('MENU_JOB').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('MENU_JOB').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../websys/webArch/jobList.cgi',000)" id="MENU_JOB" class="defaultTableButton">Trabalho</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../address/adrsList.cgi',000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('ADRS_MENU').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('ADRS_MENU').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../address/adrsList.cgi',000)" id="ADRS_MENU" class="defaultTableButton">Livro de endereços</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td colspan="3"><img src="/images/spacer.gif" alt="" width="1" height="4" border="0" title=""></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+              <td>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <table width="100%" class="menuButton" cellspacing="0">
+                        <tr>
+                          <td class="menuButton" onclick="javascript:wsMenu_jumpUrl('../../websys/webArch/configList.cgi',000); return false;" height="20" onMouseOver="javascript:this.style.backgroundColor=&quot;#ffffff&quot;;document.getElementById('CONFIG').style.textDecoration=&quot;underline&quot;;" onMouseOut="javascript:this.style.backgroundColor=&quot;#e9eff5&quot;;document.getElementById('CONFIG').style.textDecoration=&quot;none&quot;;">
+                            <a href="javascript:wsMenu_jumpUrl('../../websys/webArch/configList.cgi',000)" id="CONFIG" class="defaultTableButton">Configuração</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="160px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="/images/spacer.gif" alt="" width="4" height="1" border="0" title=""></td>
+            </tr>
+          </table>
+        </td>
+        <td width="1px" bgcolor="#b8c0c7"><img src="/images/spacer.gif" alt="" width="1" height="1" border="0" title=""></td>
+        <td width="100%" align="left" valign="top">
+          <a name="link00"></a>
+          <table width="100%" height="30" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td></td>
+              <td><img src="/images/spacer.gif" height="4" border="0" alt="" title=""></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><img src="/images/spacer.gif" width="12" border="0" alt="" title=""></td>
+              <td nowrap width="100%" align="left" height="30">
+                <table border="0" cellspacing="0" height="30" width="100%">
+                  <tr>
+                    <td nowrap align="left" valign="middle" width="30%">
+                      <div style="color:black; font-size:16px; font-weight:bold;"><img src="/images/spacer.gif" width="8" height="1" border="0" alt="" title="">Página principal</div>
+                    </td>
+                    <td></td>
+                    <form name="formChgLang">
+                      <td nowrap align="left" valign="middle" width="25px">
+                        <select name="language" onChange="langChange()">
+                          <option value="pt" selected>Portugu&#234;s</option>
+                          <option value="en">English</option>
+                        </select>
+                      </td>
+                    </form>
+                    <td width="10px"><img src="/images/spacer.gif" width="10px" border="0" alt="" title=""></td>
+                    <td nowrap align="right" valign="middle" width="25">
+                      <div class="commandLabel">
+                        <a class="commandLabel" onmouseover="changeImage(reloadButton4Admin,'img9999-reload',0)" onmouseout="changeImage(reloadButton4Admin,'img9999-reload',1)" href="javascript:wsMenu_jumpUrl('../../websys/webArch/topPage.cgi')">
+                          <nobr><img border="0" src="/images/btnReload.gif" name="img9999-reload" align="absmiddle" alt="" title="">Actualizar</nobr>
+                        </a>
+                      </div>
+                    </td>
+                    <td width="5px"><img src="/images/spacer.gif" width="5px" border="0" alt="" title=""></td>
+                    <form name="help">
+                      <input type="hidden" name="ID">
+                      <td nowrap align="right" valign="middle" width="25">
+                        <div class="commandLabel">
+                          <a class="commandLabel" onmouseover="changeImage(helpButton,'img9999',0)" onmouseout="changeImage(helpButton,'img9999',1)" href="javascript:toHelp('..','top0000.html')">
+                            <nobr><img border="0" src="/images/helpBtnSetting.gif" name="img9999" align="absmiddle" alt="Ajuda" title="Ajuda"></nobr>
+                          </a>
+                        </div>
+                      </td>
+                    </form>
+                    <td width="5px"><img src="/images/spacer.gif" width="5px" border="0" alt="" title=""></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td height="12px"><img src="/images/spacer.gif" height="12px" border="0" alt="" title=""></td>
+            </tr>
+          </table>
+          <table class="menuTab" border="0" width="100%" cellspacing="0" cellpadding="0">
+            <tr class="staticProp">
+              <td width="12px"><img width="12px" height="20px" border="0" src="/images/spacer.gif" alt="" title=""></td>
+              <td class="menuTabSpacer"> </td>
+              <td nowrap class="menuTabSelected">
+                <a href="javascript:wsMenu_jumpUrl('../../websys/webArch/topPage.cgi',000)" class="menuTabSelectedText" title="O separador Estado está seleccionado.">Estado</a>
+              </td>
+              <td class="menuTabSpacer"> </td>
+              <td nowrap class="menuTab" onclick="javascript:wsMenu_jumpUrl('../../webprinter/supply.cgi',000); return false;">
+                <a href="javascript:wsMenu_jumpUrl('../../webprinter/supply.cgi',000)">Consumíveis</a>
+              </td>
+              <td class="menuTabSpacer"> </td>
+              <td nowrap class="menuTab" onclick="javascript:wsMenu_jumpUrl('../../websys/status/configuration.cgi',000); return false;">
+                <a href="javascript:wsMenu_jumpUrl('../../websys/status/configuration.cgi',000)">Informações do dispositivo</a>
+              </td>
+              <td class="menuTabSpacer"> </td>
+              <td nowrap class="menuTab" onclick="javascript:wsMenu_jumpUrl('../../websys/status/getUnificationCounter.cgi',000); return false;">
+                <a href="javascript:wsMenu_jumpUrl('../../websys/status/getUnificationCounter.cgi',000)">Contador</a>
+              </td>
+              <td class="menuTabSpacer"> </td>
+              <td nowrap class="menuTab" onclick="javascript:wsMenu_jumpUrl('../../websys/config/getInquiryInfo.cgi',000); return false;">
+                <a href="javascript:wsMenu_jumpUrl('../../websys/config/getInquiryInfo.cgi',000)">Informação</a>
+              </td>
+              <td class="menuTabSpacer"> </td>
+              <td class="menuTabSpacer"> </td>
+              <td width="100%"></td>
+            </tr>
+            <tr>
+              <td height="16px"><img src="/images/spacer.gif" height="16px" border="0" alt="" title=""></td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="12px"><img src="/images/spacer.gif" width="12px" border="0" alt="" title=""></td>
+              <td align="left" valign="top" style="padding-bottom:20px;">
+                <form name="form1">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top" width="350">
+                        <table>
+                          <tr class="staticProp">
+                            <td nowrap><img src="/images/settingBullet.gif" alt="" title=""></td>
+                            <td nowrap align="">Nome do dispositivo</td>
+                            <td nowrap>:</td>
+                            <td nowrap>RICOH Aficio SP 5200S</td>
+                          </tr>
+                          <tr class="staticProp">
+                            <td nowrap><img src="/images/settingBullet.gif" alt="" title=""></td>
+                            <td nowrap align="">Localização</td>
+                            <td nowrap>:</td>
+                            <td nowrap></td>
+                          </tr>
+                          <tr class="staticProp">
+                            <td nowrap><img src="/images/settingBullet.gif" alt="" title=""></td>
+                            <td nowrap align="">Observação</td>
+                            <td nowrap>:</td>
+                            <td nowrap></td>
+                          </tr>
+                          <tr class="staticProp">
+                            <td nowrap><img src="/images/settingBullet.gif" alt="" title=""></td>
+                            <td nowrap align="">Nome do host</td>
+                            <td nowrap>:</td>
+                            <td nowrap>RNP00267392E370</td>
+                          </tr>
+                        </table>
+                        <table border="0"></table>
+                        <table>
+                          <tr>
+                            <td align="center">
+                              <table>
+                                <tr>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td>
+                                          <table width="100%" class="defaultTableButton" cellspacing="0">
+                                            <tr>
+                                              <td class="defaultTableButton" onclick="location.href=&quot;../webArch/getMachineReset.cgi&quot;; return false;" height="20">
+                                                <a href="location.href=%22../webArch/getMachineReset.cgi%22" class="defaultTableButton">Repor dispositivo</a>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="50" border="0" alt="" title=""></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td align="center">
+                              <table>
+                                <tr>
+                                  <td>
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td>
+                                          <table width="100%" class="defaultTableButton" cellspacing="0">
+                                            <tr>
+                                              <td class="defaultTableButton" onclick="location.href=&quot;../../webprinter/jobReset.cgi&quot;; return false;" height="20">
+                                                <a href="location.href=%22../../webprinter/jobReset.cgi%22" class="defaultTableButton">Apagar trabalho da impressora</a>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td nowrap width="1" height="1"><img src="/images/spacer.gif" height="1" width="50" border="0" alt="" title=""></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td align="left" valign="top">
+                        <table border="0">
+                          <tr>
+                            <td><img src="/images/machineImage.gif" alt="" title=""></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top" width="100%">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td nowrap width="0"></td>
+                            <td width="100%">
+                              <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                                <tr bgcolor="#BDD7EF">
+                                  <td nowrap width="12" height="24" align="left" valign="top"></td>
+                                  <td nowrap width="100%" align="left" valign="middle">
+                                    <div class="standard" style="font-weight:bold;">Estado</div>
+                                  </td>
+                                  <td nowrap align="left" valign="middle" width="20">
+                                    <div class="commandLabel">
+                                      <a class="commandLabel" onmouseover="changeImage(buttonImg,'img1',1)" onmouseout="changeImage(buttonImg,'img1',0)" href="#link00">
+                                        <nobr><img border="0" src="/images/gotoPageTop.gif" name="img1" align="absmiddle" alt="Para o topo" title="Para o topo"></nobr>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table border="0" width="100%">
+                          <tr>
+                            <td valign="top"></td>
+                          </tr>
+                          <tr>
+                            <td valign="top" width="400">
+                              <table border="0" width="100%" cellpadding="0">
+                                <tr class="staticProp">
+                                  <td nowrap align="left">
+                                    <a href="javascript:buttonOnClick(0);">Impressora</a>
+                                  </td>
+                                  <td><img alt="" title="" src="/images/deviceStPsave16.gif"></td>
+                                  <td nowrap>
+                                    <font color="black">Modo de Poupança de Energia</font><img src="/images/spacer.gif" border="0" style="width:0px; height:0px;" alt="Modo de painel desligado" title="Modo de painel desligado"></td>
+                                  <td align="right">
+                                    <a href="javascript:buttonOnClick(0);"><img src="/images/btnStatus-n.gif" alt="" title="" name="showDetailButton" width="43" height="22" border="0"></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="4"></td>
+                                </tr>
+                                <tr class="staticProp">
+                                  <td nowrap align="left">
+                                    <a href="javascript:buttonOnClick(1);">Copiador</a>
+                                  </td>
+                                  <td><img alt="" title="" src="/images/deviceStPsave16.gif"></td>
+                                  <td nowrap>
+                                    <font color="black">Modo de Poupança de Energia</font><img src="/images/spacer.gif" border="0" style="width:0px; height:0px;" alt="Modo de painel desligado" title="Modo de painel desligado"></td>
+                                  <td align="right">
+                                    <a href="javascript:buttonOnClick(1);"><img src="/images/btnStatus-n.gif" alt="" title="" name="showDetailButton" width="43" height="22" border="0"></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="4"></td>
+                                </tr>
+                                <tr class="staticProp">
+                                  <td nowrap align="left">
+                                    <a href="javascript:buttonOnClick(3);">Scanner</a>
+                                  </td>
+                                  <td><img alt="" title="" src="/images/deviceStPsave16.gif"></td>
+                                  <td nowrap>
+                                    <font color="black">Modo de Poupança de Energia</font><img src="/images/spacer.gif" border="0" style="width:0px; height:0px;" alt="Modo de painel desligado" title="Modo de painel desligado"></td>
+                                  <td align="right">
+                                    <a href="javascript:buttonOnClick(3);"><img src="/images/btnStatus-n.gif" alt="" title="" name="showDetailButton" width="43" height="22" border="0"></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="4"></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="100" height="0"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="25" height="0"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="150" height="0"></td>
+                                  <td></td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="100%">
+                              <table border="0" width="100%">
+                                <tr>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="10" height="0"></td>
+                                  <td>
+                                    <textarea name="detailMessage" readonly wrap="soft" rows="9" cols="45" class="details"></textarea>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top" width="100%">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td nowrap width="0"></td>
+                            <td width="100%">
+                              <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                                <tr bgcolor="#BDD7EF">
+                                  <td nowrap width="12" height="24" align="left" valign="top"></td>
+                                  <td nowrap width="100%" align="left" valign="middle">
+                                    <div class="standard" style="font-weight:bold;">Toner</div>
+                                  </td>
+                                  <td nowrap align="left" valign="middle" width="20">
+                                    <div class="commandLabel">
+                                      <a class="commandLabel" onmouseover="changeImage(buttonImg,'img2',1)" onmouseout="changeImage(buttonImg,'img2',0)" href="#link00">
+                                        <nobr><img border="0" src="/images/gotoPageTop.gif" name="img2" align="absmiddle" alt="Para o topo" title="Para o topo"></nobr>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table width="100%">
+                          <tr class="staticProp">
+                            <td>
+                              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="54" height="1px" style="font-size:10px" valign="bottom" align="left">0</td>
+                                        <td width="54" height="1px" style="font-size:10px" valign="bottom" align="center">50</td>
+                                        <td width="54" height="1px" style="font-size:10px" valign="bottom" align="right">100</td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr class="staticProp">
+                                  <td nowrap align="left">Preto</td><td valign="middle" width="20"><img alt="" title="" width="16" height="16" src="/images/deviceStToner_16.gif"></td>
+                                  <td bgcolor="#CCCCCC" width="162">
+                                    <table class="toner" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td class="bar" align="center"><img height="20" alt="Estado OK" title="Estado OK" src="/images/deviceStTnBarK.gif" width="96"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td nowrap align="left"></td>
+                                  <td width="100%" height="20px"></td>
+                                </tr>
+                                <tr>
+                                  <td height="2px" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                  <td height="2px" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="100"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="25"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="162"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="20"></td>
+                                  <td></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top" width="100%">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td nowrap width="0"></td>
+                            <td width="100%">
+                              <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                                <tr bgcolor="#BDD7EF">
+                                  <td nowrap width="12" height="24" align="left" valign="top"></td>
+                                  <td nowrap width="100%" align="left" valign="middle">
+                                    <div class="standard" style="font-weight:bold;">Bandeja de entrada</div>
+                                  </td>
+                                  <td nowrap align="left" valign="middle" width="20">
+                                    <div class="commandLabel">
+                                      <a class="commandLabel" onmouseover="changeImage(buttonImg,'img3',1)" onmouseout="changeImage(buttonImg,'img3',0)" href="#link00">
+                                        <nobr><img border="0" src="/images/gotoPageTop.gif" name="img3" align="absmiddle" alt="Para o topo" title="Para o topo"></nobr>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table width="100%">
+                          <tr class="staticProp">
+                            <td>
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr class="staticProp">
+                                  <td nowrap>Bandeja 1</td>
+                                  <td width="16">
+                                    <table>
+                                      <tr>
+                                        <td><img alt="Quase sem papel" title="Quase sem papel" src="/images/deviceStPNend16.gif" width="16" height="16"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td width="10"><img src="/images/spacer.gif" alt="" title="" width="10" height="1"></td>
+                                  <td nowrap>
+                                    <table>
+                                      <tr class="staticProp">
+                                        <td nowrap align="left" valign="middle">A4</td>
+                                        <td noerap="nowrap" width="5" align="left"></td>
+                                        <td>
+                                          <td><img alt="Alimentação na vertical" title="Alimentação na vertical" src="/images/deviceStDH.gif"></td>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td>
+                                    <table>
+                                      <tr>
+                                        <td><img src="/images/spacer.gif" alt="" title="" width="20" height="20"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td nowrap align="left"></td>
+                                  <td width="100%"></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="8"></td>
+                                </tr>
+                                <tr class="staticProp">
+                                  <td nowrap>Bandeja de alimentação manual</td>
+                                  <td width="16">
+                                    <table>
+                                      <tr>
+                                        <td><img alt="Sem papel" title="Sem papel" src="/images/deviceStPend16.gif" width="16" height="16"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td width="10"><img src="/images/spacer.gif" alt="" title="" width="10" height="1"></td>
+                                  <td nowrap>
+                                    <table>
+                                      <tr class="staticProp">
+                                        <td nowrap align="left" valign="middle">A4</td>
+                                        <td noerap="nowrap" width="5" align="left"></td>
+                                        <td>
+                                          <td><img alt="Alimentação na vertical" title="Alimentação na vertical" src="/images/deviceStDH.gif"></td>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td>
+                                    <table>
+                                      <tr>
+                                        <td><img src="/images/spacer.gif" alt="" title="" width="20" height="20"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td nowrap align="left"></td>
+                                  <td width="100%"></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="8"></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="100"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="15"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="10"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="50"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="20"></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top" width="100%">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td nowrap width="0"></td>
+                            <td width="100%">
+                              <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                                <tr bgcolor="#BDD7EF">
+                                  <td nowrap width="12" height="24" align="left" valign="top"></td>
+                                  <td nowrap width="100%" align="left" valign="middle">
+                                    <div class="standard" style="font-weight:bold;">Bandeja de saída</div>
+                                  </td>
+                                  <td nowrap align="left" valign="middle" width="20">
+                                    <div class="commandLabel">
+                                      <a class="commandLabel" onmouseover="changeImage(buttonImg,'img4',1)" onmouseout="changeImage(buttonImg,'img4',0)" href="#link00">
+                                        <nobr><img border="0" src="/images/gotoPageTop.gif" name="img4" align="absmiddle" alt="Para o topo" title="Para o topo"></nobr>
+                                      </a>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="4"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <table width="100%">
+                          <tr class="staticProp">
+                            <td>
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr class="staticProp">
+                                  <td nowrap>Bandeja interna 1</td>
+                                  <td>
+                                    <table>
+                                      <tr>
+                                        <td><img alt="Estado OK" title="Estado OK" src="/images/deviceStOt16.gif" width="16" height="16"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="10" height="1"></td>
+                                  <td width="100%"></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="5"></td>
+                                </tr>
+                                <tr class="staticProp">
+                                  <td nowrap>Bandeja interna 2</td>
+                                  <td>
+                                    <table>
+                                      <tr>
+                                        <td><img alt="Estado OK" title="Estado OK" src="/images/deviceStOt16.gif" width="16" height="16"></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" width="10" height="1"></td>
+                                  <td width="100%"></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#d2d5d9" height="1px" colspan="5"></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="100"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="15"></td>
+                                  <td><img src="/images/spacer.gif" alt="" title="" height="0" width="10"></td>
+                                  <td></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
