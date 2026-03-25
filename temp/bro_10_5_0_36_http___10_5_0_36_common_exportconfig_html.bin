@@ -1,0 +1,74 @@
+
+<html>
+<head>
+<title>HTTP status</title>
+<style type="text/css">
+body
+{
+margin-top: 30px;
+margin-right: 5%;
+margin-left: 5%;
+background-color: #ffffff;
+color: #000000;
+font-family: serif;
+font-size: 12px;
+line-height: 150%;
+}
+.header
+{
+color: #808080;
+font-family: 'Arial Black', sans-serif;
+font-size: 42px;
+line-height: 100%;
+border-bottom: 2px solid #808080;
+margin-bottom: 30px;
+}
+.caps
+{
+color: #e00000;
+}
+.main
+{
+margin-left: 5%;
+margin-right: 5%;
+}
+.status
+{
+font-family: sans-serif;
+font-size: 18px;
+font-weight: bold;
+}
+.reason
+{
+margin-top: 30px;
+font-family: serif;
+}
+.footer
+{
+margin-top: 30px;
+border-top: 2px solid #808080;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<span class="caps">h</span>ttpd
+</div>
+<div class="main">
+<div class="status">
+
+404 Not Found 
+
+</div>
+<div class="reason">
+
+<!-- 404 Not Found -->
+The requested URL was not found on this server.
+
+</div>
+</div>
+<div class="footer">
+</div>
+</body>
+</html>
+

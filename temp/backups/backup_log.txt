@@ -1,0 +1,22 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-25 09-25-08 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 10.244.0.35 BROTHER_CRED=custom 
+[BROTHER-SEMAUTH] TESTE-10.244.0.35 - 10.244.0.35 tam=1864 invalido=0 
+[OK-BROTHER] TESTE-10.244.0.35 - 10.244.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 1 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 0 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

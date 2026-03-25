@@ -189,3 +189,19 @@ Acosmil_Produção              10.238.0.37
 Acosmil_Gerencia              10.238.0.35
 AcosMil_Financeiro            10.238.0.36
 Acosmil_Comercial             10.238.0.34
+Mtz_Servicos_Ilha           172.16.0.217
+Mtz_Seguranca               172.16.0.109
+Mtz_Médico                  172.16.0.226
+Mtz_Massas Mil              172.16.0.64_1
+Mtz_Fundacao                172.16.0.120
+Mtz_Financeiro_Ilha         172.16.0.218
+Mtz_Financeiro_CX_Geral     172.16.0.219
+Mtz_Drh_JD                  172.16.0.248
+Mtz_Drh_Ilha                172.16.0.205
+Mtz_Drh_Folha               172.16.0.147
+Mtz_Deposito                172.16.0.136
+Mtz_Contabilidade_Lucia     172.16.0.126
+Mtz_Contabilidade_ilha_02   172.16.0.132
+Mtz_Contabilidade_Ilha      172.16.0.211
+Mtz_Comercial_Ilha_02       172.16.0.198
+

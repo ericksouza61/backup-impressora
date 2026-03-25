@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>LES Framework</title>
+</head>
+<body>
+<h1>LES Framework</h1>
+<h2>Helpful Links</h2>
+<h3>The following links will only be accessible if you are running the framework on a local machine or on a DEBUG version on a printer</h3>
+<p>
+<ul>
+<li><a href="/prtappse/semenu">SE Menu</a>
+<li><a href="/servlet/console">Web Console</a>
+<li><a href="/junit">Unit Tests</a>
+<li><a href="/prtappauth/admin/adminservlet">Web Administration</a>
+<li><a href="/prtapp/apps/webappsservlet">Web Applications</a>
+</ul>
+</body>
+</html>

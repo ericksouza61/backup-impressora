@@ -12,8 +12,9 @@ set "ARQUIVO_IPS=%~1"
 if "%ARQUIVO_IPS%"=="" set "ARQUIVO_IPS=Listagem Impressora IP'S.txt"
 
 set "PASTA_BACKUP=C:\Backups\Impressoras"
+if defined BACKUP_ROOT set "PASTA_BACKUP=%BACKUP_ROOT%"
 set "LOG_FILE=%PASTA_BACKUP%\backup_log.txt"
-set "SCRIPT_VERSION=2026-03-09-FAIL-TUNE3"
+set "SCRIPT_VERSION=2026-03-11-OVR4"
 
 echo.
 echo Pasta do script: %~dp0
@@ -47,6 +48,8 @@ echo.
 
 set "CRED_BROTHER=admin: admin:admin admin:access admin:initpass admin:brother root:access root:brother"
 set "CRED_RICOH=admin: copymaq: admin:admin copymaq:copymaq admin:copymaq"
+set "LEXMARK_URL_PATH=cgi-bin/direct/printer/prtappauth/apps/ImportExportServlet?exportButton=clicked"
+set "LEXMARK_MIN_SIZE=1000"
 set "TIMEOUT_DETECT=3"
 set "TIMEOUT_LEXMARK=12"
 set "TIMEOUT_BROTHER=8"
@@ -55,6 +58,8 @@ set "TIMEOUT_RICOH=4"
 set "TIMEOUT_RICOH_LOGIN=5"
 set "RICOH_MIN_SIZE=120"
 set "CONNECT_TIMEOUT=2"
+set "PING_PRECHECK=1"
+set "PING_TIMEOUT=1000"
 set "RICOH_PROTOCOLOS=http"
 set "RICOH_ENDPOINTS=web/entry/pt/address/adrsFileDownload.cgi"
 set "RICOH_LOCALES=pt en"
@@ -66,6 +71,114 @@ set "RICOH_USAR_SESSAO=1"
 set "RICOH_USAR_URL_EFETIVA=1"
 set "RICOH_USAR_FIXO=0"
 set "RICOH_DIAGNOSTICO=1"
+
+:: =========================================
+:: EXCECOES POR IP (APENAS PARA IPs COM FALHA)
+:: Use "_" no lugar de "." no IP.
+:: Preencha apenas se precisar ajustar credencial/endpoint/URL por IP.
+::
+:: Exemplos:
+::   set "OVR_MODELO_10_2_0_40=BROTHER"
+::   set "OVR_BROTHER_CRED_10_2_0_40=admin:SENHA"
+::   set "OVR_LEXMARK_URL_10_3_0_36=cgi-bin/direct/printer/prtappauth/apps/ImportExportServlet?exportButton=clicked"
+::   set "OVR_LEXMARK_CRED_10_3_0_36=admin:SENHA"
+::   set "OVR_RICOH_CRED_10_19_0_34=admin:SENHA"
+::   set "OVR_RICOH_ENDPOINTS_10_19_0_34=web/entry/pt/address/adrsFileDownload.cgi"
+::   set "OVR_RICOH_LOCALES_10_19_0_34=pt en"
+::   set "OVR_SKIP_10_239_0_37=SEM_SCANNER"
+:: =========================================
+
+:: MODELO (forcar)
+set "OVR_MODELO_10_29_0_37=LEXMARK"
+set "OVR_MODELO_10_3_0_34="
+set "OVR_MODELO_10_239_0_39=RICOH"
+
+:: BROTHER (falhas)
+set "OVR_BROTHER_CRED_10_2_0_40="
+set "OVR_BROTHER_CRED_10_5_0_38="
+set "OVR_BROTHER_CRED_10_26_0_34="
+set "OVR_BROTHER_CRED_10_239_0_39=admin:"
+set "OVR_BROTHER_CRED_10_239_0_40="
+set "OVR_BROTHER_CRED_10_239_0_35="
+set "OVR_BROTHER_CRED_10_4_0_41="
+set "OVR_BROTHER_CRED_10_29_0_40="
+set "OVR_BROTHER_CRED_10_43_0_36="
+set "OVR_BROTHER_CRED_10_244_0_35=admin:"
+
+:: LEXMARK (falhas)
+set "OVR_LEXMARK_URL_10_239_0_37="
+set "OVR_LEXMARK_CRED_10_239_0_37="
+set "OVR_LEXMARK_URL_10_239_0_39="
+set "OVR_LEXMARK_CRED_10_239_0_39=admin:"
+set "OVR_LEXMARK_URL_10_239_0_40="
+set "OVR_LEXMARK_CRED_10_239_0_40="
+set "OVR_LEXMARK_URL_10_239_0_35="
+set "OVR_LEXMARK_CRED_10_239_0_35="
+set "OVR_LEXMARK_URL_10_3_0_36=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_3_0_36="
+set "OVR_LEXMARK_URL_10_4_0_41="
+set "OVR_LEXMARK_CRED_10_4_0_41="
+set "OVR_LEXMARK_URL_10_4_0_34="
+set "OVR_LEXMARK_CRED_10_4_0_34="
+set "OVR_LEXMARK_URL_10_8_0_35="
+set "OVR_LEXMARK_CRED_10_8_0_35="
+set "OVR_LEXMARK_URL_10_19_0_42="
+set "OVR_LEXMARK_CRED_10_19_0_42="
+set "OVR_LEXMARK_URL_10_22_0_35=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_22_0_35="
+set "OVR_LEXMARK_URL_10_23_0_35=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_23_0_35="
+set "OVR_LEXMARK_URL_10_29_0_36=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_29_0_36="
+set "OVR_LEXMARK_URL_10_29_0_40="
+set "OVR_LEXMARK_CRED_10_29_0_40="
+set "OVR_LEXMARK_URL_10_34_0_36=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_34_0_36="
+set "OVR_LEXMARK_URL_10_34_0_38=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_34_0_38="
+set "OVR_LEXMARK_URL_10_38_0_37=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_38_0_37="
+set "OVR_LEXMARK_URL_10_43_0_36="
+set "OVR_LEXMARK_CRED_10_43_0_36="
+
+:: RICOH (falhas)
+set "OVR_RICOH_CRED_10_2_0_43=admin:"
+set "OVR_RICOH_CRED_10_239_0_50="
+set "OVR_RICOH_CRED_10_239_0_42=admin:"
+set "OVR_RICOH_CRED_10_18_0_34="
+set "OVR_RICOH_CRED_10_19_0_36="
+set "OVR_RICOH_CRED_10_19_0_37="
+set "OVR_RICOH_CRED_10_19_0_34=admin:"
+set "OVR_RICOH_CRED_10_19_0_43="
+set "OVR_RICOH_CRED_10_239_0_39=admin:"
+set "OVR_RICOH_PROTO_10_19_0_34=https http"
+set "OVR_RICOH_ENDPOINTS_10_19_0_34=web/entry/pt/address/adrsFileDownload.cgi web/entry/pt/address/adrsDownloadFile.cgi web/entry/en/address/adrsFileDownload.cgi web/entry/en/address/adrsDownloadFile.cgi"
+set "OVR_RICOH_LOCALES_10_19_0_34=pt en"
+set "OVR_RICOH_PROTO_10_239_0_39=https http"
+set "OVR_RICOH_ENDPOINTS_10_239_0_39=web/entry/pt/address/adrsFileDownload.cgi web/entry/pt/address/adrsDownloadFile.cgi web/entry/en/address/adrsFileDownload.cgi web/entry/en/address/adrsDownloadFile.cgi"
+set "OVR_RICOH_LOCALES_10_239_0_39=pt en"
+set "OVR_RICOH_USAR_FIXO_10_19_0_34=1"
+set "OVR_RICOH_FILENAME_10_19_0_34=RICOH Aficio SP 5200S_addr.udf"
+set "OVR_RICOH_USAR_FIXO_10_239_0_39=1"
+set "OVR_RICOH_FILENAME_10_239_0_39=RICOH Aficio SP 5200S_addr.udf"
+set "OVR_RICOH_PROTO_10_19_0_43="
+set "OVR_RICOH_ENDPOINTS_10_19_0_43="
+
+:: SKIP (sem scanner / scanner nao configurado / modelo sem backup)
+set "OVR_SKIP_10_239_0_37=SEM_SCANNER"
+set "OVR_SKIP_10_239_0_50=SEM_SCANNER"
+set "OVR_SKIP_10_239_0_40=SEM_SCANNER"
+set "OVR_SKIP_10_239_0_35=SEM_SCANNER"
+set "OVR_SKIP_10_19_0_37=SEM_SCANNER"
+set "OVR_SKIP_10_19_0_36=SEM_SCANNER"
+set "OVR_SKIP_10_18_0_34=SEM_SCANNER"
+set "OVR_SKIP_10_19_0_43=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_8_0_35=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_4_0_34=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_4_0_41=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_2_0_43=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_29_0_40=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_19_0_42=SCANNER_NAO_CONFIGURADO"
 
 if not exist "%PASTA_BACKUP%" mkdir "%PASTA_BACKUP%"
 if not exist "%PASTA_BACKUP%\Lexmark" mkdir "%PASTA_BACKUP%\Lexmark"
@@ -97,6 +210,9 @@ set /a SUCESSO_BROTHER=0
 set /a SUCESSO_RICOH=0
 set /a OFFLINE=0
 set /a FALHA=0
+set /a SKIP=0
+set /a SKIP_SEM_SCANNER=0
+set /a SKIP_SCANNER_NAO_CONFIG=0
 
 echo Lendo arquivo: %ARQUIVO_IPS%
 echo Total de linhas no arquivo:
@@ -125,7 +241,60 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
     echo IP: !IP_IMPRESSORA!
     echo.
 
-    call :IDENTIFICAR_MODELO "!IP_IMPRESSORA!" MODELO
+    set "IP_KEY=!IP_IMPRESSORA:.=_!"
+    set "OVR_MODELO="
+    set "OVR_BROTHER_CRED="
+    set "OVR_LEXMARK_URL="
+    set "OVR_LEXMARK_CRED="
+    set "OVR_RICOH_CRED="
+    set "OVR_RICOH_PROTO="
+    set "OVR_RICOH_ENDPOINTS="
+    set "OVR_RICOH_LOCALES="
+    set "OVR_RICOH_USAR_FIXO="
+    set "OVR_RICOH_FILENAME="
+    set "OVR_SKIP="
+
+    call set "OVR_MODELO=%%OVR_MODELO_!IP_KEY!%%"
+    call set "OVR_BROTHER_CRED=%%OVR_BROTHER_CRED_!IP_KEY!%%"
+    call set "OVR_LEXMARK_URL=%%OVR_LEXMARK_URL_!IP_KEY!%%"
+    call set "OVR_LEXMARK_CRED=%%OVR_LEXMARK_CRED_!IP_KEY!%%"
+    call set "OVR_RICOH_CRED=%%OVR_RICOH_CRED_!IP_KEY!%%"
+    call set "OVR_RICOH_PROTO=%%OVR_RICOH_PROTO_!IP_KEY!%%"
+    call set "OVR_RICOH_ENDPOINTS=%%OVR_RICOH_ENDPOINTS_!IP_KEY!%%"
+    call set "OVR_RICOH_LOCALES=%%OVR_RICOH_LOCALES_!IP_KEY!%%"
+    call set "OVR_RICOH_USAR_FIXO=%%OVR_RICOH_USAR_FIXO_!IP_KEY!%%"
+    call set "OVR_RICOH_FILENAME=%%OVR_RICOH_FILENAME_!IP_KEY!%%"
+    call set "OVR_SKIP=%%OVR_SKIP_!IP_KEY!%%"
+
+    if defined OVR_SKIP (
+        echo Impressora: IGNORADA - !OVR_SKIP!
+        echo [SKIP] !NOME_IMPRESSORA! - !IP_IMPRESSORA! - !OVR_SKIP! >> "%LOG_FILE%"
+        set /a SKIP+=1
+        if /i "!OVR_SKIP!"=="SEM_SCANNER" set /a SKIP_SEM_SCANNER+=1
+        if /i "!OVR_SKIP!"=="SCANNER_NAO_CONFIGURADO" set /a SKIP_SCANNER_NAO_CONFIG+=1
+    ) else (
+        set "MODELO="
+        if %PING_PRECHECK% equ 1 (
+            ping -n 1 -w %PING_TIMEOUT% !IP_IMPRESSORA! >nul 2>&1
+            if !errorlevel! neq 0 set "MODELO=OFFLINE"
+        )
+
+        if defined OVR_MODELO (
+            set "MODELO=!OVR_MODELO!"
+            echo [OVR] !IP_IMPRESSORA! MODELO=!MODELO! >> "%LOG_FILE%"
+        ) else if not defined MODELO (
+            call :IDENTIFICAR_MODELO "!IP_IMPRESSORA!" MODELO
+        )
+
+        if defined OVR_BROTHER_CRED echo [OVR] !IP_IMPRESSORA! BROTHER_CRED=custom >> "%LOG_FILE%"
+        if defined OVR_LEXMARK_URL echo [OVR] !IP_IMPRESSORA! LEXMARK_URL=custom >> "%LOG_FILE%"
+        if defined OVR_LEXMARK_CRED echo [OVR] !IP_IMPRESSORA! LEXMARK_CRED=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_CRED echo [OVR] !IP_IMPRESSORA! RICOH_CRED=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROTO echo [OVR] !IP_IMPRESSORA! RICOH_PROTO=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_ENDPOINTS echo [OVR] !IP_IMPRESSORA! RICOH_ENDPOINTS=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_LOCALES echo [OVR] !IP_IMPRESSORA! RICOH_LOCALES=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_USAR_FIXO echo [OVR] !IP_IMPRESSORA! RICOH_USAR_FIXO=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_FILENAME echo [OVR] !IP_IMPRESSORA! RICOH_FILENAME=custom >> "%LOG_FILE%"
 
     set "BACKUP_SUCESSO=0"
     set "ESTA_OFFLINE=0"
@@ -163,11 +332,12 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
         )
     )
 
-    if !BACKUP_SUCESSO! equ 0 (
-        if !ESTA_OFFLINE! equ 0 (
-            echo [FALHA GERAL] Nenhum metodo concluiu o backup
-            echo [FALHA-GERAL] !NOME_IMPRESSORA! - !IP_IMPRESSORA! >> "%LOG_FILE%"
-            set /a FALHA+=1
+        if !BACKUP_SUCESSO! equ 0 (
+            if !ESTA_OFFLINE! equ 0 (
+                echo [FALHA GERAL] Nenhum metodo concluiu o backup
+                echo [FALHA-GERAL] !NOME_IMPRESSORA! - !IP_IMPRESSORA! >> "%LOG_FILE%"
+                set /a FALHA+=1
+            )
         )
     )
 )
@@ -188,6 +358,9 @@ echo Backups BROTHER com sucesso: %SUCESSO_BROTHER%
 echo Backups RICOH com sucesso: %SUCESSO_RICOH%
 echo Impressoras offline: %OFFLINE%
 echo Falhas (autenticacao/outro): %FALHA%
+echo Ignoradas (sem scanner): %SKIP_SEM_SCANNER%
+echo Ignoradas (scanner nao configurado): %SKIP_SCANNER_NAO_CONFIG%
+echo Ignoradas (total): %SKIP%
 echo ============================================================
 echo.
 echo Arquivos salvos em: %PASTA_BACKUP%
@@ -201,6 +374,9 @@ echo ============================================================ >> "%LOG_FILE%
 echo Total processadas: %TOTAL% >> "%LOG_FILE%"
 echo LEXMARK: %SUCESSO_LEXMARK% - BROTHER: %SUCESSO_BROTHER% - RICOH: %SUCESSO_RICOH% >> "%LOG_FILE%"
 echo OFFLINE: %OFFLINE% - FALHAS: %FALHA% >> "%LOG_FILE%"
+echo SKIP_SEM_SCANNER: %SKIP_SEM_SCANNER% >> "%LOG_FILE%"
+echo SKIP_SCANNER_NAO_CONFIG: %SKIP_SCANNER_NAO_CONFIG% >> "%LOG_FILE%"
+echo SKIP: %SKIP% >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
 
 if exist "%ARQUIVO_PARSE%" del "%ARQUIVO_PARSE%" 2>nul
@@ -259,7 +435,15 @@ echo Tentando backup LEXMARK...
 
 if exist "%ARQ_LEX%" del "%ARQ_LEX%" 2>nul
 
-curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_LEXMARK% "http://%IP%/cgi-bin/direct/printer/prtappauth/apps/ImportExportServlet?exportButton=clicked" ^
+set "LEX_URL_PATH=%LEXMARK_URL_PATH%"
+if defined OVR_LEXMARK_URL set "LEX_URL_PATH=!OVR_LEXMARK_URL!"
+set "LEX_URL=http://%IP%/!LEX_URL_PATH!"
+if /i "!LEX_URL_PATH:~0,4!"=="http" set "LEX_URL=!LEX_URL_PATH!"
+
+set "LEX_AUTH_OPT="
+if defined OVR_LEXMARK_CRED set "LEX_AUTH_OPT=--anyauth -u ""!OVR_LEXMARK_CRED!"""
+
+curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_LEXMARK% !LEX_AUTH_OPT! "!LEX_URL!" ^
      -H "Referer: http://%IP%/" ^
      -o "%ARQ_LEX%" 2>nul
 
@@ -269,7 +453,7 @@ if exist "%ARQ_LEX%" (
     findstr /i "<html" "%ARQ_LEX%" >nul 2>&1 && set "INVALIDO=1"
     findstr /i "login" "%ARQ_LEX%" >nul 2>&1 && set "INVALIDO=1"
 
-    if !TAMANHO! gtr 1000 (
+    if !TAMANHO! gtr %LEXMARK_MIN_SIZE% (
         if !INVALIDO! equ 0 (
             echo [OK] Backup LEXMARK realizado - !TAMANHO! bytes
             echo [OK-LEXMARK] %NOME% - %IP% - !TAMANHO! bytes >> "%LOG_FILE%"
@@ -298,27 +482,86 @@ set "ARQ_BROTHER_MNT=%PASTA_BACKUP%\Brother\%NOME%_maintenance_%DATA%.csv"
 echo Tentando backup BROTHER...
 
 set "CREDENCIAL_OK=0"
+set "BROTHER_CRED_LIST=%CRED_BROTHER%"
+if defined OVR_BROTHER_CRED set "BROTHER_CRED_LIST=!OVR_BROTHER_CRED!"
 
 if exist "!ARQ_BROTHER_MNT!" del "!ARQ_BROTHER_MNT!" 2>nul
 
+set "SEMAUTH_OK=0"
 curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.csv" ^
      -o "!ARQ_BROTHER_MNT!" 2>nul
 
 if exist "!ARQ_BROTHER_MNT!" (
     for %%F in ("!ARQ_BROTHER_MNT!") do set "TAM=%%~zF"
     set "INVALIDO=0"
-    findstr /i "<html" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+    set "VALIDO=0"
+    findstr /i /c:"Model Name" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+    findstr /i /c:"Brother" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
     findstr /i "login" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
     findstr /i "404 Not Found" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
-    if !TAM! gtr 200 if !INVALIDO! equ 0 (
+    if !VALIDO! equ 1 set "INVALIDO=0"
+    echo [BROTHER-SEMAUTH] %NOME% - %IP% tam=!TAM! invalido=!INVALIDO! >> "%LOG_FILE%"
+    if !TAM! gtr 200 if !INVALIDO! equ 0 if !VALIDO! equ 1 (
         echo [OK] Backup BROTHER realizado - Credencial: sem-auth - Tipo: MNTCSV
         echo [OK-BROTHER] %NOME% - %IP% - Credencial: sem-auth - Tipo: MNTCSV >> "%LOG_FILE%"
         set /a SUCESSO_BROTHER+=1
+        set "SEMAUTH_OK=1"
         exit /b 0
+    )
+ ) else (
+    echo [BROTHER-SEMAUTH] %NOME% - %IP% arquivo=ausente >> "%LOG_FILE%"
+)
+
+if !SEMAUTH_OK! equ 0 (
+    curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.html?kind=item" ^
+         -o NUL 2>nul
+    curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info_post.html" ^
+         --data "Submit=Submit" ^
+         -o NUL 2>nul
+    if exist "!ARQ_BROTHER_MNT!" del "!ARQ_BROTHER_MNT!" 2>nul
+    curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.csv" ^
+         -o "!ARQ_BROTHER_MNT!" 2>nul
+    if exist "!ARQ_BROTHER_MNT!" (
+        for %%F in ("!ARQ_BROTHER_MNT!") do set "TAM=%%~zF"
+        set "INVALIDO=0"
+        set "VALIDO=0"
+        findstr /i /c:"Model Name" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+        findstr /i /c:"Brother" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+        findstr /i "login" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+        findstr /i "404 Not Found" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+        if !VALIDO! equ 1 set "INVALIDO=0"
+        if !VALIDO! equ 1 set "INVALIDO=0"
+        if !TAM! gtr 200 if !INVALIDO! equ 0 if !VALIDO! equ 1 (
+            echo [OK] Backup BROTHER realizado - Credencial: sem-auth - Tipo: MNTCSV-PREP
+            echo [OK-BROTHER] %NOME% - %IP% - Credencial: sem-auth - Tipo: MNTCSV-PREP >> "%LOG_FILE%"
+            set /a SUCESSO_BROTHER+=1
+            exit /b 0
+        )
     )
 )
 
-for %%C in (%CRED_BROTHER%) do (
+if !SEMAUTH_OK! equ 0 (
+    if exist "!ARQ_BROTHER_MNT!" del "!ARQ_BROTHER_MNT!" 2>nul
+    curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "https://%IP%/etc/mnt_info.csv" ^
+         -o "!ARQ_BROTHER_MNT!" 2>nul
+    if exist "!ARQ_BROTHER_MNT!" (
+        for %%F in ("!ARQ_BROTHER_MNT!") do set "TAM=%%~zF"
+        set "INVALIDO=0"
+        set "VALIDO=0"
+        findstr /i /c:"Model Name" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+        findstr /i /c:"Brother" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+        findstr /i "login" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+        findstr /i "404 Not Found" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+        if !TAM! gtr 200 if !INVALIDO! equ 0 if !VALIDO! equ 1 (
+            echo [OK] Backup BROTHER realizado - Credencial: sem-auth - Tipo: MNTCSV-HTTPS
+            echo [OK-BROTHER] %NOME% - %IP% - Credencial: sem-auth - Tipo: MNTCSV-HTTPS >> "%LOG_FILE%"
+            set /a SUCESSO_BROTHER+=1
+            exit /b 0
+        )
+    )
+)
+
+for %%C in (!BROTHER_CRED_LIST!) do (
     if !CREDENCIAL_OK! equ 0 (
         set "CREDENCIAL=%%C"
         echo   Testando credencial: !CREDENCIAL!
@@ -327,7 +570,7 @@ for %%C in (%CRED_BROTHER%) do (
         if exist "!ARQ_BROTHER_ADDR!" del "!ARQ_BROTHER_ADDR!" 2>nul
         if exist "!ARQ_BROTHER_MNT!" del "!ARQ_BROTHER_MNT!" 2>nul
 
-        curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/common/exportconfig.html" ^
+        curl.exe -L -k --fail -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/common/exportconfig.html" ^
              --data "pageid=0&Submit=Export" ^
              -u "!CREDENCIAL!" ^
              -o "!ARQ_BROTHER_CONFIG!" 2>nul
@@ -347,7 +590,7 @@ for %%C in (%CRED_BROTHER%) do (
         )
 
         if !ARQUIVO_OK! equ 0 (
-            curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER_ADDR% "http://%IP%/general/address_list.csv" ^
+            curl.exe -L -k --fail -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER_ADDR% "http://%IP%/general/address_list.csv" ^
                  -u "!CREDENCIAL!" ^
                  -o "!ARQ_BROTHER_ADDR!" 2>nul
 
@@ -364,41 +607,47 @@ for %%C in (%CRED_BROTHER%) do (
         )
 
         if !ARQUIVO_OK! equ 0 (
-            curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.html?kind=item" ^
+            curl.exe -L -k -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.html?kind=item" ^
                  -u "!CREDENCIAL!" -o NUL 2>nul
 
-            curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info_post.html" ^
+            curl.exe -L -k -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info_post.html" ^
                  --data "Submit=Submit" ^
                  -u "!CREDENCIAL!" -o NUL 2>nul
 
-            curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.csv" ^
+            curl.exe -L -k --fail -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "http://%IP%/etc/mnt_info.csv" ^
                  -u "!CREDENCIAL!" ^
                  -o "!ARQ_BROTHER_MNT!" 2>nul
 
             if exist "!ARQ_BROTHER_MNT!" (
                 for %%F in ("!ARQ_BROTHER_MNT!") do set "TAM=%%~zF"
                 set "INVALIDO=0"
-                findstr /i "<html" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+                set "VALIDO=0"
+                findstr /i /c:"Model Name" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+                findstr /i /c:"Brother" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
                 findstr /i "login" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
                 findstr /i "404 Not Found" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
-                if !TAM! gtr 200 if !INVALIDO! equ 0 (
+                if !VALIDO! equ 1 set "INVALIDO=0"
+                if !TAM! gtr 200 if !INVALIDO! equ 0 if !VALIDO! equ 1 (
                     set "ARQUIVO_OK=1"
                     set "TIPO_BKP=MNTCSV"
                 )
             )
 
             if !ARQUIVO_OK! equ 0 (
-                curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "https://%IP%/etc/mnt_info.csv" ^
+                curl.exe -L -k --fail -sS --anyauth --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_BROTHER% "https://%IP%/etc/mnt_info.csv" ^
                      -u "!CREDENCIAL!" ^
                      -o "!ARQ_BROTHER_MNT!" 2>nul
 
                 if exist "!ARQ_BROTHER_MNT!" (
                     for %%F in ("!ARQ_BROTHER_MNT!") do set "TAM=%%~zF"
                     set "INVALIDO=0"
-                    findstr /i "<html" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
+                    set "VALIDO=0"
+                    findstr /i /c:"Model Name" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
+                    findstr /i /c:"Brother" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "VALIDO=1"
                     findstr /i "login" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
                     findstr /i "404 Not Found" "!ARQ_BROTHER_MNT!" >nul 2>&1 && set "INVALIDO=1"
-                    if !TAM! gtr 200 if !INVALIDO! equ 0 (
+                    if !VALIDO! equ 1 set "INVALIDO=0"
+                    if !TAM! gtr 200 if !INVALIDO! equ 0 if !VALIDO! equ 1 (
                         set "ARQUIVO_OK=1"
                         set "TIPO_BKP=MNTCSV-HTTPS"
                     )
@@ -447,6 +696,18 @@ set "NOME_LIMPO=%NOME_LIMPO:<=_%"
 set "NOME_LIMPO=%NOME_LIMPO:|=_%"
 
 set "ARQ_RICOH=%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_backup_%DATA%.udf"
+set "RICOH_CRED_LIST=%CRED_RICOH%"
+if defined OVR_RICOH_CRED set "RICOH_CRED_LIST=!OVR_RICOH_CRED!"
+set "RICOH_PROTOCOLOS_USO=%RICOH_PROTOCOLOS%"
+if defined OVR_RICOH_PROTO set "RICOH_PROTOCOLOS_USO=!OVR_RICOH_PROTO!"
+set "RICOH_ENDPOINTS_USO=%RICOH_ENDPOINTS%"
+if defined OVR_RICOH_ENDPOINTS set "RICOH_ENDPOINTS_USO=!OVR_RICOH_ENDPOINTS!"
+set "RICOH_LOCALES_USO=%RICOH_LOCALES%"
+if defined OVR_RICOH_LOCALES set "RICOH_LOCALES_USO=!OVR_RICOH_LOCALES!"
+set "RICOH_USAR_FIXO_USO=%RICOH_USAR_FIXO%"
+if defined OVR_RICOH_USAR_FIXO set "RICOH_USAR_FIXO_USO=!OVR_RICOH_USAR_FIXO!"
+set "RICOH_FILENAME_FIXO_USO=%RICOH_FILENAME_FIXO%"
+if defined OVR_RICOH_FILENAME set "RICOH_FILENAME_FIXO_USO=!OVR_RICOH_FILENAME!"
 set "CREDENCIAL_OK=0"
 set "USUARIO_USADO="
 set "METODO_USADO="
@@ -459,7 +720,7 @@ if exist "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_csv_%DATA%.csv" del "%PASTA_BACKUP%\
 if exist "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_addressbook_%DATA%.csv" del "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_addressbook_%DATA%.csv" 2>nul
 if exist "!ARQ_RICOH!" del "!ARQ_RICOH!" 2>nul
 
-for %%C in (%CRED_RICOH%) do (
+for %%C in (!RICOH_CRED_LIST!) do (
     if !CREDENCIAL_OK! equ 0 (
         set /a RICOH_CRED_COUNT+=1
         set "PULAR_CRED=0"
@@ -579,11 +840,19 @@ set "OK=0"
 set "USR_D="
 set "EFFECTIVE_URL="
 set "URL_OK=0"
+set "FNAME_FIXO_URL=!RICOH_FILENAME_FIXO_USO!"
+set "RICOH_FIXO_ENC_SRC=!FNAME_FIXO_URL!"
+for /f "delims=" %%Z in ('powershell -NoProfile -Command "$s=$env:RICOH_FIXO_ENC_SRC; if($null -eq $s){$s=''}; [uri]::EscapeDataString($s)"') do set "FNAME_FIXO_URL=%%Z"
+set "RICOH_FIXO_ENC_SRC="
+set "PROTO_LIST=%RICOH_PROTOCOLOS%"
+if defined RICOH_PROTOCOLOS_USO set "PROTO_LIST=%RICOH_PROTOCOLOS_USO%"
+set "ENDP_LIST=%RICOH_ENDPOINTS%"
+if defined RICOH_ENDPOINTS_USO set "ENDP_LIST=%RICOH_ENDPOINTS_USO%"
 
 for /f "tokens=1 delims=:" %%U in ("!CRED_D!") do set "USR_D=%%U"
 
-for %%P in (%RICOH_PROTOCOLOS%) do (
-    for %%E in (%RICOH_ENDPOINTS%) do (
+for %%P in (!PROTO_LIST!) do (
+    for %%E in (!ENDP_LIST!) do (
         if !OK! equ 0 (
             set "URL=%%P://!IP_D!/%%E/!NOME_D!_addr.udf"
             echo [RICOH-TENTATIVA-DIRETA] !USR_D!@!URL! >> "%LOG_FILE%"
@@ -596,11 +865,17 @@ for %%P in (%RICOH_PROTOCOLOS%) do (
             )
         )
 
-        if !OK! equ 0 if %RICOH_USAR_FIXO% equ 1 (
-            set "URL_FIXA=%%P://!IP_D!/%%E/!RICOH_FILENAME_FIXO!"
+        if !OK! equ 0 if !RICOH_USAR_FIXO_USO! equ 1 (
+            set "URL_FIXA=%%P://!IP_D!/%%E/!FNAME_FIXO_URL!"
             echo [RICOH-TENTATIVA-DIRETA] !USR_D!@!URL_FIXA! >> "%LOG_FILE%"
             echo   [RICOH] Direto fixo: !USR_D! %%P/%%E
-            call :RICOH_BAIXAR_UDF_BASIC "!URL_FIXA!" "!CRED_D!" "!ARQ_D!"
+            set "RICOH_URL_ARG=!URL_FIXA!"
+            set "RICOH_CRED_ARG=!CRED_D!"
+            set "RICOH_ARQ_ARG=!ARQ_D!"
+            call :RICOH_BAIXAR_UDF_BASIC
+            set "RICOH_URL_ARG="
+            set "RICOH_CRED_ARG="
+            set "RICOH_ARQ_ARG="
             echo [RICOH-DIRETO-RC] fixo rc=!errorlevel! >> "%LOG_FILE%"
             if !errorlevel! equ 0 (
                 set "OK=1"
@@ -650,6 +925,9 @@ setlocal EnableDelayedExpansion
 set "URL_B=%~1"
 set "CRED_B=%~2"
 set "ARQ_B=%~3"
+if not defined URL_B if defined RICOH_URL_ARG set "URL_B=!RICOH_URL_ARG!"
+if not defined CRED_B if defined RICOH_CRED_ARG set "CRED_B=!RICOH_CRED_ARG!"
+if not defined ARQ_B if defined RICOH_ARQ_ARG set "ARQ_B=!RICOH_ARQ_ARG!"
 set "USR_B="
 set "PWD_B="
 set "RC=1"
@@ -672,11 +950,6 @@ powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue';$url=$env
 set "RC=!errorlevel!"
 echo [RICOH-HTTP-FIM] rc=!RC! >> "%LOG_FILE%"
 
-set "RICOH_URL_PS="
-set "RICOH_OUT_PS="
-set "RICOH_USR_PS="
-set "RICOH_PWD_PS="
-
 set "ARQ_OK=0"
 set "ARQ_SZ=0"
 if exist "!ARQ_B!" (
@@ -690,6 +963,36 @@ if !ARQ_OK! equ 1 (
 )
 
 if exist "!ARQ_B!" del "!ARQ_B!" 2>nul
+
+if defined USR_B (
+    echo [RICOH-CURL-INICIO] ANYAUTH !USR_B! !RICOH_URL_PS! >> "%LOG_FILE%"
+    curl.exe -L -k --anyauth --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% ^
+        -u "!USR_B!:!PWD_B!" ^
+        -H "Cookie: cookieOnOffChecker=on" ^
+        -H "User-Agent: Mozilla/5.0" ^
+        "!RICOH_URL_PS!" -o "!ARQ_B!" 2>nul
+    set "RC=!errorlevel!"
+    echo [RICOH-CURL-FIM] rc=!RC! >> "%LOG_FILE%"
+
+    set "ARQ_OK=0"
+    set "ARQ_SZ=0"
+    if exist "!ARQ_B!" (
+        for %%F in ("!ARQ_B!") do set "ARQ_SZ=%%~zF"
+        if !ARQ_SZ! gtr 300 set "ARQ_OK=1"
+    )
+    echo [RICOH-CURL-ARQ] existe=!ARQ_OK! tamanho=!ARQ_SZ! >> "%LOG_FILE%"
+
+    if !ARQ_OK! equ 1 (
+        endlocal & exit /b 0
+    )
+
+    if exist "!ARQ_B!" del "!ARQ_B!" 2>nul
+)
+
+set "RICOH_URL_PS="
+set "RICOH_OUT_PS="
+set "RICOH_USR_PS="
+set "RICOH_PWD_PS="
 endlocal & exit /b 1
 
 :: =========================================
@@ -718,14 +1021,19 @@ setlocal EnableDelayedExpansion
 set "URL_B=%~1"
 set "COOKIE_B=%~2"
 set "ARQ_B=%~3"
+if not defined URL_B if defined RICOH_COOKIE_URL_ARG set "URL_B=!RICOH_COOKIE_URL_ARG!"
+if not defined COOKIE_B if defined RICOH_COOKIE_ARG set "COOKIE_B=!RICOH_COOKIE_ARG!"
+if not defined ARQ_B if defined RICOH_COOKIE_ARQ_ARG set "ARQ_B=!RICOH_COOKIE_ARQ_ARG!"
 set "RC=1"
 set "ERR_B=%TEMP_LOCAL%\\ricoh_curl_err_!RANDOM!!RANDOM!.log"
+set "AUTH_OPT="
+if defined RICOH_COOKIE_CRED_ARG set "AUTH_OPT=--anyauth -u !RICOH_COOKIE_CRED_ARG!"
 
 if exist "!ARQ_B!" del "!ARQ_B!" 2>nul
 if exist "!ERR_B!" del "!ERR_B!" 2>nul
 
 echo [RICOH-CURL-INICIO] COOKIE !URL_B! >> "%LOG_FILE%"
-curl.exe -L -k --fail --max-redirs 2 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% -b "!COOKIE_B!" -c "!COOKIE_B!" "!URL_B!" -o "!ARQ_B!" 2>"!ERR_B!"
+curl.exe -L -k --fail --max-redirs 2 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% !AUTH_OPT! -b "!COOKIE_B!" -c "!COOKIE_B!" "!URL_B!" -o "!ARQ_B!" 2>"!ERR_B!"
 set "RC=!errorlevel!"
 echo [RICOH-CURL-FIM] rc=!RC! >> "%LOG_FILE%"
 if "!RC!" neq "0" if %RICOH_DIAGNOSTICO% equ 1 (
@@ -765,6 +1073,10 @@ set "RESULT_INFO="
 set "OK=0"
 set "EFFECTIVE_URL="
 set "URL_OK=0"
+set "FNAME_FIXO_URL=!RICOH_FILENAME_FIXO_USO!"
+set "RICOH_FIXO_ENC_SRC=!FNAME_FIXO_URL!"
+for /f "delims=" %%Z in ('powershell -NoProfile -Command "$s=$env:RICOH_FIXO_ENC_SRC; if($null -eq $s){$s=''}; [uri]::EscapeDataString($s)"') do set "FNAME_FIXO_URL=%%Z"
+set "RICOH_FIXO_ENC_SRC="
 
 set "TOKEN=%RANDOM%%RANDOM%"
 set "COOKIE=%TEMP_LOCAL%\\ricoh_cookie_!TOKEN!.txt"
@@ -778,20 +1090,28 @@ set "RICOH_PASS_B64_SRC=!PASS_S!"
 for /f "delims=" %%B in ('powershell -NoProfile -Command "$u=$env:RICOH_USER_B64_SRC; if($null -eq $u){$u=''}; [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($u))"') do set "USER64=%%B"
 for /f "delims=" %%B in ('powershell -NoProfile -Command "$p=$env:RICOH_PASS_B64_SRC; if($null -eq $p){$p=''}; [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($p))"') do set "PASS64=%%B"
 
-for %%L in (%RICOH_LOCALES%) do (
+set "PROTO_LIST=%RICOH_PROTOCOLOS%"
+if defined RICOH_PROTOCOLOS_USO set "PROTO_LIST=%RICOH_PROTOCOLOS_USO%"
+set "LOCALE_LIST=%RICOH_LOCALES%"
+if defined RICOH_LOCALES_USO set "LOCALE_LIST=%RICOH_LOCALES_USO%"
+
+for %%P in (!PROTO_LIST!) do (
+for %%L in (!LOCALE_LIST!) do (
     if !OK! equ 0 (
         if exist "!COOKIE!" del "!COOKIE!" 2>nul
         if exist "!AUTH_HTML!" del "!AUTH_HTML!" 2>nul
         if exist "!LOGIN_HTML!" del "!LOGIN_HTML!" 2>nul
         if exist "!UPLOAD_HTML!" del "!UPLOAD_HTML!" 2>nul
 
-        set "AUTH_URL=http://!IP_S!/web/guest/%%L/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/!NOME_S!_addr.udf"
-        set "LOGIN_URL=http://!IP_S!/web/guest/%%L/websys/webArch/login.cgi"
-        set "LIST_URL=http://!IP_S!/web/entry/%%L/address/adrsList.cgi"
-        set "UPLOAD_URL=http://!IP_S!/web/entry/%%L/address/adrsUploadFile.cgi"
-        set "DOWN_URL=http://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi/!NOME_S!_addr.udf"
-        set "DOWN_URL_FIXA=http://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi/!RICOH_FILENAME_FIXO!"
-        set "DOWN_BASE=http://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi"
+        set "AUTH_URL=%%P://!IP_S!/web/guest/%%L/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/!NOME_S!_addr.udf"
+        set "LOGIN_URL=%%P://!IP_S!/web/guest/%%L/websys/webArch/login.cgi"
+        set "LIST_URL=%%P://!IP_S!/web/entry/%%L/address/adrsList.cgi"
+        set "UPLOAD_URL=%%P://!IP_S!/web/entry/%%L/address/adrsUploadFile.cgi"
+        set "DOWN_URL=%%P://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi/!NOME_S!_addr.udf"
+        set "DOWN_URL_FIXA=%%P://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi/!FNAME_FIXO_URL!"
+        set "DOWN_URL_ALT=%%P://!IP_S!/web/entry/%%L/address/adrsDownloadFile.cgi/!NOME_S!_addr.udf"
+        set "DOWN_URL_ALT_FIXA=%%P://!IP_S!/web/entry/%%L/address/adrsDownloadFile.cgi/!FNAME_FIXO_URL!"
+        set "DOWN_BASE=%%P://!IP_S!/web/entry/%%L/address/adrsFileDownload.cgi"
 
         echo [RICOH-TENTATIVA-SESSAO] !USER_S!@!AUTH_URL! >> "%LOG_FILE%"
         echo   [RICOH] Sessao locale=%%L: auth/login
@@ -861,6 +1181,7 @@ for %%L in (%RICOH_LOCALES%) do (
                     )
 
                     if !PREP_OK! equ 1 (
+                        set "RICOH_COOKIE_CRED_ARG=!USER_S!:!PASS_S!"
                         echo [RICOH-TENTATIVA-SESSAO-DOWN] !USER_S!@!DOWN_URL! >> "%LOG_FILE%"
                         call :RB_COOKIE "!DOWN_URL!" "!COOKIE!" "!ARQ_S!"
                         if !errorlevel! equ 0 (
@@ -868,12 +1189,42 @@ for %%L in (%RICOH_LOCALES%) do (
                             set "RESULT_INFO=SESSAO locale=%%L (nome !LOGIN_MODO!)"
                         )
 
-                        if !OK! equ 0 if %RICOH_USAR_FIXO% equ 1 (
+                        if !OK! equ 0 if !RICOH_USAR_FIXO_USO! equ 1 (
                             echo [RICOH-TENTATIVA-SESSAO-DOWN] !USER_S!@!DOWN_URL_FIXA! >> "%LOG_FILE%"
-                            call :RB_COOKIE "!DOWN_URL_FIXA!" "!COOKIE!" "!ARQ_S!"
+                            set "RICOH_COOKIE_URL_ARG=!DOWN_URL_FIXA!"
+                            set "RICOH_COOKIE_ARG=!COOKIE!"
+                            set "RICOH_COOKIE_ARQ_ARG=!ARQ_S!"
+                            call :RB_COOKIE
+                            set "RICOH_COOKIE_URL_ARG="
+                            set "RICOH_COOKIE_ARG="
+                            set "RICOH_COOKIE_ARQ_ARG="
                             if !errorlevel! equ 0 (
                                 set "OK=1"
                                 set "RESULT_INFO=SESSAO locale=%%L (fixo !LOGIN_MODO!)"
+                            )
+                        )
+
+                        if !OK! equ 0 (
+                            echo [RICOH-TENTATIVA-SESSAO-DOWN] !USER_S!@!DOWN_URL_ALT! >> "%LOG_FILE%"
+                            call :RB_COOKIE "!DOWN_URL_ALT!" "!COOKIE!" "!ARQ_S!"
+                            if !errorlevel! equ 0 (
+                                set "OK=1"
+                                set "RESULT_INFO=SESSAO locale=%%L (alt !LOGIN_MODO!)"
+                            )
+                        )
+
+                        if !OK! equ 0 if !RICOH_USAR_FIXO_USO! equ 1 (
+                            echo [RICOH-TENTATIVA-SESSAO-DOWN] !USER_S!@!DOWN_URL_ALT_FIXA! >> "%LOG_FILE%"
+                            set "RICOH_COOKIE_URL_ARG=!DOWN_URL_ALT_FIXA!"
+                            set "RICOH_COOKIE_ARG=!COOKIE!"
+                            set "RICOH_COOKIE_ARQ_ARG=!ARQ_S!"
+                            call :RB_COOKIE
+                            set "RICOH_COOKIE_URL_ARG="
+                            set "RICOH_COOKIE_ARG="
+                            set "RICOH_COOKIE_ARQ_ARG="
+                            if !errorlevel! equ 0 (
+                                set "OK=1"
+                                set "RESULT_INFO=SESSAO locale=%%L (alt-fixo !LOGIN_MODO!)"
                             )
                         )
 
@@ -900,6 +1251,7 @@ for %%L in (%RICOH_LOCALES%) do (
                                 )
                             )
                         )
+                        set "RICOH_COOKIE_CRED_ARG="
                     ) else (
                         echo [RICOH-SESSAO-PREP] FALHA locale=%%L usuario=!USER_S! >> "%LOG_FILE%"
                     )
@@ -910,6 +1262,7 @@ for %%L in (%RICOH_LOCALES%) do (
             )
         )
     )
+)
 )
 
 if exist "!COOKIE!" del "!COOKIE!" 2>nul
