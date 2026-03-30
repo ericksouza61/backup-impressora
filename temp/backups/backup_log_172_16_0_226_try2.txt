@@ -1,0 +1,176 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-26 15-36-04 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 172.16.0.226 MODELO=RICOH 
+[OVR] 172.16.0.226 RICOH_USAR_FIXO=custom 
+[OVR] 172.16.0.226 RICOH_FILENAME=custom 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-RETORNO-DIRETO] admin rc=1 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.226/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.226/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[RICOH-TENTATIVA-DIRETA] copymaq@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-INICIO] BASIC copymaq http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH copymaq http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] copymaq@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-HTTP-INICIO] BASIC copymaq http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH copymaq http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-RETORNO-DIRETO] copymaq rc=1 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://172.16.0.226/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=copymaq rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=copymaq 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://172.16.0.226/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=copymaq rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=copymaq 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] copymaq@http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%203710SF_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-RETORNO-SESSAO] copymaq rc=1 
+[FALHA-RICOH] Mtz_Medico - 172.16.0.226 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] Mtz_Medico - 172.16.0.226 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 1 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

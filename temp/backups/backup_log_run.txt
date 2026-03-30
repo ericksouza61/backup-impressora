@@ -1,0 +1,1106 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-26 09-55-08 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[BROTHER-SEMAUTH] PV43_Ecommerce - 10.43.0.39 tam=1769 invalido=0 
+[OK-BROTHER] PV43_Ecommerce - 10.43.0.39 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV43_DRH - 10.43.0.37 tam=1978 invalido=0 
+[OK-BROTHER] PV43_DRH - 10.43.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV43_Custos - 10.43.0.34 tam=1968 invalido=0 
+[OK-BROTHER] PV43_Custos - 10.43.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV43_Compras - 10.43.0.38 tam=1961 invalido=0 
+[OK-BROTHER] PV43_Compras - 10.43.0.38 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV43_Caixa Geral - 10.43.0.35 tam=1950 invalido=0 
+[OK-BROTHER] PV43_Caixa Geral - 10.43.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV43_Atendimento - 10.43.0.36 tam=1971 invalido=0 
+[OK-BROTHER] PV43_Atendimento - 10.43.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OK-LEXMARK] PV38_Servir - 10.38.0.36 - 34360 bytes 
+[OK-LEXMARK] PV38_Recebimento - 10.38.0.38 - 34360 bytes 
+[OK-LEXMARK] PV38_Ecommerce - 10.38.0.40 - 34360 bytes 
+[OVR] 10.38.0.37 LEXMARK_URL=custom 
+[OK-LEXMARK] PV38_DRH - 10.38.0.37 - 24952 bytes 
+[OK-LEXMARK] PV38_Compras - 10.38.0.34 - 34351 bytes 
+[OK-LEXMARK] PV38_Caixa Geral - 10.38.0.39 - 33217 bytes 
+[OK-LEXMARK] PV38_Atendimento - 10.38.0.35 - 34360 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.37.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat2_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.37.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat2_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.37.0.35/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV37_Fat2_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.37.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat2_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.37.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat2_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV37_Fat2 - 10.37.0.35 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2590 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.37.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.37.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.37.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV37_Fat1_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.37.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat1_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.37.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV37_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Fat1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV37_Fat1 - 10.37.0.34 - admin - SESSAO - SESSAO locale=pt (nome B64) - 1662 bytes - CONSISTENTE 
+[OFFLINE] PV35_Servir - 10.35.0.36 
+[OK-LEXMARK] PV35_Nota Fiscal - 10.35.0.35 - 14924 bytes 
+[OK-LEXMARK] PV35_Ecommerce - 10.35.0.41 - 14924 bytes 
+[OK-LEXMARK] PV35_DRH - 10.35.0.39 - 24636 bytes 
+[OK-LEXMARK] PV35_CPD - 10.35.0.38 - 24668 bytes 
+[OK-LEXMARK] PV35_Caixa Geral - 10.35.0.34 - 19784 bytes 
+[OK-LEXMARK] PV35_Atendimento - 10.35.0.37 - 24660 bytes 
+[OFFLINE] PV34_Servir - 10.34.0.37 
+[OVR] 10.34.0.38 LEXMARK_URL=custom 
+[OK-LEXMARK] PV34_Custos - 10.34.0.38 - 28501 bytes 
+[OK-LEXMARK] PV34_CPD - 10.34.0.34 - 44096 bytes 
+[OVR] 10.34.0.36 LEXMARK_URL=custom 
+[OK-LEXMARK] PV34_Atendimento - 10.34.0.36 - 27618 bytes 
+[OK-LEXMARK] PV33_RH - 10.33.0.36 - 39189 bytes 
+[OK-LEXMARK] PV33_CPD - 10.33.0.35 - 29495 bytes 
+[OK-LEXMARK] PV33_Atendimento - 10.33.0.34 - 29477 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.30.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.30.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV30_Gerencia_Comercial_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.30.0.41/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.30.0.41/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.30.0.41/web/entry/en/address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.30.0.41/web/entry/en/address/adrsFileDownload.cgi/PV30_Gerencia_Comercial_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV30_Gerencia_Comercial_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV30_Gerencia_Comercial_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV30_Gerencia_Comercial_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV30_Gerencia Comercial - 10.30.0.41 - admin - SESSAO - SESSAO locale=en (nome B64) - 9999 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] PV30_Credi??rio - 10.30.0.35 tam=2121 invalido=0 
+[OK-BROTHER] PV30_Credi??rio - 10.30.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV30_Compras - 10.30.0.34 tam=1862 invalido=0 
+[OK-BROTHER] PV30_Compras - 10.30.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV30_Caixa Geral - 10.30.0.42 tam=1861 invalido=0 
+[OK-BROTHER] PV30_Caixa Geral - 10.30.0.42 - Credencial: sem-auth - Tipo: MNTCSV 
+[SKIP] PV29_teste JUI - 10.29.0.40 - SCANNER_NAO_CONFIGURADO 
+[OVR] 10.29.0.37 MODELO=LEXMARK 
+[OK-LEXMARK] PV29_Gerencia - 10.29.0.37 - 34350 bytes 
+[OK-LEXMARK] PV29_CPD - 10.29.0.34 - 34350 bytes 
+[OVR] 10.29.0.36 LEXMARK_URL=custom 
+[OK-LEXMARK] PV29_Caixa Geral - 10.29.0.36 - 21424 bytes 
+[BROTHER-SEMAUTH] PV27_Servir - 10.27.0.39 tam=1853 invalido=0 
+[OK-BROTHER] PV27_Servir - 10.27.0.39 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV27_Ecommerce - 10.27.0.38 tam=1859 invalido=0 
+[OK-BROTHER] PV27_Ecommerce - 10.27.0.38 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV27_Custos - 10.27.0.37 tam=1867 invalido=0 
+[OK-BROTHER] PV27_Custos - 10.27.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV27_Compras - 10.27.0.34 tam=1867 invalido=0 
+[OK-BROTHER] PV27_Compras - 10.27.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV27_Caixa Geral - 10.27.0.36 tam=1964 invalido=0 
+[OK-BROTHER] PV27_Caixa Geral - 10.27.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV27_Atendimento - 10.27.0.35 tam=1963 invalido=0 
+[OK-BROTHER] PV27_Atendimento - 10.27.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV26_CPD - 10.26.0.34 tam=1868 invalido=0 
+[OK-BROTHER] PV26_CPD - 10.26.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV26_Caixa Geral - 10.26.0.36 tam=1851 invalido=0 
+[OK-BROTHER] PV26_Caixa Geral - 10.26.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV26_Atendimento - 10.26.0.35 tam=1862 invalido=0 
+[OK-BROTHER] PV26_Atendimento - 10.26.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV25_Trafego - 10.25.0.34 tam=1857 invalido=0 
+[OK-BROTHER] PV25_Trafego - 10.25.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV25_Servico - 10.25.0.36 tam=1691 invalido=0 
+[OK-BROTHER] PV25_Servico - 10.25.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV25_Escrit??rio - 10.25.0.35 tam=1874 invalido=0 
+[OK-BROTHER] PV25_Escrit??rio - 10.25.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[OVR] 10.23.0.35 LEXMARK_URL=custom 
+[OK-LEXMARK] PV23_CPD - 10.23.0.35 - 28454 bytes 
+[OK-LEXMARK] PV23_Atendimento - 10.23.0.34 - 39202 bytes 
+[OFFLINE] PV22_Servir - 10.22.0.40 
+[OK-LEXMARK] PV22_Gerencia - 10.22.0.39 - 24624 bytes 
+[OK-LEXMARK] PV22_Ecommerce - 10.22.0.34 - 24660 bytes 
+[OVR] 10.22.0.35 LEXMARK_URL=custom 
+[OK-LEXMARK] PV22_DRH - 10.22.0.35 - 17926 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-RETORNO-DIRETO] admin rc=1 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.22.0.37/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.22.0.37/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[RICOH-TENTATIVA-DIRETA] copymaq@http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-HTTP-INICIO] BASIC copymaq http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH copymaq http://10.22.0.37/web/entry/pt/address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-RETORNO-DIRETO] copymaq rc=1 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://10.22.0.37/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://10.22.0.37/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV22_CPD_addr.udf 
+[RICOH-RETORNO-SESSAO] copymaq rc=1 
+[FALHA-RICOH] PV22_CPD - 10.22.0.37 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] PV22_CPD - 10.22.0.37 
+[OK-LEXMARK] PV22_Construmil - 10.22.0.38 - 24670 bytes 
+[OFFLINE] PV22_Caixa Geral - 10.22.0.45 
+[OK-LEXMARK] PV22_Atendimento - 10.22.0.36 - 24670 bytes 
+[OK-LEXMARK] PV21_Servir - 10.21.0.34 - 29505 bytes 
+[OK-LEXMARK] Pv21_DRH - 10.21.0.36 - 29505 bytes 
+[OK-LEXMARK] PV21_Custos - 10.21.0.35 - 29505 bytes 
+[BROTHER-SEMAUTH] PV20_Servir - 10.20.0.36 tam=1969 invalido=0 
+[OK-BROTHER] PV20_Servir - 10.20.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV20_Nota Fiscal - 10.20.0.34 tam=1861 invalido=0 
+[OK-BROTHER] PV20_Nota Fiscal - 10.20.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV20_Caixa Geral - 10.20.0.35 tam=1847 invalido=0 
+[OK-BROTHER] PV20_Caixa Geral - 10.20.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV20_Atendimento - 10.20.0.37 tam=1965 invalido=0 
+[OK-BROTHER] PV20_Atendimento - 10.20.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[SKIP] Pv19_Recebimentos de Notas - 10.19.0.43 - SCANNER_NAO_CONFIGURADO 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.19.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat2_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.19.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat2_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.19.0.35/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV19_Fat2_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.19.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat2_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.19.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat2_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat2_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV19_Fat2 - 10.19.0.35 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2558 bytes - CONSISTENTE 
+[OVR] 10.19.0.34 RICOH_CRED=custom 
+[OVR] 10.19.0.34 RICOH_PROTO=custom 
+[OVR] 10.19.0.34 RICOH_ENDPOINTS=custom 
+[OVR] 10.19.0.34 RICOH_LOCALES=custom 
+[OVR] 10.19.0.34 RICOH_USAR_FIXO=custom 
+[OVR] 10.19.0.34 RICOH_FILENAME=custom 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.19.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.19.0.34/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.19.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.19.0.34/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-SESSAO-PREP] FALHA locale=en usuario=admin 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[FALHA-RICOH] PV19_Fat1 - 10.19.0.34 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] PV19_Fat1 - 10.19.0.34 
+[SKIP] PV19_Descarga - 10.19.0.37 - SEM_SCANNER 
+[SKIP] PV19_Deposito2 - 10.19.0.42 - SCANNER_NAO_CONFIGURADO 
+[SKIP] PV19_Carga - 10.19.0.36 - SEM_SCANNER 
+[SKIP] PV18_ Geral2 - 10.18.0.34 - SEM_SCANNER 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.18.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV18__Geral1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.18.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV18__Geral1_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV18__Geral1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.18.0.35/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV18__Geral1_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.18.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV18__Geral1_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.18.0.35/web/entry/pt/address/adrsFileDownload.cgi/PV18__Geral1_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV18__Geral1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV18__Geral1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV18__Geral1_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV18_ Geral1 - 10.18.0.35 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2430 bytes - CONSISTENTE 
+[OFFLINE] Pv17_DRH - 10.17.0.36 
+[OK-LEXMARK] Pv17_CPD - 10.17.0.35 - 39187 bytes 
+[OK-LEXMARK] Pv17_Caixa Geral - 10.17.0.37 - 34353 bytes 
+[OK-LEXMARK] Pv17_Atendimento - 10.17.0.34 - 34353 bytes 
+[OFFLINE] PV16_Escrit??rio - 10.16.0.36 
+[OFFLINE] PV16_DRH - 10.16.0.34 
+[OFFLINE] PV16_Caixa PDV - 10.16.0.35 
+[BROTHER-SEMAUTH] PV15_CPD - 10.15.0.34 tam=1867 invalido=0 
+[OK-BROTHER] PV15_CPD - 10.15.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV15_Caixa Geral - 10.15.0.36 tam=1671 invalido=0 
+[OK-BROTHER] PV15_Caixa Geral - 10.15.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] PV15_Atendimento - 10.15.0.35 
+[BROTHER-SEMAUTH] PV14_Custos - 10.14.0.38 tam=1959 invalido=0 
+[OK-BROTHER] PV14_Custos - 10.14.0.38 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV14_CPD - 10.14.0.36 tam=1916 invalido=0 
+[OK-BROTHER] PV14_CPD - 10.14.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] PV14_Caixa Geral - 10.14.0.37 
+[BROTHER-SEMAUTH] PV14_Atendimento - 10.14.0.34 tam=1975 invalido=0 
+[OK-BROTHER] PV14_Atendimento - 10.14.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV13_Nota Fiscal - 10.13.0.34 tam=1862 invalido=0 
+[OK-BROTHER] PV13_Nota Fiscal - 10.13.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV13_Custos - 10.13.0.35 tam=2071 invalido=0 
+[OK-BROTHER] PV13_Custos - 10.13.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV12_Preforma 2 - 10.12.0.40 tam=2091 invalido=0 
+[OK-BROTHER] PV12_Preforma 2 - 10.12.0.40 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] PV12_Preforma - 10.12.0.35 
+[BROTHER-SEMAUTH] PV12_Laboratorio - 10.12.0.34 tam=1856 invalido=0 
+[OK-BROTHER] PV12_Laboratorio - 10.12.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[OK-LEXMARK] PV11_Telefonista - 10.11.0.35 - 39234 bytes 
+[OK-LEXMARK] PV11_Servir - 10.11.0.39 - 39234 bytes 
+[OK-LEXMARK] PV11_Ecommerce - 10.11.0.43 - 39234 bytes 
+[OK-LEXMARK] PV11_DRH - 10.11.0.36 - 39234 bytes 
+[OK-LEXMARK] PV11_CPD - 10.11.0.41 - 39234 bytes 
+[OK-LEXMARK] PV11_Conferencia - 10.11.0.34 - 39234 bytes 
+[OK-LEXMARK] PV11_Caixa Geral - 10.11.0.42 - 34365 bytes 
+[OK-LEXMARK] PV11_Atendimento - 10.11.0.38 - 39226 bytes 
+[OK-LEXMARK] PV10_Servir - 10.10.0.38 - 59018 bytes 
+[OK-LEXMARK] PV10_Ecommerce - 10.10.0.41 - 59027 bytes 
+[OK-LEXMARK] PV10_DRH - 10.10.0.39 - 59027 bytes 
+[OK-LEXMARK] PV10_Custos - 10.10.0.37 - 59027 bytes 
+[OK-LEXMARK] PV10_Caixa Geral - 10.10.0.35 - 19833 bytes 
+[OK-LEXMARK] PV10_Atendimento - 10.10.0.36 - 59027 bytes 
+[OK-LEXMARK] PV10_Administra????o - 10.10.0.42 - 59027 bytes 
+[BROTHER-SEMAUTH] PV09_DRH - 10.9.0.35 tam=1871 invalido=0 
+[OK-BROTHER] PV09_DRH - 10.9.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV09_Credi??rio - 10.9.0.34 tam=2126 invalido=0 
+[OK-BROTHER] PV09_Credi??rio - 10.9.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV09_Caixa Geral - 10.9.0.36 tam=1870 invalido=0 
+[OK-BROTHER] PV09_Caixa Geral - 10.9.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] PV08_Servir - 10.8.0.36 
+[OK-LEXMARK] PV08_Nota Fiscal - 10.8.0.38 - 41818 bytes 
+[OK-LEXMARK] PV08_DRH - 10.8.0.37 - 44082 bytes 
+[SKIP] PV08_Compras - 10.8.0.35 - SCANNER_NAO_CONFIGURADO 
+[OK-LEXMARK] PV08_Caixa Geral - 10.8.0.40 - 19815 bytes 
+[OK-LEXMARK] PV08_Atendimento - 10.8.0.34 - 44082 bytes 
+[OFFLINE] PV07_Servir - 10.7.0.37 
+[OK-LEXMARK] PV07_Nota Fiscal - 10.7.0.40 - 34342 bytes 
+[OK-LEXMARK] PV07_DRH - 10.7.0.39 - 34342 bytes 
+[OK-LEXMARK] PV07_CPD - 10.7.0.34 - 34342 bytes 
+[OK-LEXMARK] PV07_Caixa Geral - 10.7.0.41 - 34342 bytes 
+[OK-LEXMARK] PV07_Atendimento - 10.7.0.35 - 34342 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.12.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV06_Administra____o_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.12.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV06_Administra____o_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV06_Administra____o_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.12.0.41/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV06_Administra____o_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.12.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV06_Administra____o_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.12.0.41/web/entry/pt/address/adrsFileDownload.cgi/PV06_Administra____o_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV06_Administra____o_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV06_Administra____o_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV06_Administra____o_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV06_Administra????o - 10.12.0.41 - admin - SESSAO - SESSAO locale=pt (nome B64) - 1855 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] PV05_Servir - 10.5.0.37 tam=1857 invalido=0 
+[OK-BROTHER] PV05_Servir - 10.5.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV05_Nota Fiscal - 10.5.0.38 tam=1856 invalido=0 
+[OK-BROTHER] PV05_Nota Fiscal - 10.5.0.38 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV05_CPD - 10.5.0.34 tam=1856 invalido=0 
+[OK-BROTHER] PV05_CPD - 10.5.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV05_Caixa Geral - 10.5.0.35 tam=1703 invalido=0 
+[OK-BROTHER] PV05_Caixa Geral - 10.5.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV05_Atendimento - 10.5.0.36 tam=1846 invalido=0 
+[OK-BROTHER] PV05_Atendimento - 10.5.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OK-LEXMARK] PV04_Telemarketing - 10.4.0.38 - 34337 bytes 
+[OFFLINE] PV04_Servir - 10.4.0.37 
+[OK-LEXMARK] PV04_DRH - 10.4.0.35 - 34337 bytes 
+[OK-LEXMARK] PV04_Custos - 10.4.0.39 - 34337 bytes 
+[SKIP] PV04_CPD - 10.4.0.34 - SCANNER_NAO_CONFIGURADO 
+[SKIP] PV04_Caixa Geral - 10.4.0.41 - SCANNER_NAO_CONFIGURADO 
+[OK-LEXMARK] PV04_Atendimento - 10.4.0.36 - 34337 bytes 
+[OK-LEXMARK] PV03_Servir - 10.3.0.34 - 24632 bytes 
+[OK-LEXMARK] PV03_DRH - 10.3.0.35 - 24649 bytes 
+[OVR] 10.3.0.36 LEXMARK_URL=custom 
+[OK-LEXMARK] PV03_CPD - 10.3.0.36 - 17909 bytes 
+[BROTHER-SEMAUTH] PV02_Servir - 10.2.0.36 tam=1769 invalido=0 
+[OK-BROTHER] PV02_Servir - 10.2.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] PV02_Nota Fiscal - 10.2.0.37 
+[BROTHER-SEMAUTH] PV02_Expedicao - 10.2.0.39 tam=1865 invalido=0 
+[OK-BROTHER] PV02_Expedicao - 10.2.0.39 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV02_Drh - 10.2.0.40 tam=1868 invalido=0 
+[OK-BROTHER] PV02_Drh - 10.2.0.40 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV02_CPD - 10.2.0.34 tam=1856 invalido=0 
+[OK-BROTHER] PV02_CPD - 10.2.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV02_Caixa Geral - 10.2.0.35 tam=1788 invalido=0 
+[OK-BROTHER] PV02_Caixa Geral - 10.2.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV01_CPD - 10.1.0.34 tam=1869 invalido=0 
+[OK-BROTHER] PV01_CPD - 10.1.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV01_Caixa Geral - 10.1.0.36 tam=1949 invalido=0 
+[OK-BROTHER] PV01_Caixa Geral - 10.1.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV01_Atendimento - 10.1.0.35 tam=1977 invalido=0 
+[OK-BROTHER] PV01_Atendimento - 10.1.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PV14_DRH - 10.14.0.35 tam=1963 invalido=0 
+[OK-BROTHER] PV14_DRH - 10.14.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PneusMil_P??tio - 10.247.0.35 tam=1850 invalido=0 
+[OK-BROTHER] PneusMil_P??tio - 10.247.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PneusMil_Caixa Geral - 10.247.0.36 tam=2099 invalido=0 
+[OK-BROTHER] PneusMil_Caixa Geral - 10.247.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] PneusMil_Caixa - 10.247.0.34 tam=1856 invalido=0 
+[OK-BROTHER] PneusMil_Caixa - 10.247.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[OK-LEXMARK] PDR_Transporte_2 - 10.239.0.34 - 5258 bytes 
+[OFFLINE] PDR_Transporte1 - 10.239.0.36 
+[OK-LEXMARK] PDR_Suprimentos1 - 10.239.0.43 - 5257 bytes 
+[SKIP] PDR_Pavimil - 10.239.0.35 - SEM_SCANNER 
+[OK-LEXMARK] PDR_Padua_transporte - 10.250.0.37 - 5244 bytes 
+[OK-LEXMARK] PDR_Padua_RH - 10.250.0.36 - 10073 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.57/web/entry/pt/address/adrsFileDownload.cgi/PDR_Ilha_02_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.57/web/entry/pt/address/adrsFileDownload.cgi/PDR_Ilha_02_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PDR_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.239.0.57/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PDR_Ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.57/web/entry/pt/address/adrsFileDownload.cgi/PDR_Ilha_02_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.239.0.57/web/entry/pt/address/adrsFileDownload.cgi/PDR_Ilha_02_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PDR_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PDR_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PDR_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PDR_Ilha_02 - 10.239.0.57 - admin - SESSAO - SESSAO locale=pt (nome B64) - 3455 bytes - CONSISTENTE 
+[OVR] 10.239.0.42 RICOH_CRED=custom 
+[OFFLINE] PDR_Ilha_01 - 10.239.0.42 
+[SKIP] PDR_Fat_02 - 10.239.0.50 - SEM_SCANNER 
+[OVR] 10.239.0.39 MODELO=RICOH 
+[OVR] 10.239.0.39 BROTHER_CRED=custom 
+[OVR] 10.239.0.39 LEXMARK_CRED=custom 
+[OVR] 10.239.0.39 RICOH_CRED=custom 
+[OVR] 10.239.0.39 RICOH_PROTO=custom 
+[OVR] 10.239.0.39 RICOH_ENDPOINTS=custom 
+[OVR] 10.239.0.39 RICOH_LOCALES=custom 
+[OVR] 10.239.0.39 RICOH_USAR_FIXO=custom 
+[OVR] 10.239.0.39 RICOH_FILENAME=custom 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-RETORNO-DIRETO] admin rc=1 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.239.0.39/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.239.0.39/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.239.0.39/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+curl: (22) The requested URL returned error: 403
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-INICIO] COOKIE  
+[RICOH-CURL-FIM] rc=2 
+[RICOH-CURL-ERRO-INICIO]  
+curl: option -c: blank argument where content is expected
+curl: try 'curl --help' for more information
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+curl: (22) The requested URL returned error: 403
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-INICIO] COOKIE  
+[RICOH-CURL-FIM] rc=2 
+[RICOH-CURL-ERRO-INICIO]  
+curl: option -c: blank argument where content is expected
+curl: try 'curl --help' for more information
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.239.0.39/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/PDR_Fat_01_addr.udf 
+curl: (22) The requested URL returned error: 403
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-INICIO] COOKIE  
+[RICOH-CURL-FIM] rc=2 
+[RICOH-CURL-ERRO-INICIO]  
+curl: option -c: blank argument where content is expected
+curl: try 'curl --help' for more information
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/PDR_Fat_01_addr.udf 
+curl: (22) The requested URL returned error: 403
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.239.0.39/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-INICIO] COOKIE  
+[RICOH-CURL-FIM] rc=2 
+[RICOH-CURL-ERRO-INICIO]  
+curl: option -c: blank argument where content is expected
+curl: try 'curl --help' for more information
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[FALHA-RICOH] PDR_Fat_01 - 10.239.0.39 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] PDR_Fat_01 - 10.239.0.39 
+[SKIP] PDR_Faturamento - 10.239.0.40 - SEM_SCANNER 
+[OK-LEXMARK] PDR_Caixa - 10.239.0.38 - 5239 bytes 
+[SKIP] PDR_Almoxarifado - 10.239.0.37 - SEM_SCANNER 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.37.0.36/web/entry/pt/address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.37.0.36/web/entry/pt/address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Caixa_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.37.0.36/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.37.0.36/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.37.0.36/web/entry/en/address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.37.0.36/web/entry/en/address/adrsFileDownload.cgi/PV37_Caixa_Geral_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Caixa_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Caixa_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV37_Caixa_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] PV37_Caixa Geral - 10.37.0.36 - admin - SESSAO - SESSAO locale=en (nome B64) - 1854 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] PV02_Atendimento - 10.2.0.38 tam=1849 invalido=0 
+[OK-BROTHER] PV02_Atendimento - 10.2.0.38 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] Maximil_Vendas - 10.249.0.36 tam=1688 invalido=0 
+[OK-BROTHER] Maximil_Vendas - 10.249.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] Maximil_Faturamento - 10.249.0.37 tam=1955 invalido=0 
+[OK-BROTHER] Maximil_Faturamento - 10.249.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] Maximil_Comercial - 10.249.0.35 tam=1687 invalido=0 
+[OK-BROTHER] Maximil_Comercial - 10.249.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[OK-LEXMARK] PV29_Atendimento - 10.29.0.35 - 29506 bytes 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.248.0.36/web/entry/pt/address/adrsFileDownload.cgi/Manuten____o_Gerencia_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.248.0.36/web/entry/pt/address/adrsFileDownload.cgi/Manuten____o_Gerencia_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Manuten____o_Gerencia_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.248.0.36/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Manuten____o_Gerencia_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.248.0.36/web/entry/pt/address/adrsFileDownload.cgi/Manuten____o_Gerencia_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.248.0.36/web/entry/pt/address/adrsFileDownload.cgi/Manuten____o_Gerencia_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Manuten____o_Gerencia_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Manuten____o_Gerencia_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Manuten____o_Gerencia_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Manuten????o_Gerencia - 10.248.0.36 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2175 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] Manuten????o_Escrit??rio 2 - 10.248.0.34 tam=1962 invalido=0 
+[OK-BROTHER] Manuten????o_Escrit??rio 2 - 10.248.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] Manuten????o_Escrit??rio 1 - 10.248.0.35 tam=1954 invalido=0 
+[OK-BROTHER] Manuten????o_Escrit??rio 1 - 10.248.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[SKIP] JUI - TESTE - 10.2.0.43 - SCANNER_NAO_CONFIGURADO 
+[OK-LEXMARK] FL01_Servir - 10.6.0.36 - 24641 bytes 
+[OK-LEXMARK] FL01_CPD - 10.6.0.34 - 24641 bytes 
+[OK-LEXMARK] FL01_Caixa Geral - 10.6.0.35 - 23508 bytes 
+[BROTHER-SEMAUTH] Maximil_Financeiro - 10.249.0.34 tam=1971 invalido=0 
+[OK-BROTHER] Maximil_Financeiro - 10.249.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.244.0.34/web/entry/pt/address/adrsFileDownload.cgi/Ctr_Projetos_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.244.0.34/web/entry/pt/address/adrsFileDownload.cgi/Ctr_Projetos_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Ctr_Projetos_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.244.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Ctr_Projetos_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://10.244.0.34/web/entry/pt/address/adrsFileDownload.cgi/Ctr_Projetos_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://10.244.0.34/web/entry/pt/address/adrsFileDownload.cgi/Ctr_Projetos_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Ctr_Projetos_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Ctr_Projetos_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Ctr_Projetos_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Ctr_Projetos - 10.244.0.34 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2223 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] Ctr_Geral2 - 10.244.0.36 tam=1845 invalido=0 
+[OK-BROTHER] Ctr_Geral2 - 10.244.0.36 - Credencial: sem-auth - Tipo: MNTCSV 
+[OVR] 10.244.0.35 BROTHER_CRED=custom 
+[BROTHER-SEMAUTH] Ctr_Geral1 - 10.244.0.35 tam=1864 invalido=0 
+[OK-BROTHER] Ctr_Geral1 - 10.244.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] Carragena_Administra????o - 10.241.0.54 
+[OFFLINE] Arrozeira_Administra????o - 10.241.0.56 
+[BROTHER-SEMAUTH] Acosmil_Produ????o - 10.238.0.37 tam=1868 invalido=0 
+[OK-BROTHER] Acosmil_Produ????o - 10.238.0.37 - Credencial: sem-auth - Tipo: MNTCSV 
+[BROTHER-SEMAUTH] Acosmil_Gerencia - 10.238.0.35 tam=1865 invalido=0 
+[OK-BROTHER] Acosmil_Gerencia - 10.238.0.35 - Credencial: sem-auth - Tipo: MNTCSV 
+[OFFLINE] AcosMil_Financeiro - 10.238.0.36 
+[BROTHER-SEMAUTH] Acosmil_Comercial - 10.238.0.34 tam=1855 invalido=0 
+[OK-BROTHER] Acosmil_Comercial - 10.238.0.34 - Credencial: sem-auth - Tipo: MNTCSV 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.217/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Servicos_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.217/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Servicos_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Servicos_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.217/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Servicos_Ilha_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.217/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Servicos_Ilha_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.217/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Servicos_Ilha_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Servicos_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Servicos_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Servicos_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Servicos_Ilha - 172.16.0.217 - admin - SESSAO - SESSAO locale=pt (nome B64) - 3056 bytes - CONSISTENTE 
+[FALHA-LEXMARK] Mtz_Seguranca - 172.16.0.109 
+[FALHA-GERAL] Mtz_Seguranca - 172.16.0.109 
+[BROTHER-SEMAUTH] Mtz_M??dico - 172.16.0.226 arquivo=ausente 
+[FALHA-BROTHER] Mtz_M??dico - 172.16.0.226 
+[FALHA-LEXMARK] Mtz_M??dico - 172.16.0.226 
+[FALHA-GERAL] Mtz_M??dico - 172.16.0.226 
+[OFFLINE] Mtz_Fundacao - 172.16.0.120 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.218/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.218/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.218/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-SESSAO-PREP] FALHA locale=pt usuario=admin 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.218/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.218/web/entry/en/address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.218/web/entry/en/address/adrsFileDownload.cgi/Mtz_Financeiro_Ilha_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Financeiro_Ilha - 172.16.0.218 - admin - SESSAO - SESSAO locale=en (nome B64) - 6896 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.219/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_CX_Geral_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.219/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_CX_Geral_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_CX_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.219/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Financeiro_CX_Geral_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.219/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_CX_Geral_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.219/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Financeiro_CX_Geral_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_CX_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_CX_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Financeiro_CX_Geral_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Financeiro_CX_Geral - 172.16.0.219 - admin - SESSAO - SESSAO locale=pt (nome B64) - 3056 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.248/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_JD_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.248/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_JD_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_JD_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.248/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Drh_JD_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.248/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_JD_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.248/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_JD_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_JD_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_JD_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_JD_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Drh_JD - 172.16.0.248 - admin - SESSAO - SESSAO locale=pt (nome B64) - 1664 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.205/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.205/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.205/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Drh_Ilha_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.205/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Ilha_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.205/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Ilha_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Ilha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Drh_Ilha - 172.16.0.205 - admin - SESSAO - SESSAO locale=pt (nome B64) - 8032 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.147/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Folha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.147/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Folha_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Folha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.147/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Drh_Folha_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.147/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Folha_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.147/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Drh_Folha_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Folha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Folha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Drh_Folha_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Drh_Folha - 172.16.0.147 - admin - SESSAO - SESSAO locale=pt (nome B64) - 2064 bytes - CONSISTENTE 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.136/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.136/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Deposito_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.136/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.136/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.136/web/entry/en/address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.136/web/entry/en/address/adrsFileDownload.cgi/Mtz_Deposito_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Deposito_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Deposito_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Deposito_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Deposito - 172.16.0.136 - admin - SESSAO - SESSAO locale=en (nome B64) - 2001 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] Mtz_Contabilidade_Lucia - 172.16.0.126 arquivo=ausente 
+[FALHA-BROTHER] Mtz_Contabilidade_Lucia - 172.16.0.126 
+[FALHA-LEXMARK] Mtz_Contabilidade_Lucia - 172.16.0.126 
+[FALHA-GERAL] Mtz_Contabilidade_Lucia - 172.16.0.126 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.132/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_ilha_02_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.132/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_ilha_02_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.132/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.132/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_ilha_02_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.132/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_ilha_02_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Contabilidade_ilha_02 - 172.16.0.132 - admin - SESSAO - SESSAO locale=pt (nome B64) - 6672 bytes - CONSISTENTE 
+[BROTHER-SEMAUTH] Mtz_Contabilidade_Ilha - 172.16.0.211 arquivo=ausente 
+[FALHA-BROTHER] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[FALHA-LEXMARK] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[FALHA-GERAL] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.198/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.198/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.198/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.198/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.198/web/entry/en/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.198/web/entry/en/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-26.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Comercial_Ilha_02 - 172.16.0.198 - admin - SESSAO - SESSAO locale=en (nome B64) - 8225 bytes - CONSISTENTE 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 202 
+LEXMARK: 75 - BROTHER: 66 - RICOH: 19 
+OFFLINE: 21 - FALHAS: 7 
+SKIP_SEM_SCANNER: 7 
+SKIP_SCANNER_NAO_CONFIG: 7 
+SKIP: 14 
+============================================================ 
