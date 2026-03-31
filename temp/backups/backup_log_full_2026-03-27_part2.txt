@@ -1,0 +1,52 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-27 09-18-23 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[BROTHER-SEMAUTH] Mtz_Contabilidade_Ilha - 172.16.0.211 arquivo=ausente 
+[FALHA-BROTHER] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[FALHA-LEXMARK] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[FALHA-GERAL] Mtz_Contabilidade_Ilha - 172.16.0.211 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.198/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.198/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.198/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.198/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=B64 usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.198/web/entry/en/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.198/web/entry/en/address/adrsFileDownload.cgi/Mtz_Comercial_Ilha_02_addr.udf 
+[RICOH-CURL-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-RETORNO-SESSAO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Comercial_Ilha_02_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=0 
+[OK-RICOH] Mtz_Comercial_Ilha_02 - 172.16.0.198 - admin - SESSAO - SESSAO locale=en (nome B64) - 8225 bytes - CONSISTENTE 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 2 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 1 
+OFFLINE: 0 - FALHAS: 1 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

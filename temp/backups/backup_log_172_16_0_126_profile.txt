@@ -1,0 +1,31 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-27 08-49-45 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 172.16.0.126 MODELO=RICOH 
+[OVR] 172.16.0.126 RICOH_PROFILE=custom 
+[OVR] 172.16.0.126 RICOH_PROFILE_POST=custom 
+[OVR] 172.16.0.126 RICOH_PROFILE_GET=custom 
+[OVR] 172.16.0.126 RICOH_PROFILE_NORMAL=custom 
+[OVR] 172.16.0.126 RICOH_PROFILE_BKUPSELECT=custom 
+[RICOH-PROFILE-POST] http://172.16.0.126/form/htm_ProfileBackup 
+[RICOH-PROFILE-POST] rc=0 
+[RICOH-PROFILE-GET] http://172.16.0.126/form/Profile.bin 
+[RICOH-PROFILE-GET] rc=0 
+[RICOH-RETORNO-PROFILE] admin rc=0 
+[OK-RICOH] Mtz_Contabilidade_Lucia - 172.16.0.126 - admin - PROFILE - form/Profile.bin - 68288 bytes - CONSISTENTE 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 1 
+OFFLINE: 0 - FALHAS: 0 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

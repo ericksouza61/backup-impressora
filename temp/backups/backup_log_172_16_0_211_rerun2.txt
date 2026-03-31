@@ -1,0 +1,44 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-27 13-54-21 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_Ilha_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.211/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.211/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[RICOH-TENTATIVA-DIRETA] copymaq@http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC copymaq http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH copymaq http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-RETORNO-DIRETO] copymaq rc=1 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://172.16.0.211/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-TENTATIVA-SESSAO] copymaq@http://172.16.0.211/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-RETORNO-SESSAO] copymaq rc=1 
+[FALHA-RICOH] Mtz_Contabilidade_Ilha - 172.16.0.211 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] Mtz_Contabilidade_Ilha - 172.16.0.211 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 1 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

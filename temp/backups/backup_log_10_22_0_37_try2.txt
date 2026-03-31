@@ -1,0 +1,22 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-30 09-17-20 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 10.22.0.37 MODELO=LEXMARK 
+[OVR] 10.22.0.37 LEXMARK_URL=custom 
+[OK-LEXMARK] PV22_CPD - 10.22.0.37 - 24670 bytes 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 1 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 0 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

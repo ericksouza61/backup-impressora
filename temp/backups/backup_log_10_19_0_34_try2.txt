@@ -1,0 +1,113 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-30 09-22-46 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 10.19.0.34 MODELO=RICOH 
+[OVR] 10.19.0.34 RICOH_CRED=custom 
+[OVR] 10.19.0.34 RICOH_PROTO=custom 
+[OVR] 10.19.0.34 RICOH_ENDPOINTS=custom 
+[OVR] 10.19.0.34 RICOH_LOCALES=custom 
+[OVR] 10.19.0.34 RICOH_USAR_FIXO=custom 
+[OVR] 10.19.0.34 RICOH_FILENAME=custom 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/pt/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/PV19_Fat1_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin https://10.19.0.34/web/entry/en/address/adrsDownloadFile.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-CURL-FIM] rc=28 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] fixo rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://10.19.0.34/web/entry/pt/address/adrsFileDownload.cgi/PV19_Fat1_addr.udf 
+[RICOH-HTTP-FIM] rc=0 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\PV19_Fat1_backup_2026-03-30.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.19.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@https://10.19.0.34/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.19.0.34/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] modo=B64 usuario=admin rc=28 
+[RICOH-SESSAO-LOGIN] FALHA usuario=admin locale=pt 
+[RICOH-TENTATIVA-SESSAO] admin@http://10.19.0.34/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/RICOH%20Aficio%20SP%205200S_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-SESSAO-PREP] FALHA locale=en usuario=admin 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[FALHA-RICOH] PV19_Fat1 - 10.19.0.34 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] PV19_Fat1 - 10.19.0.34 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 1 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 

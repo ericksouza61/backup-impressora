@@ -1,0 +1,18 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-27 10-08-01 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.211/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=1 tamanho=655 
+[RICOH-DIRETO-RC] nome rc=0 
+[RICOH-RETORNO-DIRETO] admin rc=0 
+[RICOH-VALIDA-INICIO] C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Contabilidade_Ilha_backup_2026-03-27.udf 
+[RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.211/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.211/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Contabilidade_Ilha_addr.udf 

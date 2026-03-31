@@ -4,6 +4,7 @@ if "%TMP%"==""  set "TMP=C:\Windows\Temp"
 setlocal EnableDelayedExpansion
 
 cd /d "%~dp0"
+title Backup Impressoras - Desenvolvido por Erick Souza
 
 set "TEMP_LOCAL=%~dp0temp"
 if not exist "%TEMP_LOCAL%" mkdir "%TEMP_LOCAL%"
@@ -65,6 +66,12 @@ set "RICOH_PROTOCOLOS=http"
 set "RICOH_ENDPOINTS=web/entry/pt/address/adrsFileDownload.cgi"
 set "RICOH_LOCALES=pt en"
 set "RICOH_FILENAME_FIXO=RICOH Aficio SP 5200S_addr.udf"
+set "RICOH_PROFILE_POST=form/htm_ProfileBackup"
+set "RICOH_PROFILE_GET=form/Profile.bin"
+set "RICOH_PROFILE_NORMAL=1"
+set "RICOH_PROFILE_BKUPSELECT=1"
+set "RICOH_PROFILE_MIN_SIZE=200"
+set "RICOH_SESSAO_SEM_PREP=0"
 set "RICOH_MODO_RAPIDO=1"
 set "RICOH_MAX_CRED=2"
 set "RICOH_USAR_DIRETO=1"
@@ -72,6 +79,15 @@ set "RICOH_USAR_SESSAO=1"
 set "RICOH_USAR_URL_EFETIVA=1"
 set "RICOH_USAR_FIXO=0"
 set "RICOH_DIAGNOSTICO=1"
+set "RICOH_ENTRY_WARMUP=0"
+set "RICOH_ENTRY_MAIN=web/entry/pt/websys/webArch/mainFrame.cgi"
+set "RICOH_ENTRY_REF=web/entry/pt/address/adrsDownloadFile.cgi"
+set "RICOH_COOKIE_UA="
+set "RICOH_COOKIE_ACCEPT="
+set "RICOH_COOKIE_LANG="
+set "RICOH_LOGIN_OPEN=0"
+set "RICOH_ENTRY_LOGIN=0"
+set "RICOH_LOGIN_B64FIELDS=0"
 
 :: =========================================
 :: EXCECOES POR IP (APENAS PARA IPs COM FALHA)
@@ -94,8 +110,11 @@ set "OVR_MODELO_10_29_0_37=LEXMARK"
 set "OVR_MODELO_10_22_0_37=LEXMARK"
 set "OVR_MODELO_10_19_0_34=RICOH"
 set "OVR_MODELO_172_16_0_226=RICOH"
+set "OVR_MODELO_172_16_0_126=RICOH"
 set "OVR_MODELO_10_3_0_34="
 set "OVR_MODELO_10_239_0_39=RICOH"
+set "OVR_MODELO_10_239_0_42=OFFLINE"
+set "OVR_MODELO_10_10_0_36=LEXMARK"
 
 :: BROTHER (falhas)
 set "OVR_BROTHER_CRED_10_2_0_40="
@@ -128,7 +147,9 @@ set "OVR_LEXMARK_URL_10_8_0_35="
 set "OVR_LEXMARK_CRED_10_8_0_35="
 set "OVR_LEXMARK_URL_10_19_0_42="
 set "OVR_LEXMARK_CRED_10_19_0_42="
-set "OVR_LEXMARK_URL_10_22_0_37=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_URL_10_10_0_36=cgi-bin/direct/printer/prtappauth/apps/ImportExportServlet?exportButton=clicked"
+set "OVR_LEXMARK_CRED_10_10_0_36="
+set "OVR_LEXMARK_URL_10_22_0_37=cgi-bin/direct/printer/prtappauth/apps/ImportExportServlet?exportButton=clicked"
 set "OVR_LEXMARK_CRED_10_22_0_37="
 set "OVR_LEXMARK_URL_10_22_0_35=cgi-bin/direct/printer/prtapp/apps/ImportExportServlet?exportButton=clicked"
 set "OVR_LEXMARK_CRED_10_22_0_35="
@@ -158,6 +179,22 @@ set "OVR_RICOH_CRED_10_19_0_34=admin:"
 set "OVR_RICOH_CRED_10_19_0_43="
 set "OVR_RICOH_CRED_172_16_0_226=admin:"
 set "OVR_RICOH_CRED_10_239_0_39=admin:"
+set "OVR_RICOH_ENTRY_WARMUP_10_239_0_39=1"
+set "OVR_RICOH_ENTRY_LOGIN_10_239_0_39=1"
+set "OVR_RICOH_LOGIN_OPEN_10_239_0_39=0"
+set "OVR_RICOH_LOGIN_B64FIELDS_10_239_0_39=1"
+set "OVR_RICOH_ENTRY_WARMUP_10_239_0_36=1"
+set "OVR_RICOH_ENTRY_LOGIN_10_239_0_36=1"
+set "OVR_RICOH_LOGIN_OPEN_10_239_0_36=1"
+set "OVR_RICOH_LOGIN_B64FIELDS_10_239_0_36=1"
+set "OVR_RICOH_ENTRY_WARMUP_10_239_0_42=1"
+set "OVR_RICOH_ENTRY_LOGIN_10_239_0_42=1"
+set "OVR_RICOH_LOGIN_OPEN_10_239_0_42=1"
+set "OVR_RICOH_LOGIN_B64FIELDS_10_239_0_42=1"
+set "OVR_RICOH_ENTRY_WARMUP_172_16_0_248=1"
+set "OVR_RICOH_ENTRY_LOGIN_172_16_0_248=1"
+set "OVR_RICOH_LOGIN_OPEN_172_16_0_248=1"
+set "OVR_RICOH_LOGIN_B64FIELDS_172_16_0_248=1"
 set "OVR_RICOH_PROTO_10_19_0_34=https http"
 set "OVR_RICOH_ENDPOINTS_10_19_0_34=web/entry/pt/address/adrsFileDownload.cgi web/entry/pt/address/adrsDownloadFile.cgi web/entry/en/address/adrsFileDownload.cgi web/entry/en/address/adrsDownloadFile.cgi"
 set "OVR_RICOH_LOCALES_10_19_0_34=pt en"
@@ -168,6 +205,26 @@ set "OVR_RICOH_USAR_FIXO_10_19_0_34=1"
 set "OVR_RICOH_FILENAME_10_19_0_34=RICOH Aficio SP 5200S_addr.udf"
 set "OVR_RICOH_USAR_FIXO_10_239_0_39=1"
 set "OVR_RICOH_FILENAME_10_239_0_39=RICOH Aficio SP 5200S_addr.udf"
+set "OVR_RICOH_PROFILE_172_16_0_226=1"
+set "OVR_RICOH_PROFILE_POST_172_16_0_226=form/htm_ProfileBackup"
+set "OVR_RICOH_PROFILE_GET_172_16_0_226=form/Profile.bin"
+set "OVR_RICOH_PROFILE_NORMAL_172_16_0_226=1"
+set "OVR_RICOH_PROFILE_BKUPSELECT_172_16_0_226=1"
+set "OVR_RICOH_PROFILE_172_16_0_126=1"
+set "OVR_RICOH_PROFILE_POST_172_16_0_126=form/htm_ProfileBackup"
+set "OVR_RICOH_PROFILE_GET_172_16_0_126=form/Profile.bin"
+set "OVR_RICOH_PROFILE_NORMAL_172_16_0_126=1"
+set "OVR_RICOH_PROFILE_BKUPSELECT_172_16_0_126=1"
+set "OVR_RICOH_SESSAO_SEM_PREP_10_19_0_34=0"
+set "OVR_RICOH_ENTRY_WARMUP_10_19_0_34=1"
+set "OVR_RICOH_ENTRY_MAIN_10_19_0_34=web/entry/pt/websys/webArch/mainFrame.cgi"
+set "OVR_RICOH_ENTRY_REF_10_19_0_34=web/entry/pt/address/adrsDownloadFile.cgi"
+set "OVR_RICOH_COOKIE_UA_10_19_0_34=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0"
+set "OVR_RICOH_COOKIE_ACCEPT_10_19_0_34=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+set "OVR_RICOH_COOKIE_LANG_10_19_0_34=pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"
+set "OVR_RICOH_LOGIN_OPEN_10_19_0_34=1"
+set "OVR_RICOH_ENTRY_LOGIN_10_19_0_34=1"
+set "OVR_RICOH_LOGIN_B64FIELDS_10_19_0_34=1"
 set "OVR_RICOH_PROTO_10_19_0_43="
 set "OVR_RICOH_ENDPOINTS_10_19_0_43="
 
@@ -187,6 +244,7 @@ set "OVR_SKIP_10_2_0_43=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_10_29_0_40=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_10_19_0_42=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_172_16_0_109=SCANNER_NAO_CONFIGURADO"
+set "OVR_SKIP_10_239_0_36=SEM_SCANNER"
 
 if not exist "%PASTA_BACKUP%" mkdir "%PASTA_BACKUP%"
 for %%D in ("%LOG_FILE%") do set "LOG_DIR=%%~dpD"
@@ -201,6 +259,7 @@ for /f "tokens=*" %%i in ('powershell -NoProfile -Command "Get-Date -Format HH-m
 
 echo ============================================================ > "%LOG_FILE%"
 echo BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH >> "%LOG_FILE%"
+echo Desenvolvido por Erick Souza >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
 echo Iniciado em: %DATA% %HORA% >> "%LOG_FILE%"
 echo Script: %~f0 >> "%LOG_FILE%"
@@ -211,6 +270,7 @@ echo. >> "%LOG_FILE%"
 echo.
 echo ============================================================
 echo   BACKUP AUTOMATIZADO - LEXMARK, BROTHER E RICOH
+echo   Desenvolvido por Erick Souza
 echo ============================================================
 echo.
 
@@ -262,6 +322,21 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
     set "OVR_RICOH_LOCALES="
     set "OVR_RICOH_USAR_FIXO="
     set "OVR_RICOH_FILENAME="
+    set "OVR_RICOH_PROFILE="
+    set "OVR_RICOH_PROFILE_POST="
+    set "OVR_RICOH_PROFILE_GET="
+    set "OVR_RICOH_PROFILE_NORMAL="
+    set "OVR_RICOH_PROFILE_BKUPSELECT="
+    set "OVR_RICOH_SESSAO_SEM_PREP="
+    set "OVR_RICOH_ENTRY_WARMUP="
+    set "OVR_RICOH_ENTRY_MAIN="
+    set "OVR_RICOH_ENTRY_REF="
+    set "OVR_RICOH_COOKIE_UA="
+    set "OVR_RICOH_COOKIE_ACCEPT="
+    set "OVR_RICOH_COOKIE_LANG="
+    set "OVR_RICOH_LOGIN_OPEN="
+    set "OVR_RICOH_ENTRY_LOGIN="
+    set "OVR_RICOH_LOGIN_B64FIELDS="
     set "OVR_SKIP="
 
     call set "OVR_MODELO=%%OVR_MODELO_!IP_KEY!%%"
@@ -274,6 +349,21 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
     call set "OVR_RICOH_LOCALES=%%OVR_RICOH_LOCALES_!IP_KEY!%%"
     call set "OVR_RICOH_USAR_FIXO=%%OVR_RICOH_USAR_FIXO_!IP_KEY!%%"
     call set "OVR_RICOH_FILENAME=%%OVR_RICOH_FILENAME_!IP_KEY!%%"
+    call set "OVR_RICOH_PROFILE=%%OVR_RICOH_PROFILE_!IP_KEY!%%"
+    call set "OVR_RICOH_PROFILE_POST=%%OVR_RICOH_PROFILE_POST_!IP_KEY!%%"
+    call set "OVR_RICOH_PROFILE_GET=%%OVR_RICOH_PROFILE_GET_!IP_KEY!%%"
+    call set "OVR_RICOH_PROFILE_NORMAL=%%OVR_RICOH_PROFILE_NORMAL_!IP_KEY!%%"
+    call set "OVR_RICOH_PROFILE_BKUPSELECT=%%OVR_RICOH_PROFILE_BKUPSELECT_!IP_KEY!%%"
+    call set "OVR_RICOH_SESSAO_SEM_PREP=%%OVR_RICOH_SESSAO_SEM_PREP_!IP_KEY!%%"
+    call set "OVR_RICOH_ENTRY_WARMUP=%%OVR_RICOH_ENTRY_WARMUP_!IP_KEY!%%"
+    call set "OVR_RICOH_ENTRY_MAIN=%%OVR_RICOH_ENTRY_MAIN_!IP_KEY!%%"
+    call set "OVR_RICOH_ENTRY_REF=%%OVR_RICOH_ENTRY_REF_!IP_KEY!%%"
+    call set "OVR_RICOH_COOKIE_UA=%%OVR_RICOH_COOKIE_UA_!IP_KEY!%%"
+    call set "OVR_RICOH_COOKIE_ACCEPT=%%OVR_RICOH_COOKIE_ACCEPT_!IP_KEY!%%"
+    call set "OVR_RICOH_COOKIE_LANG=%%OVR_RICOH_COOKIE_LANG_!IP_KEY!%%"
+    call set "OVR_RICOH_LOGIN_OPEN=%%OVR_RICOH_LOGIN_OPEN_!IP_KEY!%%"
+    call set "OVR_RICOH_ENTRY_LOGIN=%%OVR_RICOH_ENTRY_LOGIN_!IP_KEY!%%"
+    call set "OVR_RICOH_LOGIN_B64FIELDS=%%OVR_RICOH_LOGIN_B64FIELDS_!IP_KEY!%%"
     call set "OVR_SKIP=%%OVR_SKIP_!IP_KEY!%%"
 
     if defined OVR_SKIP (
@@ -305,6 +395,21 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
         if defined OVR_RICOH_LOCALES echo [OVR] !IP_IMPRESSORA! RICOH_LOCALES=custom >> "%LOG_FILE%"
         if defined OVR_RICOH_USAR_FIXO echo [OVR] !IP_IMPRESSORA! RICOH_USAR_FIXO=custom >> "%LOG_FILE%"
         if defined OVR_RICOH_FILENAME echo [OVR] !IP_IMPRESSORA! RICOH_FILENAME=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROFILE echo [OVR] !IP_IMPRESSORA! RICOH_PROFILE=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROFILE_POST echo [OVR] !IP_IMPRESSORA! RICOH_PROFILE_POST=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROFILE_GET echo [OVR] !IP_IMPRESSORA! RICOH_PROFILE_GET=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROFILE_NORMAL echo [OVR] !IP_IMPRESSORA! RICOH_PROFILE_NORMAL=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_PROFILE_BKUPSELECT echo [OVR] !IP_IMPRESSORA! RICOH_PROFILE_BKUPSELECT=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_SESSAO_SEM_PREP echo [OVR] !IP_IMPRESSORA! RICOH_SESSAO_SEM_PREP=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_ENTRY_WARMUP echo [OVR] !IP_IMPRESSORA! RICOH_ENTRY_WARMUP=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_ENTRY_MAIN echo [OVR] !IP_IMPRESSORA! RICOH_ENTRY_MAIN=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_ENTRY_REF echo [OVR] !IP_IMPRESSORA! RICOH_ENTRY_REF=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_COOKIE_UA echo [OVR] !IP_IMPRESSORA! RICOH_COOKIE_UA=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_COOKIE_ACCEPT echo [OVR] !IP_IMPRESSORA! RICOH_COOKIE_ACCEPT=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_COOKIE_LANG echo [OVR] !IP_IMPRESSORA! RICOH_COOKIE_LANG=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_LOGIN_OPEN echo [OVR] !IP_IMPRESSORA! RICOH_LOGIN_OPEN=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_ENTRY_LOGIN echo [OVR] !IP_IMPRESSORA! RICOH_ENTRY_LOGIN=custom >> "%LOG_FILE%"
+        if defined OVR_RICOH_LOGIN_B64FIELDS echo [OVR] !IP_IMPRESSORA! RICOH_LOGIN_B64FIELDS=custom >> "%LOG_FILE%"
 
     set "BACKUP_SUCESSO=0"
     set "ESTA_OFFLINE=0"
@@ -375,6 +480,7 @@ echo ============================================================
 echo.
 echo Arquivos salvos em: %PASTA_BACKUP%
 echo Log completo: %LOG_FILE%
+echo Desenvolvido por Erick Souza
 echo.
 
 echo. >> "%LOG_FILE%"
@@ -388,6 +494,7 @@ echo SKIP_SEM_SCANNER: %SKIP_SEM_SCANNER% >> "%LOG_FILE%"
 echo SKIP_SCANNER_NAO_CONFIG: %SKIP_SCANNER_NAO_CONFIG% >> "%LOG_FILE%"
 echo SKIP: %SKIP% >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
+echo Desenvolvido por Erick Souza >> "%LOG_FILE%"
 
 if exist "%ARQUIVO_PARSE%" del "%ARQUIVO_PARSE%" 2>nul
 
@@ -718,6 +825,36 @@ set "RICOH_USAR_FIXO_USO=%RICOH_USAR_FIXO%"
 if defined OVR_RICOH_USAR_FIXO set "RICOH_USAR_FIXO_USO=!OVR_RICOH_USAR_FIXO!"
 set "RICOH_FILENAME_FIXO_USO=%RICOH_FILENAME_FIXO%"
 if defined OVR_RICOH_FILENAME set "RICOH_FILENAME_FIXO_USO=!OVR_RICOH_FILENAME!"
+set "RICOH_PROFILE_ATIVO=0"
+set "RICOH_PROFILE_POST_USO=%RICOH_PROFILE_POST%"
+set "RICOH_PROFILE_GET_USO=%RICOH_PROFILE_GET%"
+set "RICOH_PROFILE_NORMAL_USO=%RICOH_PROFILE_NORMAL%"
+set "RICOH_PROFILE_BKUPSELECT_USO=%RICOH_PROFILE_BKUPSELECT%"
+set "RICOH_SESSAO_SEM_PREP_USO=%RICOH_SESSAO_SEM_PREP%"
+set "RICOH_ENTRY_WARMUP_USO=%RICOH_ENTRY_WARMUP%"
+set "RICOH_ENTRY_MAIN_USO=%RICOH_ENTRY_MAIN%"
+set "RICOH_ENTRY_REF_USO=%RICOH_ENTRY_REF%"
+set "RICOH_COOKIE_UA_USO=%RICOH_COOKIE_UA%"
+set "RICOH_COOKIE_ACCEPT_USO=%RICOH_COOKIE_ACCEPT%"
+set "RICOH_COOKIE_LANG_USO=%RICOH_COOKIE_LANG%"
+set "RICOH_LOGIN_OPEN_USO=%RICOH_LOGIN_OPEN%"
+set "RICOH_ENTRY_LOGIN_USO=%RICOH_ENTRY_LOGIN%"
+set "RICOH_LOGIN_B64FIELDS_USO=%RICOH_LOGIN_B64FIELDS%"
+if defined OVR_RICOH_PROFILE set "RICOH_PROFILE_ATIVO=1"
+if defined OVR_RICOH_PROFILE_POST set "RICOH_PROFILE_POST_USO=!OVR_RICOH_PROFILE_POST!"
+if defined OVR_RICOH_PROFILE_GET set "RICOH_PROFILE_GET_USO=!OVR_RICOH_PROFILE_GET!"
+if defined OVR_RICOH_PROFILE_NORMAL set "RICOH_PROFILE_NORMAL_USO=!OVR_RICOH_PROFILE_NORMAL!"
+if defined OVR_RICOH_PROFILE_BKUPSELECT set "RICOH_PROFILE_BKUPSELECT_USO=!OVR_RICOH_PROFILE_BKUPSELECT!"
+if defined OVR_RICOH_SESSAO_SEM_PREP set "RICOH_SESSAO_SEM_PREP_USO=!OVR_RICOH_SESSAO_SEM_PREP!"
+if defined OVR_RICOH_ENTRY_WARMUP set "RICOH_ENTRY_WARMUP_USO=!OVR_RICOH_ENTRY_WARMUP!"
+if defined OVR_RICOH_ENTRY_MAIN set "RICOH_ENTRY_MAIN_USO=!OVR_RICOH_ENTRY_MAIN!"
+if defined OVR_RICOH_ENTRY_REF set "RICOH_ENTRY_REF_USO=!OVR_RICOH_ENTRY_REF!"
+if defined OVR_RICOH_COOKIE_UA set "RICOH_COOKIE_UA_USO=!OVR_RICOH_COOKIE_UA!"
+if defined OVR_RICOH_COOKIE_ACCEPT set "RICOH_COOKIE_ACCEPT_USO=!OVR_RICOH_COOKIE_ACCEPT!"
+if defined OVR_RICOH_COOKIE_LANG set "RICOH_COOKIE_LANG_USO=!OVR_RICOH_COOKIE_LANG!"
+if defined OVR_RICOH_LOGIN_OPEN set "RICOH_LOGIN_OPEN_USO=!OVR_RICOH_LOGIN_OPEN!"
+if defined OVR_RICOH_ENTRY_LOGIN set "RICOH_ENTRY_LOGIN_USO=!OVR_RICOH_ENTRY_LOGIN!"
+if defined OVR_RICOH_LOGIN_B64FIELDS set "RICOH_LOGIN_B64FIELDS_USO=!OVR_RICOH_LOGIN_B64FIELDS!"
 set "CREDENCIAL_OK=0"
 set "USUARIO_USADO="
 set "METODO_USADO="
@@ -729,6 +866,36 @@ set /a RICOH_CRED_COUNT=0
 if exist "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_csv_%DATA%.csv" del "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_csv_%DATA%.csv" 2>nul
 if exist "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_addressbook_%DATA%.csv" del "%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_addressbook_%DATA%.csv" 2>nul
 if exist "!ARQ_RICOH!" del "!ARQ_RICOH!" 2>nul
+if !RICOH_PROFILE_ATIVO! equ 1 (
+    set "ARQ_RICOH_PROFILE=%PASTA_BACKUP%\Ricoh\%NOME_LIMPO%_profile_%DATA%.bin"
+    if exist "!ARQ_RICOH_PROFILE!" del "!ARQ_RICOH_PROFILE!" 2>nul
+)
+
+set "RICOH_PROFILE_TRIED=0"
+if !RICOH_PROFILE_ATIVO! equ 1 (
+    for %%C in (!RICOH_CRED_LIST!) do (
+        if !CREDENCIAL_OK! equ 0 if !RICOH_PROFILE_TRIED! equ 0 (
+            set "RICOH_PROFILE_TRIED=1"
+            set "CREDENCIAL=%%C"
+            set "SENHA="
+            for /f "tokens=1* delims=:" %%U in ("!CREDENCIAL!") do (
+                set "USUARIO=%%U"
+                set "SENHA=%%V"
+            )
+            if not defined SENHA set "SENHA="
+            echo   [RICOH] Tentativa PROFILE: usuario=!USUARIO!
+            call :RICOH_PROFILE_BACKUP "%IP%" "!SENHA!" "!ARQ_RICOH_PROFILE!"
+            echo [RICOH-RETORNO-PROFILE] !USUARIO! rc=!errorlevel! >> "%LOG_FILE%"
+            if !errorlevel! equ 0 (
+                set "CREDENCIAL_OK=1"
+                set "USUARIO_USADO=!USUARIO!"
+                set "METODO_USADO=PROFILE"
+                set "INFO_USADA=!RICOH_PROFILE_GET_USO!"
+                set "ARQ_RICOH=!ARQ_RICOH_PROFILE!"
+            )
+        )
+    )
+)
 
 for %%C in (!RICOH_CRED_LIST!) do (
     if !CREDENCIAL_OK! equ 0 (
@@ -785,21 +952,107 @@ for %%C in (!RICOH_CRED_LIST!) do (
 )
 
 if !CREDENCIAL_OK! equ 1 (
-    call :RICOH_VALIDAR_UDF "!ARQ_RICOH!"
-    if !errorlevel! equ 0 (
+    if /i "!METODO_USADO!"=="PROFILE" (
         for %%F in ("!ARQ_RICOH!") do set "TAM_UDF=%%~zF"
         set "VALIDACAO=CONSISTENTE"
 
-        echo [OK] Backup RICOH realizado em UDF - !USUARIO_USADO! - !METODO_USADO! - !TAM_UDF! bytes - !VALIDACAO!
+        echo [OK] Backup RICOH realizado em PROFILE - !USUARIO_USADO! - !METODO_USADO! - !TAM_UDF! bytes - !VALIDACAO!
         echo [OK-RICOH] %NOME% - %IP% - !USUARIO_USADO! - !METODO_USADO! - !INFO_USADA! - !TAM_UDF! bytes - !VALIDACAO! >> "%LOG_FILE%"
         set /a SUCESSO_RICOH+=1
         exit /b 0
+    ) else (
+        call :RICOH_VALIDAR_UDF "!ARQ_RICOH!"
+        if !errorlevel! equ 0 (
+            for %%F in ("!ARQ_RICOH!") do set "TAM_UDF=%%~zF"
+            set "VALIDACAO=CONSISTENTE"
+
+            echo [OK] Backup RICOH realizado em UDF - !USUARIO_USADO! - !METODO_USADO! - !TAM_UDF! bytes - !VALIDACAO!
+            echo [OK-RICOH] %NOME% - %IP% - !USUARIO_USADO! - !METODO_USADO! - !INFO_USADA! - !TAM_UDF! bytes - !VALIDACAO! >> "%LOG_FILE%"
+            set /a SUCESSO_RICOH+=1
+            exit /b 0
+        )
     )
 )
 
 echo [FALHA] Nenhum metodo completo funcionou para RICOH
 echo [FALHA-RICOH] %NOME% - %IP% - Falha de autenticacao/permissao para gerar UDF >> "%LOG_FILE%"
 exit /b 1
+
+:: =========================================
+:: FUNCAO: RICOH - BACKUP PROFILE.BIN (SP3710SF)
+:: =========================================
+:RICOH_PROFILE_BACKUP
+setlocal EnableDelayedExpansion
+set "IP_P=%~1"
+set "PASS_P=%~2"
+set "ARQ_P=%~3"
+set "POST_P=%~4"
+set "GET_P=%~5"
+set "NORMAL_P=%~6"
+set "BKUP_P=%~7"
+if not defined POST_P set "POST_P=!RICOH_PROFILE_POST_USO!"
+if not defined GET_P set "GET_P=!RICOH_PROFILE_GET_USO!"
+if not defined NORMAL_P set "NORMAL_P=!RICOH_PROFILE_NORMAL_USO!"
+if not defined BKUP_P set "BKUP_P=!RICOH_PROFILE_BKUPSELECT_USO!"
+
+if "!POST_P:~0,1!"=="/" set "POST_P=!POST_P:~1!"
+if "!GET_P:~0,1!"=="/" set "GET_P=!GET_P:~1!"
+
+set "POST_URL=http://!IP_P!/!POST_P!"
+set "GET_URL=http://!IP_P!/!GET_P!"
+set "ERR_P=%TEMP_LOCAL%\\ricoh_profile_err_!RANDOM!!RANDOM!.log"
+set "RC=1"
+
+if exist "!ARQ_P!" del "!ARQ_P!" 2>nul
+if exist "!ERR_P!" del "!ERR_P!" 2>nul
+
+echo [RICOH-PROFILE-POST] !POST_URL! >> "%LOG_FILE%"
+curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% ^
+    -H "Cookie: cookieOnOffChecker=on" ^
+    --data "normal=!NORMAL_P!&bkupSelect=!BKUP_P!&admin=!PASS_P!" ^
+    "!POST_URL!" -o NUL 2>"!ERR_P!"
+set "RC=!errorlevel!"
+echo [RICOH-PROFILE-POST] rc=!RC! >> "%LOG_FILE%"
+
+echo [RICOH-PROFILE-GET] !GET_URL! >> "%LOG_FILE%"
+curl.exe -L -k --fail -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% ^
+    "!GET_URL!" -o "!ARQ_P!" 2>>"!ERR_P!"
+set "RC=!errorlevel!"
+echo [RICOH-PROFILE-GET] rc=!RC! >> "%LOG_FILE%"
+
+if "!RC!" neq "0" if %RICOH_DIAGNOSTICO% equ 1 (
+    echo [RICOH-PROFILE-ERRO-INICIO] !GET_URL! >> "%LOG_FILE%"
+    if exist "!ERR_P!" type "!ERR_P!" >> "%LOG_FILE%"
+    echo [RICOH-PROFILE-ERRO-FIM] >> "%LOG_FILE%"
+)
+if exist "!ERR_P!" del "!ERR_P!" 2>nul
+
+if exist "!ARQ_P!" (
+    set "ARQ_OK=1"
+    for %%F in ("!ARQ_P!") do set "ARQ_SZ=%%~zF"
+    if not defined ARQ_SZ set "ARQ_SZ=0"
+    if !ARQ_SZ! LEQ %RICOH_PROFILE_MIN_SIZE% set "ARQ_OK=0"
+    if !ARQ_OK! equ 1 (
+        set "RICOH_VAL_PATH=!ARQ_P!"
+        powershell -NoProfile -Command "$p=$env:RICOH_VAL_PATH; try{$bytes=[System.IO.File]::ReadAllBytes($p);$take=[Math]::Min($bytes.Length,4096);$txt=[Text.Encoding]::ASCII.GetString($bytes,0,$take).ToLowerInvariant();$bad=@('<html','<!doctype','login','authform.cgi','result=failure','result=timeout','web image monitor','404 not found','forbidden','unauthorized','access denied','permission denied');foreach($b in $bad){if($txt.Contains($b)){exit 1}};exit 0}catch{exit 1}" >nul 2>&1
+        set "RC=!errorlevel!"
+        set "RICOH_VAL_PATH="
+        if "!RC!" NEQ "0" set "ARQ_OK=0"
+    )
+    if !ARQ_OK! equ 1 (
+        endlocal & exit /b 0
+    ) else (
+        if %RICOH_DIAGNOSTICO% equ 1 (
+            set "BAD_P=!ARQ_P!.bad"
+            copy /y "!ARQ_P!" "!BAD_P!" >nul 2>&1
+            for %%F in ("!ARQ_P!") do set "BAD_SZ=%%~zF"
+            echo [RICOH-VALIDA-ARQ] invalido tamanho=!BAD_SZ! salvo=!BAD_P! >> "%LOG_FILE%"
+        )
+        del "!ARQ_P!" 2>nul
+    )
+)
+
+endlocal & exit /b 1
 
 :: =========================================
 :: FUNCAO: VALIDAR ARQUIVO UDF RICOH
@@ -833,6 +1086,41 @@ if "!RC!"=="0" (
     endlocal & exit /b 0
 ) else (
     echo [RICOH-VALIDA-FIM] rc=1 motivo=conteudo-suspeito >> "%LOG_FILE%"
+    endlocal & exit /b 1
+)
+
+:: =========================================
+:: FUNCAO: VALIDAR ARQUIVO PROFILE.BIN RICOH
+:: =========================================
+:RICOH_VALIDAR_PROFILE
+setlocal EnableDelayedExpansion
+set "ARQ_VALID=%~1"
+set "RC=1"
+set "SZ=0"
+echo [RICOH-VALIDA-PROFILE-INICIO] !ARQ_VALID! >> "%LOG_FILE%"
+
+if not exist "!ARQ_VALID!" (
+    echo [RICOH-VALIDA-PROFILE-FIM] rc=1 motivo=arquivo-ausente >> "%LOG_FILE%"
+    endlocal & exit /b 1
+)
+
+for %%F in ("!ARQ_VALID!") do set "SZ=%%~zF"
+if not defined SZ set "SZ=0"
+if !SZ! LEQ %RICOH_PROFILE_MIN_SIZE% (
+    echo [RICOH-VALIDA-PROFILE-FIM] rc=1 motivo=tamanho-!SZ! >> "%LOG_FILE%"
+    endlocal & exit /b 1
+)
+
+set "RICOH_VAL_PATH=!ARQ_VALID!"
+powershell -NoProfile -Command "$p=$env:RICOH_VAL_PATH; try{$bytes=[System.IO.File]::ReadAllBytes($p);$take=[Math]::Min($bytes.Length,4096);$txt=[Text.Encoding]::ASCII.GetString($bytes,0,$take).ToLowerInvariant();$bad=@('<html','<!doctype','login','authform.cgi','result=failure','result=timeout','web image monitor','404 not found','forbidden','unauthorized','access denied','permission denied');foreach($b in $bad){if($txt.Contains($b)){exit 1}};exit 0}catch{exit 1}" >nul 2>&1
+set "RC=!errorlevel!"
+set "RICOH_VAL_PATH="
+
+if "!RC!"=="0" (
+    echo [RICOH-VALIDA-PROFILE-FIM] rc=0 >> "%LOG_FILE%"
+    endlocal & exit /b 0
+) else (
+    echo [RICOH-VALIDA-PROFILE-FIM] rc=1 motivo=conteudo-suspeito >> "%LOG_FILE%"
     endlocal & exit /b 1
 )
 
@@ -1038,12 +1326,20 @@ set "RC=1"
 set "ERR_B=%TEMP_LOCAL%\\ricoh_curl_err_!RANDOM!!RANDOM!.log"
 set "AUTH_OPT="
 if defined RICOH_COOKIE_CRED_ARG set "AUTH_OPT=--anyauth -u !RICOH_COOKIE_CRED_ARG!"
+set "H_UA="
+set "H_REF="
+set "H_ACC="
+set "H_LANG="
+if defined RICOH_COOKIE_UA_ARG set "H_UA=-A ^"!RICOH_COOKIE_UA_ARG!^""
+if defined RICOH_COOKIE_REF_ARG set "H_REF=-H ^"Referer: !RICOH_COOKIE_REF_ARG!^""
+if defined RICOH_COOKIE_ACCEPT_ARG set "H_ACC=-H ^"Accept: !RICOH_COOKIE_ACCEPT_ARG!^""
+if defined RICOH_COOKIE_LANG_ARG set "H_LANG=-H ^"Accept-Language: !RICOH_COOKIE_LANG_ARG!^""
 
 if exist "!ARQ_B!" del "!ARQ_B!" 2>nul
 if exist "!ERR_B!" del "!ERR_B!" 2>nul
 
 echo [RICOH-CURL-INICIO] COOKIE !URL_B! >> "%LOG_FILE%"
-curl.exe -L -k --fail --max-redirs 2 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% !AUTH_OPT! -b "!COOKIE_B!" -c "!COOKIE_B!" "!URL_B!" -o "!ARQ_B!" 2>"!ERR_B!"
+curl.exe -L -k --fail --max-redirs 2 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% !AUTH_OPT! !H_UA! !H_REF! !H_ACC! !H_LANG! -b "!COOKIE_B!" -c "!COOKIE_B!" "!URL_B!" -o "!ARQ_B!" 2>"!ERR_B!"
 set "RC=!errorlevel!"
 echo [RICOH-CURL-FIM] rc=!RC! >> "%LOG_FILE%"
 if "!RC!" neq "0" if %RICOH_DIAGNOSTICO% equ 1 (
@@ -1114,6 +1410,7 @@ for %%L in (!LOCALE_LIST!) do (
         if exist "!UPLOAD_HTML!" del "!UPLOAD_HTML!" 2>nul
 
         set "AUTH_URL=%%P://!IP_S!/web/guest/%%L/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/!NOME_S!_addr.udf"
+        if !RICOH_USAR_FIXO_USO! equ 1 set "AUTH_URL=%%P://!IP_S!/web/guest/%%L/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/!FNAME_FIXO_URL!"
         set "LOGIN_URL=%%P://!IP_S!/web/guest/%%L/websys/webArch/login.cgi"
         set "LIST_URL=%%P://!IP_S!/web/entry/%%L/address/adrsList.cgi"
         set "UPLOAD_URL=%%P://!IP_S!/web/entry/%%L/address/adrsUploadFile.cgi"
@@ -1135,8 +1432,15 @@ for %%L in (!LOCALE_LIST!) do (
             if !AUTH_INVALIDA! equ 0 (
                 set "LOGIN_FALHOU=1"
                 set "LOGIN_MODO="
+                set "LOGIN_OPEN_PARAM="
+                if !RICOH_LOGIN_OPEN_USO! equ 1 (
+                    set "LOGIN_OPEN_RAW="
+                    for /f "tokens=2 delims==" %%O in ("!AUTH_URL!") do set "LOGIN_OPEN_RAW=%%O"
+                    if defined LOGIN_OPEN_RAW set "LOGIN_OPEN_RAW=!LOGIN_OPEN_RAW:%%20= !"
+                    if defined LOGIN_OPEN_RAW set "LOGIN_OPEN_PARAM=--data-urlencode ^"open=!LOGIN_OPEN_RAW!^""
+                )
 
-                curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -c "!COOKIE!" -b "!COOKIE!" --data-urlencode "userid=!USER_S!" --data-urlencode "password=!PASS_S!" "!LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
+                curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -c "!COOKIE!" -b "!COOKIE!" !LOGIN_OPEN_PARAM! --data-urlencode "userid=!USER_S!" --data-urlencode "password=!PASS_S!" "!LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
                 echo [RICOH-SESSAO-LOGIN] modo=PLAIN usuario=!USER_S! rc=!errorlevel! >> "%LOG_FILE%"
                 call :RLOGIN_OK "!LOGIN_HTML!"
                 if !errorlevel! equ 0 (
@@ -1145,7 +1449,7 @@ for %%L in (!LOCALE_LIST!) do (
                 )
 
                 if !LOGIN_FALHOU! equ 1 (
-                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -c "!COOKIE!" -b "!COOKIE!" --data "userid=!USER64!&password=!PASS64!" "!LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
+                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -c "!COOKIE!" -b "!COOKIE!" !LOGIN_OPEN_PARAM! --data "userid=!USER64!&password=!PASS64!" "!LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
                     echo [RICOH-SESSAO-LOGIN] modo=B64 usuario=!USER_S! rc=!errorlevel! >> "%LOG_FILE%"
                     call :RLOGIN_OK "!LOGIN_HTML!"
                     if !errorlevel! equ 0 (
@@ -1153,39 +1457,54 @@ for %%L in (!LOCALE_LIST!) do (
                         set "LOGIN_MODO=B64"
                     )
                 )
+                if !LOGIN_FALHOU! equ 1 if !RICOH_LOGIN_B64FIELDS_USO! equ 1 (
+                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -c "!COOKIE!" -b "!COOKIE!" !LOGIN_OPEN_PARAM! ^
+                        --data "userid_work=&userid=!USER64!&password_work=&password=!PASS64!&open=" "!LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
+                    echo [RICOH-SESSAO-LOGIN] modo=FIELDS usuario=!USER_S! rc=!errorlevel! >> "%LOG_FILE%"
+                    call :RLOGIN_OK "!LOGIN_HTML!"
+                    if !errorlevel! equ 0 (
+                        set "LOGIN_FALHOU=0"
+                        set "LOGIN_MODO=FIELDS"
+                    )
+                )
+                set "LOGIN_OPEN_PARAM="
+                set "LOGIN_OPEN_RAW="
 
                 if !LOGIN_FALHOU! equ 0 (
                     echo [RICOH-SESSAO-LOGIN] OK modo=!LOGIN_MODO! usuario=!USER_S! >> "%LOG_FILE%"
                     set "PREP_OK=1"
-
-                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -b "!COOKIE!" -c "!COOKIE!" "!LIST_URL!" -o NUL 2>nul
-                    if !errorlevel! neq 0 set "PREP_OK=0"
-                    echo [RICOH-SESSAO-PREP] GET adrsList rc=!errorlevel! locale=%%L >> "%LOG_FILE%"
-
-                    if !PREP_OK! equ 1 (
-                        curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% -b "!COOKIE!" -c "!COOKIE!" ^
-                            --data "mode=BACKUP&kind=BACKUP&mainteKey=&pageSpecifiedIn=&pageNumberIn=&searchSpecifyModeIn=&wayTo=&wayFrom=adrsDownloadFile.cgi" ^
-                            "!UPLOAD_URL!" -o "!UPLOAD_HTML!" 2>nul
-                        echo [RICOH-SESSAO-PREP] POST adrsUploadFile rc=!errorlevel! locale=%%L >> "%LOG_FILE%"
-
+                    if !RICOH_SESSAO_SEM_PREP_USO! equ 1 (
+                        echo [RICOH-SESSAO-PREP] SKIP locale=%%L usuario=!USER_S! >> "%LOG_FILE%"
+                    ) else (
+                        curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -b "!COOKIE!" -c "!COOKIE!" "!LIST_URL!" -o NUL 2>nul
                         if !errorlevel! neq 0 set "PREP_OK=0"
-                        if exist "!UPLOAD_HTML!" (
-                            set "UPLOAD_INVALIDO=0"
-                            findstr /i "result=FAILURE result=TIMEOUT login.cgi authForm.cgi MSG_COOKIEOFF cookieoff authentication failed" "!UPLOAD_HTML!" >nul 2>&1 && set "UPLOAD_INVALIDO=1"
-                            if !UPLOAD_INVALIDO! equ 1 set "PREP_OK=0"
-                            if !UPLOAD_INVALIDO! equ 0 (
-                                findstr /i "returnValue SUCCESS adrsDownloadFile.cgi adrsFileDownload.cgi" "!UPLOAD_HTML!" >nul 2>&1
-                                if !errorlevel! equ 0 set "PREP_OK=1"
-                            )
-                        ) else (
-                            set "PREP_OK=0"
-                        )
+                        echo [RICOH-SESSAO-PREP] GET adrsList rc=!errorlevel! locale=%%L >> "%LOG_FILE%"
 
-                        if !PREP_OK! neq 1 if exist "!UPLOAD_HTML!" (
-                            findstr /i "login.cgi authForm.cgi result=FAILURE result=TIMEOUT" "!UPLOAD_HTML!" >nul 2>&1
-                            if !errorlevel! neq 0 (
-                                set "PREP_OK=1"
-                                echo [RICOH-SESSAO-PREP] AJUSTE: mantendo tentativa de download locale=%%L usuario=!USER_S! >> "%LOG_FILE%"
+                        if !PREP_OK! equ 1 (
+                            curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH% -b "!COOKIE!" -c "!COOKIE!" ^
+                                --data "mode=BACKUP&kind=BACKUP&mainteKey=&pageSpecifiedIn=&pageNumberIn=&searchSpecifyModeIn=&wayTo=&wayFrom=adrsDownloadFile.cgi" ^
+                                "!UPLOAD_URL!" -o "!UPLOAD_HTML!" 2>nul
+                            echo [RICOH-SESSAO-PREP] POST adrsUploadFile rc=!errorlevel! locale=%%L >> "%LOG_FILE%"
+
+                            if !errorlevel! neq 0 set "PREP_OK=0"
+                            if exist "!UPLOAD_HTML!" (
+                                set "UPLOAD_INVALIDO=0"
+                                findstr /i "result=FAILURE result=TIMEOUT login.cgi authForm.cgi MSG_COOKIEOFF cookieoff authentication failed" "!UPLOAD_HTML!" >nul 2>&1 && set "UPLOAD_INVALIDO=1"
+                                if !UPLOAD_INVALIDO! equ 1 set "PREP_OK=0"
+                                if !UPLOAD_INVALIDO! equ 0 (
+                                    findstr /i "returnValue SUCCESS adrsDownloadFile.cgi adrsFileDownload.cgi" "!UPLOAD_HTML!" >nul 2>&1
+                                    if !errorlevel! equ 0 set "PREP_OK=1"
+                                )
+                            ) else (
+                                set "PREP_OK=0"
+                            )
+
+                            if !PREP_OK! neq 1 if exist "!UPLOAD_HTML!" (
+                                findstr /i "login.cgi authForm.cgi result=FAILURE result=TIMEOUT" "!UPLOAD_HTML!" >nul 2>&1
+                                if !errorlevel! neq 0 (
+                                    set "PREP_OK=1"
+                                    echo [RICOH-SESSAO-PREP] AJUSTE: mantendo tentativa de download locale=%%L usuario=!USER_S! >> "%LOG_FILE%"
+                                )
                             )
                         )
                     )
@@ -1270,6 +1589,84 @@ for %%L in (!LOCALE_LIST!) do (
                     echo [RICOH-SESSAO-LOGIN] FALHA usuario=!USER_S! locale=%%L >> "%LOG_FILE%"
                 )
             )
+        )
+
+        if !OK! equ 0 if !RICOH_ENTRY_WARMUP_USO! equ 1 (
+            set "ENTRY_MAIN_PATH=!RICOH_ENTRY_MAIN_USO!"
+            set "ENTRY_REF_PATH=!RICOH_ENTRY_REF_USO!"
+            if not defined ENTRY_MAIN_PATH set "ENTRY_MAIN_PATH=web/entry/%%L/websys/webArch/mainFrame.cgi"
+            if not defined ENTRY_REF_PATH set "ENTRY_REF_PATH=web/entry/%%L/address/adrsDownloadFile.cgi"
+
+            set "ENTRY_MAIN_URL=!ENTRY_MAIN_PATH!"
+            if /i "!ENTRY_MAIN_URL:~0,4!"=="http" (
+                rem url completa
+            ) else (
+                if "!ENTRY_MAIN_URL:~0,1!"=="/" (
+                    set "ENTRY_MAIN_URL=%%P://!IP_S!!ENTRY_MAIN_URL!"
+                ) else (
+                    set "ENTRY_MAIN_URL=%%P://!IP_S!/!ENTRY_MAIN_URL!"
+                )
+            )
+
+            set "ENTRY_REF_URL=!ENTRY_REF_PATH!"
+            if /i "!ENTRY_REF_URL:~0,4!"=="http" (
+                rem url completa
+            ) else (
+                if "!ENTRY_REF_URL:~0,1!"=="/" (
+                    set "ENTRY_REF_URL=%%P://!IP_S!!ENTRY_REF_URL!"
+                ) else (
+                    set "ENTRY_REF_URL=%%P://!IP_S!/!ENTRY_REF_URL!"
+                )
+            )
+
+            echo [RICOH-ENTRY-WARMUP] !USER_S!@!ENTRY_MAIN_URL! >> "%LOG_FILE%"
+            curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% --anyauth -u "!USER_S!:!PASS_S!" -b "!COOKIE!" -c "!COOKIE!" "!ENTRY_MAIN_URL!" -o NUL 2>nul
+            if !RICOH_ENTRY_LOGIN_USO! equ 1 (
+                set "ENTRY_LOGIN_URL=%%P://!IP_S!/web/entry/%%L/websys/webArch/login.cgi"
+                echo [RICOH-ENTRY-LOGIN] !USER_S!@!ENTRY_LOGIN_URL! >> "%LOG_FILE%"
+                if !RICOH_LOGIN_B64FIELDS_USO! equ 1 (
+                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -b "!COOKIE!" -c "!COOKIE!" -b "cookieOnOffChecker=on" ^
+                        --data "userid_work=&userid=!USER64!&password_work=&password=!PASS64!&open=" "!ENTRY_LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
+                ) else (
+                    curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -b "!COOKIE!" -c "!COOKIE!" -b "cookieOnOffChecker=on" --data-urlencode "userid=!USER_S!" --data-urlencode "password=!PASS_S!" "!ENTRY_LOGIN_URL!" -o "!LOGIN_HTML!" 2>nul
+                )
+            )
+            curl.exe -L -k --max-redirs 3 --retry 0 -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_RICOH_LOGIN% -b "!COOKIE!" -c "!COOKIE!" "!ENTRY_REF_URL!" -o NUL 2>nul
+
+            set "RICOH_COOKIE_CRED_ARG=!USER_S!:!PASS_S!"
+            if defined RICOH_COOKIE_UA_USO set "RICOH_COOKIE_UA_ARG=!RICOH_COOKIE_UA_USO!"
+            if defined RICOH_COOKIE_ACCEPT_USO set "RICOH_COOKIE_ACCEPT_ARG=!RICOH_COOKIE_ACCEPT_USO!"
+            if defined RICOH_COOKIE_LANG_USO set "RICOH_COOKIE_LANG_ARG=!RICOH_COOKIE_LANG_USO!"
+            set "RICOH_COOKIE_REF_ARG=!ENTRY_REF_URL!"
+
+            if !RICOH_USAR_FIXO_USO! equ 1 (
+                echo [RICOH-ENTRY-WARMUP-DOWN] !USER_S!@!DOWN_URL_FIXA! >> "%LOG_FILE%"
+                set "RICOH_COOKIE_URL_ARG=!DOWN_URL_FIXA!"
+                set "RICOH_COOKIE_ARG=!COOKIE!"
+                set "RICOH_COOKIE_ARQ_ARG=!ARQ_S!"
+                call :RB_COOKIE
+                set "RICOH_COOKIE_URL_ARG="
+                set "RICOH_COOKIE_ARG="
+                set "RICOH_COOKIE_ARQ_ARG="
+            ) else (
+                echo [RICOH-ENTRY-WARMUP-DOWN] !USER_S!@!DOWN_URL! >> "%LOG_FILE%"
+                set "RICOH_COOKIE_URL_ARG=!DOWN_URL!"
+                set "RICOH_COOKIE_ARG=!COOKIE!"
+                set "RICOH_COOKIE_ARQ_ARG=!ARQ_S!"
+                call :RB_COOKIE
+                set "RICOH_COOKIE_URL_ARG="
+                set "RICOH_COOKIE_ARG="
+                set "RICOH_COOKIE_ARQ_ARG="
+            )
+            if !errorlevel! equ 0 (
+                set "OK=1"
+                set "RESULT_INFO=ENTRY-WARMUP locale=%%L"
+            )
+            set "RICOH_COOKIE_CRED_ARG="
+            set "RICOH_COOKIE_UA_ARG="
+            set "RICOH_COOKIE_ACCEPT_ARG="
+            set "RICOH_COOKIE_LANG_ARG="
+            set "RICOH_COOKIE_REF_ARG="
         )
     )
 )

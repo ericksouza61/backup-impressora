@@ -1,0 +1,78 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-03-26 17-55-53 
+Script: C:\Desenvolvemento\backupteste.bat 
+Versao: 2026-03-11-OVR4 
+============================================================ 
+ 
+[OVR] 172.16.0.226 MODELO=RICOH 
+[OVR] 172.16.0.226 RICOH_CRED=custom 
+[OVR] 172.16.0.226 RICOH_PROFILE=custom 
+[OVR] 172.16.0.226 RICOH_PROFILE_POST=custom 
+[OVR] 172.16.0.226 RICOH_PROFILE_GET=custom 
+[OVR] 172.16.0.226 RICOH_PROFILE_NORMAL=custom 
+[OVR] 172.16.0.226 RICOH_PROFILE_BKUPSELECT=custom 
+[RICOH-PROFILE-POST] http://172.16.0.226/form/htm_ProfileBackup 
+[RICOH-PROFILE-POST] rc=0 
+[RICOH-PROFILE-GET] http://172.16.0.226/form/Profile.bin 
+[RICOH-PROFILE-GET] rc=0 
+[RICOH-VALIDA-ARQ] invalido tamanho=49088 salvo=C:\Desenvolvemento\temp\backups\Ricoh\Mtz_Medico_profile_2026-03-26.bin.bad 
+[RICOH-RETORNO-PROFILE] admin rc=1 
+[RICOH-TENTATIVA-DIRETA] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-INICIO] BASIC admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-HTTP-FIM] rc=1 
+[RICOH-HTTP-ARQ] existe=0 tamanho=0 
+[RICOH-CURL-INICIO] ANYAUTH admin http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ARQ] existe=0 tamanho=0 
+[RICOH-DIRETO-RC] nome rc=1 
+[RICOH-RETORNO-DIRETO] admin rc=1 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.226/web/guest/pt/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=pt 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=pt 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/pt/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO] admin@http://172.16.0.226/web/guest/en/websys/webArch/authForm.cgi?open=address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-SESSAO-LOGIN] modo=PLAIN usuario=admin rc=0 
+[RICOH-SESSAO-LOGIN] OK modo=PLAIN usuario=admin 
+[RICOH-SESSAO-PREP] GET adrsList rc=0 locale=en 
+[RICOH-SESSAO-PREP] POST adrsUploadFile rc=0 locale=en 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsFileDownload.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-TENTATIVA-SESSAO-DOWN] admin@http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-INICIO] COOKIE http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+[RICOH-CURL-FIM] rc=22 
+[RICOH-CURL-ERRO-INICIO] http://172.16.0.226/web/entry/en/address/adrsDownloadFile.cgi/Mtz_Medico_addr.udf 
+curl: (22) The requested URL returned error: 404
+[RICOH-CURL-ERRO-FIM] 
+[RICOH-RETORNO-SESSAO] admin rc=1 
+[FALHA-RICOH] Mtz_Medico - 172.16.0.226 - Falha de autenticacao/permissao para gerar UDF 
+[FALHA-GERAL] Mtz_Medico - 172.16.0.226 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 1 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+============================================================ 
