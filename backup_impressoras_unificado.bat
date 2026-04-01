@@ -11,8 +11,27 @@ if not exist "%TEMP_LOCAL%" mkdir "%TEMP_LOCAL%"
 set "ARQUIVO_IPS=%~1"
 if "%ARQUIVO_IPS%"=="" set "ARQUIVO_IPS=Listagem Impressora IP'S.txt"
 
-set "PASTA_BACKUP=C:\Backups\Impressoras"
-if defined BACKUP_ROOT set "PASTA_BACKUP=%BACKUP_ROOT%"
+set "PASTA_BACKUP=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas"
+rem BACKUP_ROOT override desativado para forcar gravacao no caminho UNC
+set "UNC_SHARE=\\ap29dtc\Usuarios"
+set "UNC_USER=grupomi\erick.souza"
+set "UNC_PASS=xpkj19"
+net use "%UNC_SHARE%" /user:%UNC_USER% %UNC_PASS% >nul 2>&1
+if not exist "%PASTA_BACKUP%" mkdir "%PASTA_BACKUP%" >nul 2>&1
+set "UNC_WRITE_TEST=%PASTA_BACKUP%\_write_test.tmp"
+echo teste>"%UNC_WRITE_TEST%" 2>nul
+if not exist "%UNC_WRITE_TEST%" (
+    echo.
+    echo ============================================================
+    echo ERRO: Sem permissao de escrita no caminho de backup!
+    echo Caminho: %PASTA_BACKUP%
+    echo Verifique permissao e credenciais de rede.
+    echo ============================================================
+    echo.
+    pause
+    exit /b 1
+)
+del "%UNC_WRITE_TEST%" >nul 2>&1
 set "LOG_FILE=%PASTA_BACKUP%\backup_log.txt"
 if defined BACKUP_LOG set "LOG_FILE=%BACKUP_LOG%"
 set "SCRIPT_VERSION=2026-03-11-OVR4"
@@ -178,6 +197,7 @@ set "OVR_RICOH_CRED_10_19_0_34=admin:"
 set "OVR_RICOH_CRED_10_19_0_43="
 set "OVR_RICOH_CRED_172_16_0_226=admin:"
 set "OVR_RICOH_CRED_10_239_0_39=admin:"
+set "OVR_RICOH_CRED_172_16_0_211=admin:admin"
 set "OVR_RICOH_ENTRY_WARMUP_10_239_0_39=1"
 set "OVR_RICOH_ENTRY_LOGIN_10_239_0_39=1"
 set "OVR_RICOH_LOGIN_OPEN_10_239_0_39=0"
