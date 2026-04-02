@@ -29,7 +29,7 @@ if not exist "%UNC_WRITE_TEST%" (
     echo Verifique permissao e credenciais de rede.
     echo ============================================================
     echo.
-    pause
+    if not defined AUTO_RUN pause
     exit /b 1
 )
 del "%UNC_WRITE_TEST%" >nul 2>&1
@@ -60,7 +60,7 @@ if not exist "%ARQUIVO_IPS%" (
     echo 2. OU informe o caminho no primeiro argumento do script
     echo ============================================================
     echo.
-    pause
+    if not defined AUTO_RUN pause
     exit /b 1
 )
 
@@ -316,7 +316,7 @@ powershell -NoProfile -Command "$file=$env:ARQUIVO_IPS; $out=$env:ARQUIVO_PARSE;
 if errorlevel 1 (
     echo [ERRO] Falha ao parsear o arquivo de impressoras.
     echo [ERRO] Falha no parser de entrada. >> "%LOG_FILE%"
-    pause
+    if not defined AUTO_RUN pause
     exit /b 1
 )
 
@@ -518,7 +518,7 @@ echo Desenvolvido por Erick Souza >> "%LOG_FILE%"
 
 if exist "%ARQUIVO_PARSE%" del "%ARQUIVO_PARSE%" 2>nul
 
-pause
+if not defined AUTO_RUN pause
 exit /b 0
 
 :: =========================================
