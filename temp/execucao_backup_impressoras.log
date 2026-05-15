@@ -1,0 +1,20 @@
+[2026-04-15 11:59:20] [INICIO] modo=AUTOMATICA script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    script=c:\Desenvolvemento\backupteste.bat arquivo_ips=c:\Desenvolvemento\temp\pantum_single_test.txt
+[2026-04-15 11:59:26] [FIM] modo=AUTOMATICA script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO total=1 falhas=0 offline=0 skip=0
+[2026-04-15 15:54:16] [INICIO] modo=AUTOMATICA script=backup_impressoras_unificado.bat usuario=Erick.Souza maquina=TI-2578
+    script=c:\Desenvolvemento\backup_impressoras_unificado.bat arquivo_ips=c:\Desenvolvemento\temp\pantum_single_test.txt
+[2026-04-15 15:54:22] [FIM] modo=AUTOMATICA script=backup_impressoras_unificado.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO total=1 falhas=0 offline=0 skip=0
+[2026-04-16 08:50:13] [INICIO] modo=MANUAL script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    script=C:\Desenvolvemento\backupteste.bat arquivo_ips=Listagem Impressora IP'S.txt
+[2026-04-16 09:09:19] [FIM] modo=MANUAL script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO total=202 falhas=4 offline=28 skip=16
+[2026-05-01 15:00:02] [INICIO] modo=AUTOMATICA script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    script=C:\Desenvolvemento\backupteste.bat arquivo_ips=Listagem Impressora IP'S.txt
+[2026-05-01 15:12:04] [FIM] modo=AUTOMATICA script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO total=202 falhas=3 offline=95 skip=16
+[2026-05-15 09:29:34] [INICIO] modo=MANUAL script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    script=C:\Desenvolvemento\backupteste.bat arquivo_ips=Listagem Impressora IP'S.txt
+[2026-05-15 09:52:40] [FIM] modo=MANUAL script=backupteste.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO total=202 falhas=4 offline=23 skip=16

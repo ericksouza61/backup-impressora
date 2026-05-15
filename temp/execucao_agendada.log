@@ -1,0 +1,4 @@
+[2026-05-01 15:00:01] [INICIO] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    launcher=C:\Desenvolvemento\backupteste_agendado.bat script=C:\Desenvolvemento\backupteste.bat
+[2026-05-01 15:12:04] [FIM] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO codigo=0 script=C:\Desenvolvemento\backupteste.bat

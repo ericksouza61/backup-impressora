@@ -1,0 +1,106 @@
+﻿{
+    "captured_at":  "2026-04-15 11:55:48",
+    "ip":  "10.3.0.34",
+    "printer_name":  "Teste_Pantum_10_3_0_34",
+    "vendor":  "Pantum",
+    "product_name":  "Pantum BM5220ADW",
+    "product_id_dec":  10073,
+    "product_id_hex":  "0x2759",
+    "serial_number":  "CV3CV002FF",
+    "firmware_version":  "2.H.0.7",
+    "info_url":  "http://10.3.0.34/shtml/omDB.shtml?INFO",
+    "login_url":  "http://10.3.0.34/shtml/omDB.shtml?LOGIN",
+    "modules":  {
+                    "ADDRBOOK":  {
+                                     "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?ADDRBOOK",
+                                     "count":  0,
+                                     "items":  [
+
+                                               ]
+                                 },
+                    "MAILINFO":  {
+                                     "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?MAILINFO",
+                                     "count":  0,
+                                     "items":  [
+
+                                               ]
+                                 },
+                    "MAILGROUP":  {
+                                      "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?MAILGROUP",
+                                      "count":  0,
+                                      "items":  [
+
+                                                ]
+                                  },
+                    "PHONEINFO":  {
+                                      "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?PHONEINFO",
+                                      "count":  0,
+                                      "items":  [
+
+                                                ]
+                                  },
+                    "PHONEGROUP":  {
+                                       "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?PHONEGROUP",
+                                       "count":  0,
+                                       "items":  [
+
+                                                 ]
+                                   },
+                    "SMBINFO":  {
+                                    "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?SMBINFO",
+                                    "count":  4,
+                                    "items":  [
+                                                  {
+                                                      "addr":  "172.16.0.40",
+                                                      "path":  "/fs/Usuarios/Pv03/Atendimento/Compartilhado/Scanner",
+                                                      "anony":  "0",
+                                                      "user":  "grupomil/copymaq",
+                                                      "pswd":  "******",
+                                                      "name":  "Atendimento",
+                                                      "idx":  "0"
+                                                  },
+                                                  {
+                                                      "addr":  "172.16.0.40",
+                                                      "path":  "/fs/Usuarios/Pv03/CPD/Compartilhado/Scanner",
+                                                      "anony":  "0",
+                                                      "user":  "grupomil/copymaq",
+                                                      "pswd":  "******",
+                                                      "name":  "CPD",
+                                                      "idx":  "1"
+                                                  },
+                                                  {
+                                                      "addr":  "172.16.0.40",
+                                                      "path":  "/fs/Usuarios/Pv03/RH/Compartilhado/Scanner",
+                                                      "anony":  "0",
+                                                      "user":  "grupomil/copymaq",
+                                                      "pswd":  "******",
+                                                      "name":  "RH",
+                                                      "idx":  "2"
+                                                  },
+                                                  {
+                                                      "addr":  "172.16.0.40",
+                                                      "path":  "/fs/Usuarios/Pv03/Servir/Compartilhado/Scanner",
+                                                      "anony":  "0",
+                                                      "user":  "grupomil/copymaq",
+                                                      "pswd":  "******",
+                                                      "name":  "Servir",
+                                                      "idx":  "3"
+                                                  }
+                                              ]
+                                },
+                    "FTPINFO":  {
+                                    "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?FTPINFO",
+                                    "count":  0,
+                                    "items":  [
+
+                                              ]
+                                },
+                    "SCANQUICKSET":  {
+                                         "url":  "http://10.3.0.34/shtml/omWifiScanDB.shtml?SCANQUICKSET",
+                                         "count":  0,
+                                         "items":  [
+
+                                                   ]
+                                     }
+                }
+}

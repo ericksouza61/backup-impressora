@@ -39,19 +39,59 @@ function Get-LastFailures {
 $uncShare = Get-BatVar -batPath $scriptPath -varName "UNC_SHARE"
 $uncUser  = Get-BatVar -batPath $scriptPath -varName "UNC_USER"
 $uncPass  = Get-BatVar -batPath $scriptPath -varName "UNC_PASS"
-$uncReady = $false
+$script:uncReady = $false
 
-function Ensure-UNC {
-    param([string]$backupPath)
-    if ($uncReady) { return $true }
-    if (-not $uncShare) { $uncReady = $true; return $true }
+function Connect-UNCShare {
+    if ($script:uncReady) { return $true }
+    if (-not $uncShare) {
+        $script:uncReady = $true
+        return $true
+    }
     try {
-        $args = "/c net use `"$uncShare`" /user:$uncUser $uncPass >nul 2>&1"
-        Start-Process -FilePath "cmd.exe" -ArgumentList $args -WindowStyle Hidden -Wait | Out-Null
+        $args = "/c net use `"$uncShare`""
+        if ($uncUser) {
+            $args += " /user:$uncUser"
+            if ($uncPass) { $args += " $uncPass" }
+        }
+        $args += " >nul 2>&1"
+        $proc = Start-Process -FilePath "cmd.exe" -ArgumentList $args -WindowStyle Hidden -Wait -PassThru
+        if ($proc.ExitCode -eq 0) {
+            $script:uncReady = $true
+            return $true
+        }
     } catch {
     }
-    if ($backupPath -and (Test-Path $backupPath)) { $uncReady = $true }
-    return $uncReady
+    return $false
+}
+
+function Ensure-UNC {
+    param(
+        [string]$backupPath,
+        [switch]$RequireWrite
+    )
+    if (-not $backupPath) { return $false }
+
+    $null = Connect-UNCShare
+
+    try {
+        if (-not (Test-Path $backupPath)) {
+            New-Item -ItemType Directory -Path $backupPath -Force | Out-Null
+        }
+
+        if ($RequireWrite) {
+            $probe = Join-Path $backupPath ("_gui_write_test_" + [guid]::NewGuid().ToString("N") + ".tmp")
+            Set-Content -Path $probe -Value "teste" -Encoding ASCII -ErrorAction Stop
+            Remove-Item -Path $probe -Force -ErrorAction SilentlyContinue
+        }
+
+        if (Test-Path $backupPath) {
+            $script:uncReady = $true
+            return $true
+        }
+    } catch {
+    }
+
+    return $false
 }
 
 $backupPath = Get-BackupPath -batPath $scriptPath
@@ -106,7 +146,7 @@ $btnRun.Add_Click({
         [System.Windows.Forms.MessageBox]::Show("Nao foi possivel identificar a pasta de backup.", "Aviso", "OK", "Warning") | Out-Null
         return
     }
-    if (-not (Ensure-UNC -backupPath $path)) {
+    if (-not (Ensure-UNC -backupPath $path -RequireWrite)) {
         [System.Windows.Forms.MessageBox]::Show("Sem acesso ao caminho de backup.`n$path", "Aviso", "OK", "Warning") | Out-Null
         return
     }
@@ -221,6 +261,10 @@ $btnFailures.Add_Click({
     $path = Get-BackupPath -batPath $scriptPath
     if (-not $path) {
         [System.Windows.Forms.MessageBox]::Show("Nao foi possivel identificar o log.", "Aviso", "OK", "Warning") | Out-Null
+        return
+    }
+    if (-not (Ensure-UNC -backupPath $path)) {
+        [System.Windows.Forms.MessageBox]::Show("Sem acesso ao caminho de backup.`n$path", "Aviso", "OK", "Warning") | Out-Null
         return
     }
     $log = Join-Path $path "backup_log.txt"

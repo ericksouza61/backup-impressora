@@ -1,0 +1,29 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER, RICOH E PANTUM 
+Desenvolvido por Erick Souza 
+============================================================ 
+Iniciado em: 2026-04-15 11-59-19 
+Script: c:\Desenvolvemento\backupteste.bat 
+Versao: 2026-04-15-LOG1 
+[EXECUCAO] INICIO modo=AUTOMATICA usuario=Erick.Souza maquina=TI-2578 
+[EXECUCAO] Arquivo de entrada: c:\Desenvolvemento\temp\pantum_single_test.txt 
+[EXECUCAO] Pasta de backup: \\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas 
+============================================================ 
+ 
+[OVR] 10.3.0.34 MODELO=PANTUM 
+[PANTUM] Pantum_Teste - 10.3.0.34 - Pantum BM5220ADW - ID 10073 - ADDRBOOK=0 MAILINFO=0 MAILGROUP=0 PHONEINFO=0 PHONEGROUP=0 SMBINFO=4 FTPINFO=0 SCANQUICKSET=0
+[OK-PANTUM] Pantum_Teste - 10.3.0.34 - 5801 bytes 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 - PANTUM: 1 
+OFFLINE: 0 - FALHAS: 0 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 0 
+[EXECUCAO] FIM modo=AUTOMATICA status=SUCESSO codigo=0 
+[EXECUCAO] Resumo: TOTAL=1 LEXMARK=0 BROTHER=0 RICOH=0 PANTUM=1 OFFLINE=0 FALHAS=0 SKIP=0 
+============================================================ 
+Desenvolvido por Erick Souza 
