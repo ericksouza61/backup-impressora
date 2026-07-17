@@ -2,3 +2,11 @@
     launcher=C:\Desenvolvemento\backupteste_agendado.bat script=C:\Desenvolvemento\backupteste.bat
 [2026-05-01 15:12:04] [FIM] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
     status=SUCESSO codigo=0 script=C:\Desenvolvemento\backupteste.bat
+[2026-06-01 15:00:01] [INICIO] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    launcher=C:\Desenvolvemento\backupteste_agendado.bat script=C:\Desenvolvemento\backupteste.bat pasta_backup=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas e Matriz
+[2026-06-01 15:18:59] [FIM] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO codigo=0 script=C:\Desenvolvemento\backupteste.bat
+[2026-07-01 15:00:02] [INICIO] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    launcher=C:\Desenvolvemento\backupteste_agendado.bat script=C:\Desenvolvemento\backupteste.bat pasta_backup=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas e Matriz
+[2026-07-01 15:24:14] [FIM] launcher=backupteste_agendado.bat usuario=Erick.Souza maquina=TI-2578
+    status=SUCESSO codigo=0 script=C:\Desenvolvemento\backupteste.bat

@@ -12,8 +12,9 @@ if not exist "%TEMP_LOCAL%" mkdir "%TEMP_LOCAL%" >nul 2>&1
 set "LOG_AGENDADO=%TEMP_LOCAL%\execucao_agendada.log"
 set "BAT=%~dp0backupteste.bat"
 if not exist "%BAT%" set "BAT=C:\Desenvolvemento\backupteste.bat"
+set "PASTA_BACKUP_OVERRIDE=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas e Matriz"
 
-call :LOG_AGENDADO "INICIO" "launcher=%~f0 script=%BAT%"
+call :LOG_AGENDADO "INICIO" "launcher=%~f0 script=%BAT% pasta_backup=%PASTA_BACKUP_OVERRIDE%"
 
 if not exist "%BAT%" (
     call :LOG_AGENDADO "ERRO" "Arquivo principal nao encontrado: %BAT%"

@@ -1,0 +1,25 @@
+============================================================ 
+BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH 
+============================================================ 
+Iniciado em: 2026-07-17 09-38-37 
+Script: C:\Desenvolvemento\backup_impressoras_unificado.bat 
+Versao: 2026-04-15-LOG1 
+[EXECUCAO] INICIO modo=AUTOMATICA usuario=Erick.Souza maquina=TI-2578 
+[EXECUCAO] Arquivo de entrada: C:\Desenvolvemento\temp\pantum_single_test.txt 
+[EXECUCAO] Pasta de backup: C:\Desenvolvemento\temp\backup_test_output 
+============================================================ 
+ 
+[SKIP] Pantum_Teste - 10.3.0.34 - MODELO_NAO_SUPORTADO 
+ 
+============================================================ 
+RESUMO FINAL 
+============================================================ 
+Total processadas: 1 
+LEXMARK: 0 - BROTHER: 0 - RICOH: 0 
+OFFLINE: 0 - FALHAS: 0 
+SKIP_SEM_SCANNER: 0 
+SKIP_SCANNER_NAO_CONFIG: 0 
+SKIP: 1 
+[EXECUCAO] FIM modo=AUTOMATICA status=SUCESSO codigo=0 
+[EXECUCAO] Resumo: TOTAL=1 LEXMARK=0 BROTHER=0 RICOH=0 OFFLINE=0 FALHAS=0 SKIP=1 
+============================================================ 

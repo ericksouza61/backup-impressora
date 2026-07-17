@@ -18,7 +18,8 @@ if defined AUTO_RUN set "MODO_EXECUCAO=AUTOMATICA"
 set "EXEC_LOG=%TEMP_LOCAL%\execucao_backup_impressoras.log"
 call :LOG_EXEC_LOCAL "INICIO" "script=%~f0 arquivo_ips=%ARQUIVO_IPS%"
 
-set "PASTA_BACKUP=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas"
+set "PASTA_BACKUP=\\ap29dtc\Usuarios\Informatica\Suporte\Impressoras\Backup\Lojas e Matriz"
+if defined PASTA_BACKUP_OVERRIDE set "PASTA_BACKUP=%PASTA_BACKUP_OVERRIDE%"
 rem BACKUP_ROOT override desativado para forcar gravacao no caminho UNC
 set "UNC_SHARE=\\ap29dtc\Usuarios"
 set "UNC_USER=grupomi\erick.souza"
@@ -115,7 +116,6 @@ set "RICOH_COOKIE_LANG="
 set "RICOH_LOGIN_OPEN=0"
 set "RICOH_ENTRY_LOGIN=0"
 set "RICOH_LOGIN_B64FIELDS=0"
-set "PANTUM_MIN_SIZE=300"
 
 :: =========================================
 :: EXCECOES POR IP (APENAS PARA IPs COM FALHA)
@@ -139,9 +139,6 @@ set "OVR_MODELO_10_22_0_37=LEXMARK"
 set "OVR_MODELO_10_19_0_34=RICOH"
 set "OVR_MODELO_172_16_0_226=RICOH"
 set "OVR_MODELO_172_16_0_126=RICOH"
-set "OVR_MODELO_10_3_0_34=PANTUM"
-set "OVR_MODELO_10_3_0_35=PANTUM"
-set "OVR_MODELO_10_3_0_36=PANTUM"
 set "OVR_MODELO_10_239_0_39=RICOH"
 set "OVR_MODELO_10_239_0_42=OFFLINE"
 set "OVR_MODELO_10_10_0_36=LEXMARK"
@@ -276,6 +273,9 @@ set "OVR_SKIP_10_29_0_40=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_10_19_0_42=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_172_16_0_109=SCANNER_NAO_CONFIGURADO"
 set "OVR_SKIP_10_239_0_36=SEM_SCANNER"
+set "OVR_SKIP_10_3_0_34=MODELO_NAO_SUPORTADO"
+set "OVR_SKIP_10_3_0_35=MODELO_NAO_SUPORTADO"
+set "OVR_SKIP_10_3_0_36=MODELO_NAO_SUPORTADO"
 
 if not exist "%PASTA_BACKUP%" mkdir "%PASTA_BACKUP%"
 for %%D in ("%LOG_FILE%") do set "LOG_DIR=%%~dpD"
@@ -283,11 +283,10 @@ if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
 if not exist "%PASTA_BACKUP%\Lexmark" mkdir "%PASTA_BACKUP%\Lexmark"
 if not exist "%PASTA_BACKUP%\Brother" mkdir "%PASTA_BACKUP%\Brother"
 if not exist "%PASTA_BACKUP%\Ricoh" mkdir "%PASTA_BACKUP%\Ricoh"
-if not exist "%PASTA_BACKUP%\Pantum" mkdir "%PASTA_BACKUP%\Pantum"
 if not exist "%PASTA_BACKUP%\Desconhecido" mkdir "%PASTA_BACKUP%\Desconhecido"
 
 echo ============================================================ > "%LOG_FILE%"
-echo BACKUP UNIFICADO - LEXMARK, BROTHER, RICOH E PANTUM >> "%LOG_FILE%"
+echo BACKUP UNIFICADO - LEXMARK, BROTHER E RICOH >> "%LOG_FILE%"
 echo Desenvolvido por Erick Souza >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
 echo Iniciado em: %DATA% %HORA% >> "%LOG_FILE%"
@@ -301,7 +300,7 @@ echo. >> "%LOG_FILE%"
 
 echo.
 echo ============================================================
-echo   BACKUP AUTOMATIZADO - LEXMARK, BROTHER, RICOH E PANTUM
+echo   BACKUP AUTOMATIZADO - LEXMARK, BROTHER E RICOH
 echo   Desenvolvido por Erick Souza
 echo ============================================================
 echo Modo de execucao: %MODO_EXECUCAO%
@@ -312,7 +311,6 @@ set /a TOTAL=0
 set /a SUCESSO_LEXMARK=0
 set /a SUCESSO_BROTHER=0
 set /a SUCESSO_RICOH=0
-set /a SUCESSO_PANTUM=0
 set /a OFFLINE=0
 set /a FALHA=0
 set /a SKIP=0
@@ -468,10 +466,6 @@ for /f "usebackq tokens=1* delims=|" %%a in ("%ARQUIVO_PARSE%") do (
         echo Modelo detectado: RICOH
         call :BACKUP_RICOH "!NOME_IMPRESSORA!" "!IP_IMPRESSORA!"
         if !errorlevel! equ 0 set "BACKUP_SUCESSO=1"
-    ) else if /i "!MODELO!"=="PANTUM" (
-        echo Modelo detectado: PANTUM
-        call :BACKUP_PANTUM "!NOME_IMPRESSORA!" "!IP_IMPRESSORA!"
-        if !errorlevel! equ 0 set "BACKUP_SUCESSO=1"
     ) else (
         echo Modelo: DESCONHECIDO - Tentando sequencia otimizada BROTHER -^> LEXMARK...
 
@@ -512,7 +506,6 @@ echo.
 echo Backups LEXMARK com sucesso: %SUCESSO_LEXMARK%
 echo Backups BROTHER com sucesso: %SUCESSO_BROTHER%
 echo Backups RICOH com sucesso: %SUCESSO_RICOH%
-echo Backups PANTUM com sucesso: %SUCESSO_PANTUM%
 echo Impressoras offline: %OFFLINE%
 echo Falhas (autenticacao/outro): %FALHA%
 echo Ignoradas (sem scanner): %SKIP_SEM_SCANNER%
@@ -530,13 +523,13 @@ echo ============================================================ >> "%LOG_FILE%
 echo RESUMO FINAL >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
 echo Total processadas: %TOTAL% >> "%LOG_FILE%"
-echo LEXMARK: %SUCESSO_LEXMARK% - BROTHER: %SUCESSO_BROTHER% - RICOH: %SUCESSO_RICOH% - PANTUM: %SUCESSO_PANTUM% >> "%LOG_FILE%"
+echo LEXMARK: %SUCESSO_LEXMARK% - BROTHER: %SUCESSO_BROTHER% - RICOH: %SUCESSO_RICOH% >> "%LOG_FILE%"
 echo OFFLINE: %OFFLINE% - FALHAS: %FALHA% >> "%LOG_FILE%"
 echo SKIP_SEM_SCANNER: %SKIP_SEM_SCANNER% >> "%LOG_FILE%"
 echo SKIP_SCANNER_NAO_CONFIG: %SKIP_SCANNER_NAO_CONFIG% >> "%LOG_FILE%"
 echo SKIP: %SKIP% >> "%LOG_FILE%"
 echo [EXECUCAO] FIM modo=%MODO_EXECUCAO% status=SUCESSO codigo=0 >> "%LOG_FILE%"
-echo [EXECUCAO] Resumo: TOTAL=%TOTAL% LEXMARK=%SUCESSO_LEXMARK% BROTHER=%SUCESSO_BROTHER% RICOH=%SUCESSO_RICOH% PANTUM=%SUCESSO_PANTUM% OFFLINE=%OFFLINE% FALHAS=%FALHA% SKIP=%SKIP% >> "%LOG_FILE%"
+echo [EXECUCAO] Resumo: TOTAL=%TOTAL% LEXMARK=%SUCESSO_LEXMARK% BROTHER=%SUCESSO_BROTHER% RICOH=%SUCESSO_RICOH% OFFLINE=%OFFLINE% FALHAS=%FALHA% SKIP=%SKIP% >> "%LOG_FILE%"
 echo ============================================================ >> "%LOG_FILE%"
 echo Desenvolvido por Erick Souza >> "%LOG_FILE%"
 
@@ -594,11 +587,6 @@ for %%E in ("" "web/guest/en/websys/webArch/mainFrame.cgi" "web/guest/ja/websys/
         curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_DETECT% "http://%IP_TEMP%/%%~E" 2>nul | findstr /i "Ricoh Aficio Web Image Monitor" >nul
         if !errorlevel! equ 0 set "MODELO_RESULTADO=RICOH"
     )
-)
-
-if /i "!MODELO_RESULTADO!"=="DESCONHECIDO" (
-    curl.exe -L -k -sS --connect-timeout %CONNECT_TIMEOUT% -m %TIMEOUT_DETECT% "http://%IP_TEMP%/shtml/omDB.shtml?INFO" 2>nul | findstr /i "Pantum omProductName" >nul
-    if !errorlevel! equ 0 set "MODELO_RESULTADO=PANTUM"
 )
 
 :IDENTIFICAR_FIM
@@ -856,62 +844,6 @@ if !CREDENCIAL_OK! equ 1 exit /b 0
 echo [FALHA] Nenhuma credencial funcionou para Brother
 echo [FALHA-BROTHER] %NOME% - %IP% >> "%LOG_FILE%"
 exit /b 1
-
-:: =========================================
-:: FUNCAO: BACKUP PANTUM
-:: =========================================
-:BACKUP_PANTUM
-setlocal EnableDelayedExpansion
-set "NOME=%~1"
-set "IP=%~2"
-set "NOME_LIMPO=%NOME%"
-set "NOME_LIMPO=%NOME_LIMPO: =_%"
-set "NOME_LIMPO=%NOME_LIMPO:/=_%"
-set "NOME_LIMPO=%NOME_LIMPO:\=_%"
-set "NOME_LIMPO=%NOME_LIMPO::=_%"
-set "NOME_LIMPO=%NOME_LIMPO:?=_%"
-set "NOME_LIMPO=%NOME_LIMPO:>=_%"
-set "NOME_LIMPO=%NOME_LIMPO:<=_%"
-set "NOME_LIMPO=%NOME_LIMPO:|=_%"
-set "ARQ_PANTUM=%PASTA_BACKUP%\Pantum\%NOME_LIMPO%_backup_%DATA%.json"
-set "PANTUM_HELPER=%~dp0Backup-Pantum.ps1"
-
-echo Tentando backup PANTUM...
-
-if not exist "!PANTUM_HELPER!" (
-    echo [FALHA] Helper do Pantum nao encontrado
-    echo [FALHA-PANTUM] %NOME% - %IP% - helper-ausente >> "%LOG_FILE%"
-    endlocal & exit /b 1
-)
-
-if exist "!ARQ_PANTUM!" del "!ARQ_PANTUM!" 2>nul
-
-set "PANTUM_IP=!IP!"
-set "PANTUM_NAME=!NOME!"
-set "PANTUM_OUT=!ARQ_PANTUM!"
-set "PANTUM_LOG=%LOG_FILE%"
-
-powershell -NoProfile -Command "$ErrorActionPreference='Stop'; Set-ExecutionPolicy -Scope Process Bypass; & $env:PANTUM_HELPER $env:PANTUM_IP $env:PANTUM_NAME $env:PANTUM_OUT $env:PANTUM_LOG" >nul 2>&1
-set "RC=!errorlevel!"
-
-set "PANTUM_IP="
-set "PANTUM_NAME="
-set "PANTUM_OUT="
-set "PANTUM_LOG="
-
-if "!RC!"=="0" if exist "!ARQ_PANTUM!" (
-    for %%F in ("!ARQ_PANTUM!") do set "TAMANHO=%%~zF"
-    if !TAMANHO! gtr %PANTUM_MIN_SIZE% (
-        echo [OK] Backup PANTUM realizado - !TAMANHO! bytes
-        echo [OK-PANTUM] %NOME% - %IP% - !TAMANHO! bytes >> "%LOG_FILE%"
-        endlocal & set /a SUCESSO_PANTUM+=1 & exit /b 0
-    )
-)
-
-if exist "!ARQ_PANTUM!" del "!ARQ_PANTUM!" 2>nul
-echo [FALHA] Backup PANTUM falhou
-echo [FALHA-PANTUM] %NOME% - %IP% >> "%LOG_FILE%"
-endlocal & exit /b 1
 
 :: =========================================
 :: FUNCAO: BACKUP RICOH
